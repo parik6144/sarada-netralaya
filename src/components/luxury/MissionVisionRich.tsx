@@ -87,7 +87,7 @@ export default function MissionVisionRich() {
             className="group relative overflow-hidden rounded-[1.75rem] border border-white/10 min-h-[520px] sm:min-h-[560px] shadow-[0_30px_80px_rgba(0,0,0,0.35)]"
           >
             <Image
-              src="/images/about-clinic.png"
+              src="/images/about-clinic.jpg"
               alt="Our mission in patient care"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
