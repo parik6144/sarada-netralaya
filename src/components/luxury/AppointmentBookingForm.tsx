@@ -89,11 +89,12 @@ export default function AppointmentBookingForm({ compact = false, onSuccess }: P
         <p className="mt-5 text-[11px] font-semibold uppercase tracking-[0.2em] text-emerald-700">Success</p>
         <h3 className="mt-2 w-full text-xl font-bold text-[#0B1F3A] sm:text-2xl">Appointment request sent</h3>
         <p className="mt-3 w-full text-sm leading-relaxed text-slate-600">
-          Thank you. Our front desk will call you shortly to confirm your slot.
+          Thank you. Our front desk will call you shortly to confirm your slot. If you shared an email, a
+          confirmation mail is also on its way.
         </p>
         {mailSent ? (
           <p className="mt-3 w-full rounded-xl bg-emerald-50 px-4 py-2 text-xs font-semibold text-emerald-700">
-            Notification email sent to hospital team
+            Hospital notified · confirmation email sent when email was provided
           </p>
         ) : (
           <p className="mt-3 w-full rounded-xl bg-amber-50 px-4 py-2 text-xs font-semibold text-amber-700">

@@ -14,7 +14,7 @@ const doctors = [
     qualifications: ['MBBS, MS (Ophthalmology)', 'Fellowship in Phaco & Refractive Surgery', 'Specialist in Cataract & Glaucoma Surgery', 'Former Consultant at Apollo Hospitals'],
   },
   {
-    name: 'Dr. Nitish R. Bharadwaj',
+    name: 'Dr. Nitish Bhardwaj',
     title: 'Ophthalmologist & Refractive Surgeon',
     experience: '10+ Years Experience',
     initials: 'NB',

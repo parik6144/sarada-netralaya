@@ -207,10 +207,13 @@ export default function ContactPageClient() {
                   <p className="mt-5 text-[11px] tracking-[0.2em] uppercase font-semibold text-emerald-700">Success</p>
                   <h3 className="mt-2 text-xl font-bold text-slate-900">Message sent</h3>
                   <p className="mt-2 text-sm text-slate-600 max-w-md mx-auto">
-                    Thank you. We will reply shortly on your phone or email.
+                    Thank you. We will reply shortly on your phone or email. If you shared an email, a
+                    confirmation mail is also on its way.
                   </p>
                   {mailSent ? (
-                    <p className="mt-3 text-xs font-semibold text-emerald-700">Hospital team notified by email</p>
+                    <p className="mt-3 text-xs font-semibold text-emerald-700">
+                      Hospital notified · confirmation email sent when email was provided
+                    </p>
                   ) : (
                     <p className="mt-3 text-xs font-semibold text-amber-700">
                       Message saved — email notify pending

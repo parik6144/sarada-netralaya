@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { db } from '@/lib/db';
-import { sendBrandedAdminMail } from '@/lib/mail';
+import { sendBrandedAdminMail, sendUserThankYouMail } from '@/lib/mail';
 
 export async function POST(request: Request) {
   try {
@@ -25,6 +25,15 @@ export async function POST(request: Request) {
       },
     });
 
+    const detailRows: Array<[string, string]> = [
+      ['Name', name],
+      ['Phone', phone],
+      ['Email', email || ''],
+      ['Subject', subject || 'Website enquiry'],
+      ['Message', message],
+      ['Contact ID', contact.id],
+    ];
+
     let mailSent = true;
     try {
       await sendBrandedAdminMail({
@@ -33,15 +42,22 @@ export async function POST(request: Request) {
         subtitle: 'Someone sent a message from the SARADA Netralaya contact page.',
         badge: 'Contact enquiry',
         replyTo: email,
-        rows: [
-          ['Name', name],
-          ['Phone', phone],
-          ['Email', email || ''],
-          ['Subject', subject || 'Website enquiry'],
-          ['Message', message],
-          ['Contact ID', contact.id],
-        ],
+        rows: detailRows,
       });
+
+      if (email) {
+        await sendUserThankYouMail({
+          to: email,
+          kind: 'contact',
+          name,
+          rows: [
+            ['Name', name],
+            ['Phone', phone],
+            ['Subject', subject || 'Website enquiry'],
+            ['Reference', contact.id],
+          ],
+        });
+      }
     } catch (mailError) {
       mailSent = false;
       console.error('Contact mail error:', mailError);

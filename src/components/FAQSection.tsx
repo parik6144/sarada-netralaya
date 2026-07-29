@@ -9,7 +9,7 @@ const faqs = [
   { q: 'How long does cataract surgery take?', a: 'The actual procedure takes approximately 15-20 minutes per eye. However, you should plan to spend about 2-3 hours at the hospital for pre-operative preparation and post-operative observation.' },
   { q: 'Is LASIK surgery safe?', a: 'LASIK is one of the safest and most studied elective procedures available. At SARADA Netralaya, we use the latest FDA-approved laser technology. Our surgeons have performed thousands of successful LASIK procedures.' },
   { q: 'What should I bring to my appointment?', a: 'Please bring your previous prescriptions, current glasses or contact lenses, a list of any medications you are taking, your insurance card, and a valid photo ID.' },
-  { q: 'Do you offer pediatric eye care?', a: "Yes, we have specialized pediatric eye care services. Dr. Nitish R. Bharadwaj has extensive experience in treating children's eye conditions including squint, lazy eye, and congenital cataracts." },
+  { q: 'Do you offer pediatric eye care?', a: "Yes, we have specialized pediatric eye care services. Dr. Nitish Bhardwaj has extensive experience in treating children's eye conditions including squint, lazy eye, and congenital cataracts." },
   { q: 'How often should I get an eye exam?', a: 'Adults aged 18-60 should have a comprehensive eye exam every 1-2 years. Those over 60 should have annual exams. Children should have their first eye exam at 6 months, then at age 3, and before starting school.' },
 ];
 

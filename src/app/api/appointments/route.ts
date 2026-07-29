@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { db } from '@/lib/db';
-import { sendBrandedAdminMail } from '@/lib/mail';
+import { sendBrandedAdminMail, sendUserThankYouMail } from '@/lib/mail';
 
 export async function POST(request: Request) {
   try {
@@ -37,6 +37,19 @@ export async function POST(request: Request) {
       },
     });
 
+    const detailRows: Array<[string, string]> = [
+      ['Patient', patientName],
+      ['Phone', phone],
+      ['Email', email || ''],
+      ['Doctor', doctor],
+      ['Department', department],
+      ['Date', preferredDate],
+      ['Time', preferredTime],
+      ['Message', symptoms || ''],
+      ['Insurance', hasInsurance ? insuranceName || 'Yes' : 'No'],
+      ['Booking ID', appointment.id],
+    ];
+
     let mailSent = true;
     try {
       await sendBrandedAdminMail({
@@ -45,19 +58,24 @@ export async function POST(request: Request) {
         subtitle: 'A patient submitted a booking request from the SARADA Netralaya website.',
         badge: 'Appointment request',
         replyTo: email,
-        rows: [
-          ['Patient', patientName],
-          ['Phone', phone],
-          ['Email', email || ''],
-          ['Doctor', doctor],
-          ['Department', department],
-          ['Date', preferredDate],
-          ['Time', preferredTime],
-          ['Message', symptoms || ''],
-          ['Insurance', hasInsurance ? insuranceName || 'Yes' : 'No'],
-          ['Booking ID', appointment.id],
-        ],
+        rows: detailRows,
       });
+
+      if (email) {
+        await sendUserThankYouMail({
+          to: email,
+          kind: 'appointment',
+          name: patientName,
+          rows: [
+            ['Patient', patientName],
+            ['Phone', phone],
+            ['Doctor', doctor],
+            ['Date', preferredDate],
+            ['Time', preferredTime],
+            ['Booking ID', appointment.id],
+          ],
+        });
+      }
     } catch (mailError) {
       mailSent = false;
       console.error('Appointment mail error:', mailError);

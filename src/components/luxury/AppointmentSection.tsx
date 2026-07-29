@@ -126,7 +126,7 @@ export default function AppointmentSection({ hideHeader = false }: { hideHeader?
                   <div className="space-y-5">
                     <h3 className="text-lg font-medium text-slate-900 mb-6">Select Doctor</h3>
                     <div className="grid sm:grid-cols-2 gap-4">
-                      {[{ name: 'Dr. Nitin G. Dhira', spec: 'Cataract & Glaucoma' }, { name: 'Dr. Nitish R. Bharadwaj', spec: 'Cataract & Cornea' }].map(d => (
+                      {[{ name: 'Dr. Nitin G. Dhira', spec: 'Cataract & Glaucoma' }, { name: 'Dr. Nitish Bhardwaj', spec: 'Cornea, Cataract & Refractive' }].map(d => (
                         <button key={d.name} type="button"
                           onClick={() => setForm({ ...form, doctor: d.name })}
                           className={`p-5 rounded-xl text-left transition-all duration-300 ${

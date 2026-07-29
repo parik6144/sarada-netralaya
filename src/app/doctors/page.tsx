@@ -8,7 +8,7 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Our Doctors | SARADA Netralaya & Maternity',
   description:
-    'Meet Dr. Nitin G. Dhira (Cataract & Glaucoma) and Dr. Nitish R. Bharadwaj (Cataract & Cornea) at SARADA Netralaya, Jamshedpur.',
+    'Meet Dr. Nitin G. Dhira (Cataract & Glaucoma) and Dr. Nitish Bhardwaj (Cornea, Cataract & Refractive) at SARADA Netralaya, Jamshedpur.',
 };
 
 export default function DoctorsPage() {
@@ -60,7 +60,7 @@ export default function DoctorsPage() {
               Ready to meet your surgeon?
             </h2>
             <p className="mt-3 text-sm text-white/80 max-w-xl mx-auto">
-              Book a consultation with Dr. Nitin G. Dhira or Dr. Nitish R. Bharadwaj at our Baradwari centre.
+              Book a consultation with Dr. Nitin G. Dhira or Dr. Nitish Bhardwaj at our Baradwari centre.
             </p>
             <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
               <BookAppointmentButton className="inline-flex justify-center px-7 py-3 rounded-full bg-brand-red text-white text-sm font-semibold hover:bg-brand-red-dark transition-colors">Book Appointment</BookAppointmentButton>

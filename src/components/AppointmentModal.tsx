@@ -137,7 +137,7 @@ export default function AppointmentModal({ open, onOpenChange }: AppointmentModa
                   <SelectTrigger><SelectValue placeholder="Select doctor" /></SelectTrigger>
                   <SelectContent>
                     <SelectItem value="Dr. Nitin G. Dhira">Dr. Nitin G. Dhira</SelectItem>
-                    <SelectItem value="Dr. Nitish R. Bharadwaj">Dr. Nitish R. Bharadwaj</SelectItem>
+                    <SelectItem value="Dr. Nitish Bhardwaj">Dr. Nitish Bhardwaj</SelectItem>
                   </SelectContent>
                 </Select>
               </div>

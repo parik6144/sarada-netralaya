@@ -109,7 +109,7 @@ const diseases: Disease[] = [
     treatment: ['Antibiotic/antiviral/antifungal eye drops', 'Corneal collagen cross-linking (CXL) for keratoconus', 'Penetrating keratoplasty (full corneal transplant)', 'DSAEK/DMEK (partial thickness transplant)', 'Phototherapeutic keratectomy (PTK)', 'Rigid gas permeable contact lenses'],
     prevention: ['Practice good contact lens hygiene', 'Never sleep with contact lenses', 'Protect eyes with safety goggles', 'Treat eye infections promptly', 'Avoid sharing eye makeup or towels', 'Get regular eye checkups if you have risk factors'],
     whenToSee: 'Severe eye pain, sudden vision loss, or a visible white spot on the cornea needs URGENT evaluation. Delay in treatment of corneal infections can lead to permanent scarring and vision loss.',
-    doctor: 'Dr. Nitish R. Bharadwaj',
+    doctor: 'Dr. Nitish Bhardwaj',
   },
   {
     id: 'dry-eye',
@@ -126,7 +126,7 @@ const diseases: Disease[] = [
     treatment: ['Artificial tears and lubricating eye drops', 'Preservative-free eye drops for frequent use', 'Warm compresses and lid hygiene', 'Punctal plugs to reduce tear drainage', 'Prescription eye drops (Cyclosporine/Lifitegrast)', 'Intense Pulsed Light (IPL) therapy', 'LipiFlow thermal pulsation', 'Serum autologous eye drops (severe cases)'],
     prevention: ['Follow 20-20-20 rule for screen use', 'Blink consciously and frequently', 'Use a humidifier in dry environments', 'Take omega-3 supplements', 'Stay hydrated (8+ glasses water/day)', 'Wear wraparound sunglasses outdoors', 'Avoid direct fan/AC airflow on face'],
     whenToSee: 'If dry eye symptoms persist despite over-the-counter drops, or if you experience pain, redness, or vision changes, schedule a comprehensive dry eye evaluation at SARADA.',
-    doctor: 'Dr. Nitish R. Bharadwaj',
+    doctor: 'Dr. Nitish Bhardwaj',
   },
   {
     id: 'allergy',
@@ -143,7 +143,7 @@ const diseases: Disease[] = [
     treatment: ['Antihistamine eye drops (Olopatadine, Ketotifen)', 'Mast cell stabilizer drops', 'Combination antihistamine/mast cell drops', 'Oral antihistamines (Cetirizine, Allegra)', 'Cold compresses for symptom relief', 'Prescription steroid eye drops (severe cases)', 'Artificial tears to wash out allergens', 'Avoidance of identified allergens'],
     prevention: ['Stay indoors during high pollen days', 'Keep windows closed during allergy season', 'Use HEPA air purifiers', 'Wash hands and face after being outdoors', 'Use hypoallergenic pillow covers', 'Avoid rubbing eyes', 'Clean contact lenses properly'],
     whenToSee: 'If symptoms are severe, persistent, or accompanied by pain or vision changes, visit us. If over-the-counter allergy drops are not providing relief after 1-2 weeks, a prescription may be needed.',
-    doctor: 'Dr. Nitish R. Bharadwaj',
+    doctor: 'Dr. Nitish Bhardwaj',
   },
   {
     id: 'squint',
@@ -160,7 +160,7 @@ const diseases: Disease[] = [
     treatment: ['Prescription glasses (for refractive-related squint)', 'Prism lenses to align images', 'Orthoptic exercises (vision therapy)', 'Botox injection for temporary alignment', 'Squint correction surgery (adjusting eye muscles)', 'Patching for amblyopia (lazy eye)', 'Regular follow-up and monitoring'],
     prevention: ['Early childhood eye screening (by age 3-4)', 'Get eyes checked if family history of squint', 'Treat refractive errors promptly in children', 'Do not ignore signs of eye misalignment', 'Regular pediatric eye exams'],
     whenToSee: 'If your child\'s eyes appear misaligned in photos, if they squint frequently, tilt their head, or complain of double vision — bring them in immediately. Early treatment is critical for children under 8.',
-    doctor: 'Dr. Nitish R. Bharadwaj',
+    doctor: 'Dr. Nitish Bhardwaj',
   },
   {
     id: 'pediatric',
@@ -169,7 +169,7 @@ const diseases: Disease[] = [
     color: 'text-brand-red',
     iconBg: 'bg-brand-red/10',
     shortDesc: 'Children\'s eye conditions including lazy eye (amblyopia), congenital cataracts, and refractive errors requiring early intervention.',
-    overview: 'Children can experience a variety of eye conditions that differ significantly from adult eye problems. Early detection and treatment are crucial because children\'s eyes and visual system are still developing. Conditions like amblyopia (lazy eye) must be treated before age 8-10 for the best outcomes, or the vision loss becomes permanent. At SARADA Netralaya, Dr. Nitish R. Bharadwaj has specialized training in pediatric ophthalmology and provides gentle, child-friendly eye examinations and treatments including vision screening, glasses, patching therapy, and pediatric eye surgery when needed.',
+    overview: 'Children can experience a variety of eye conditions that differ significantly from adult eye problems. Early detection and treatment are crucial because children\'s eyes and visual system are still developing. Conditions like amblyopia (lazy eye) must be treated before age 8-10 for the best outcomes, or the vision loss becomes permanent. At SARADA Netralaya, Dr. Nitish Bhardwaj has specialized training in pediatric ophthalmology and provides gentle, child-friendly eye examinations and treatments including vision screening, glasses, patching therapy, and pediatric eye surgery when needed.',
     symptoms: ['Frequent eye rubbing', 'Sitting too close to TV or holding books close', 'Squinting or tilting head to see', 'Crossed or misaligned eyes', 'White reflex in pupil (leukocoria) in photos', 'Poor performance in school', 'Clumsiness or difficulty with sports', 'Complaints of headaches or eye fatigue', 'Excessive tearing'],
     causes: ['Genetic/hereditary factors', 'Premature birth (retinopathy of prematurity)', 'Congenital conditions (cataracts, glaucoma)', 'Uncorrected refractive errors', 'Amblyopia (lazy eye) from unequal vision', 'Developmental abnormalities', 'Eye infections in newborns'],
     riskFactors: ['Family history of eye problems', 'Premature or low birth weight', 'Developmental delays', 'Mother\'s infection during pregnancy', 'Lack of early eye screening', 'Prolonged screen time in young children'],
@@ -177,7 +177,7 @@ const diseases: Disease[] = [
     treatment: ['Prescription eyeglasses', 'Patching therapy for amblyopia', 'Atropine drops for lazy eye', 'Vision therapy exercises', 'Pediatric cataract surgery', 'ROP laser treatment', 'Strabismus (squint) surgery', 'Regular monitoring every 6 months'],
     prevention: ['First eye exam at 6 months of age', 'Second exam at age 3, before school', 'Annual eye exams for school-age children', 'Limit screen time (follow 20-20-20 rule)', 'Ensure good lighting for reading', 'Provide a balanced diet rich in vitamin A', 'Do not ignore any eye complaints from children'],
     whenToSee: 'If you notice a white reflection in your child\'s pupil in photos, misaligned eyes, frequent eye rubbing, or if your child struggles with reading — these need prompt evaluation. ROP screening for premature babies is MANDATORY.',
-    doctor: 'Dr. Nitish R. Bharadwaj',
+    doctor: 'Dr. Nitish Bhardwaj',
   },
   {
     id: 'computer-vision',
@@ -194,7 +194,7 @@ const diseases: Disease[] = [
     treatment: ['Computer glasses with anti-reflective coating', 'Blue-light blocking lenses', 'Artificial tears and lubricating drops', '20-20-20 rule (every 20 min, look 20ft away for 20 sec)', 'Ergonomic workstation adjustments', 'Blink exercises and eye yoga', 'Screen brightness/filter adjustments', 'Vision therapy if binocular vision issues'],
     prevention: ['Follow 20-20-20 rule strictly', 'Position screen 20-26 inches from eyes', 'Set screen at or slightly below eye level', 'Reduce overhead lighting to minimize glare', 'Use anti-glare screen protectors', 'Take 10-min breaks every 2 hours', 'Get annual eye exams', 'Keep eyes hydrated with artificial tears'],
     whenToSee: 'If headaches, eye strain, or blurred vision persist despite taking breaks, visit SARADA for a comprehensive evaluation. You may need prescription computer glasses or have an underlying refractive error.',
-    doctor: 'Dr. Nitish R. Bharadwaj',
+    doctor: 'Dr. Nitish Bhardwaj',
   },
   {
     id: 'conjunctivitis',
@@ -211,7 +211,7 @@ const diseases: Disease[] = [
     treatment: ['Viral: Supportive care (artificial tears, cold compress) - resolves in 1-2 weeks', 'Bacterial: Antibiotic eye drops/ointments (Erythromycin, Gentamicin, Moxifloxacin)', 'Allergic: Antihistamine/mast cell drops, oral antihistamines', 'Chemical: Immediate irrigation, remove irritant', 'Good hygiene: frequent hand washing, no eye rubbing', 'Avoid contact lenses until fully healed', 'Do not share towels, pillows, or eye makeup'],
     prevention: ['Wash hands frequently with soap', 'Avoid touching or rubbing eyes', 'Do not share personal items (towels, makeup)', 'Clean contact lenses properly', 'Replace eye makeup regularly', 'Stay home if infectious (viral/bacterial)', 'Use protective eyewear in pools/chemical environments'],
     whenToSee: 'If you have severe eye pain, sensitivity to light, blurred vision that does not clear with blinking, or symptoms that worsen after 3 days — visit SARADA immediately. Newborns with eye discharge need URGENT evaluation.',
-    doctor: 'Dr. Nitish R. Bharadwaj',
+    doctor: 'Dr. Nitish Bhardwaj',
   },
 ];
 

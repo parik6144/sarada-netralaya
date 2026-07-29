@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 import path from 'path';
 import { site } from '@/data/site';
 
-const notifyTo = process.env.MAIL_NOTIFY_TO || 'parikachevier2013@gmail.com';
+const notifyTo = process.env.MAIL_NOTIFY_TO || 'info@saradanetralaya.org';
 const LOGO_CID = 'sarada-logo@netralaya';
 
 function getTransporter() {
@@ -57,6 +57,7 @@ export function buildBrandedEmailHtml(options: {
   subtitle: string;
   rowsHtml: string;
   badge?: string;
+  extraHtml?: string;
 }) {
   const badge = options.badge || 'Website notification';
   return `<!DOCTYPE html>
@@ -67,7 +68,6 @@ export function buildBrandedEmailHtml(options: {
     <tr>
       <td align="center">
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:620px;background:#ffffff;border-radius:18px;overflow:hidden;box-shadow:0 12px 40px rgba(11,31,58,0.12);">
-          <!-- Header -->
           <tr>
             <td style="background:linear-gradient(135deg,#0B1F3A 0%,#123A5C 100%);padding:22px 28px;text-align:center;">
               <img src="cid:${LOGO_CID}" alt="SARADA Netralaya" width="220" style="display:block;margin:0 auto 14px auto;max-width:220px;height:auto;background:#ffffff;border-radius:10px;padding:10px 14px;" />
@@ -78,13 +78,12 @@ export function buildBrandedEmailHtml(options: {
               <p style="margin:0;color:rgba(255,255,255,0.75);font-size:13px;line-height:1.5;">${escapeHtml(options.subtitle)}</p>
             </td>
           </tr>
-          <!-- Body -->
           <tr>
             <td style="padding:24px 28px 8px;">
+              ${options.extraHtml || ''}
               ${options.rowsHtml}
             </td>
           </tr>
-          <!-- CTA -->
           <tr>
             <td style="padding:8px 28px 24px;text-align:center;">
               <a href="tel:${site.phones[0].replace(/\s/g, '')}" style="display:inline-block;background:#C8102E;color:#ffffff;text-decoration:none;font-size:13px;font-weight:700;padding:12px 22px;border-radius:999px;margin:4px;">
@@ -95,7 +94,6 @@ export function buildBrandedEmailHtml(options: {
               </a>
             </td>
           </tr>
-          <!-- Footer -->
           <tr>
             <td style="background:#F8FAFC;border-top:1px solid #e2e8f0;padding:18px 28px;text-align:center;">
               <p style="margin:0 0 6px;color:#0B1F3A;font-size:13px;font-weight:700;">${escapeHtml(site.name)}</p>
@@ -112,21 +110,34 @@ export function buildBrandedEmailHtml(options: {
 </html>`;
 }
 
-export async function sendAdminMail(options: {
+async function sendBrandedTo(options: {
+  to: string;
   subject: string;
-  text: string;
-  html: string;
+  title: string;
+  subtitle: string;
+  rows: Array<[string, string]>;
+  badge?: string;
   replyTo?: string | null;
+  extraHtml?: string;
 }) {
   const transporter = getTransporter();
   const logoPath = path.join(process.cwd(), 'public', 'sarada-logo.png');
+  const rowsHtml = rowsToHtml(options.rows);
+  const html = buildBrandedEmailHtml({
+    title: options.title,
+    subtitle: options.subtitle,
+    rowsHtml,
+    badge: options.badge,
+    extraHtml: options.extraHtml,
+  });
+  const text = [options.subtitle, '', ...options.rows.map(([k, v]) => `${k}: ${v || '—'}`)].join('\n');
 
   await transporter.sendMail({
     from: fromAddress(),
-    to: notifyTo,
+    to: options.to,
     subject: options.subject,
-    text: options.text,
-    html: options.html,
+    text,
+    html,
     replyTo: options.replyTo || undefined,
     attachments: [
       {
@@ -139,7 +150,7 @@ export async function sendAdminMail(options: {
   });
 }
 
-/** Convenience: branded appointment / contact emails */
+/** Admin notify — hospital inbox */
 export async function sendBrandedAdminMail(options: {
   subject: string;
   title: string;
@@ -148,19 +159,34 @@ export async function sendBrandedAdminMail(options: {
   badge?: string;
   replyTo?: string | null;
 }) {
-  const rowsHtml = rowsToHtml(options.rows);
-  const html = buildBrandedEmailHtml({
-    title: options.title,
-    subtitle: options.subtitle,
-    rowsHtml,
-    badge: options.badge,
+  await sendBrandedTo({
+    ...options,
+    to: notifyTo,
   });
-  const text = options.rows.map(([k, v]) => `${k}: ${v || '—'}`).join('\n');
+}
 
-  await sendAdminMail({
-    subject: options.subject,
-    text,
-    html,
-    replyTo: options.replyTo,
+/** Thank-you / confirmation to the patient or visitor */
+export async function sendUserThankYouMail(options: {
+  to: string;
+  kind: 'appointment' | 'contact';
+  name: string;
+  rows: Array<[string, string]>;
+}) {
+  const isAppointment = options.kind === 'appointment';
+  const assurance = isAppointment
+    ? 'Our team has received your appointment request. We will call you shortly to confirm your preferred date and time. Please keep your phone reachable.'
+    : 'Thank you for contacting SARADA Netralaya. We have received your message and our team will get back to you soon.';
+
+  await sendBrandedTo({
+    to: options.to,
+    subject: isAppointment
+      ? `Appointment request received — ${site.name}`
+      : `We received your message — ${site.name}`,
+    title: isAppointment ? 'Thank you for booking' : 'Thank you for writing to us',
+    subtitle: `Dear ${options.name}, your request has been received successfully.`,
+    badge: isAppointment ? 'Booking confirmation' : 'Message confirmation',
+    replyTo: notifyTo,
+    extraHtml: `<p style="margin:0 0 18px;padding:14px 16px;background:#ECFDF5;border:1px solid #A7F3D0;border-radius:12px;color:#065F46;font-size:14px;line-height:1.55;">${escapeHtml(assurance)}</p>`,
+    rows: options.rows,
   });
 }
