@@ -3,8 +3,12 @@ import nodemailer from 'nodemailer';
 import { db, ensureDbSchema } from '@/lib/db';
 import { getDatabaseUrl } from '@/lib/database-url';
 
-/** Diagnostics for booking failures — reports config state without leaking secrets. */
-export async function GET() {
+/** Diagnostics for booking failures. Config detail requires HEALTH_TOKEN. */
+export async function GET(request: Request) {
+  const token = new URL(request.url).searchParams.get('token');
+  const expected = process.env.HEALTH_TOKEN;
+  const detailed = Boolean(expected) && token === expected;
+
   const user = process.env.MAIL_USERNAME;
   const pass = process.env.MAIL_PASSWORD?.replace(/^['"]|['"]$/g, '').replace(/\s+/g, '');
   const host = process.env.MAIL_HOST || 'smtp.gmail.com';
@@ -46,6 +50,14 @@ export async function GET() {
   }
 
   const bookingWorks = mail.smtpVerified === true || database.writable === true;
+
+  if (!detailed) {
+    return NextResponse.json({
+      bookingWorks,
+      mailReady: mail.smtpVerified === true,
+      databaseReady: database.writable === true,
+    });
+  }
 
   return NextResponse.json({
     bookingWorks,
