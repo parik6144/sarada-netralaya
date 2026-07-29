@@ -6,7 +6,7 @@ import { Eye, Zap, Shield, Scan, Heart, Droplets, Baby, Activity } from 'lucide-
 
 const treatments = [
   { icon: Eye, name: 'Cataract Surgery', desc: 'Advanced phacoemulsification with premium intraocular lens implantation for clear, restored vision.', iconBg: 'bg-brand-red/10', iconBgHover: 'group-hover:bg-brand-red/20', iconColor: 'text-brand-red' },
-  { icon: Zap, name: 'LASIK & Refractive Surgery', desc: 'Laser-assisted vision correction to reduce or eliminate dependence on glasses and contact lenses.', iconBg: 'bg-brand-blue/10', iconBgHover: 'group-hover:bg-brand-blue/20', iconColor: 'text-brand-blue' },
+  { icon: Zap, name: 'Refractive Surgery', desc: 'ICL and IPCL counselling to reduce dependence on glasses after a full suitability workup.', iconBg: 'bg-brand-blue/10', iconBgHover: 'group-hover:bg-brand-blue/20', iconColor: 'text-brand-blue' },
   { icon: Shield, name: 'Glaucoma Treatment', desc: 'Early detection and management of glaucoma to prevent irreversible optic nerve damage.', iconBg: 'bg-brand-red/10', iconBgHover: 'group-hover:bg-brand-red/20', iconColor: 'text-brand-red' },
   { icon: Scan, name: 'Retina Services', desc: 'Comprehensive diagnosis and treatment for retinal conditions including diabetic retinopathy and macular degeneration.', iconBg: 'bg-brand-blue/10', iconBgHover: 'group-hover:bg-brand-blue/20', iconColor: 'text-brand-blue' },
   { icon: Heart, name: 'Cornea Treatment', desc: 'Advanced corneal care including transplant surgery, cross-linking, and treatment of corneal infections.', iconBg: 'bg-brand-red/10', iconBgHover: 'group-hover:bg-brand-red/20', iconColor: 'text-brand-red' },

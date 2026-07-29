@@ -3,7 +3,7 @@ import TechnologyPageClient from '@/components/luxury/TechnologyPageClient';
 export const metadata = {
   title: 'Technology | SARADA Netralaya',
   description:
-    'Zeiss Lumera 700, Alcon Centurion, OCT, LASIK laser, and advanced dry eye systems — explained in simple English.',
+    'Advanced diagnostics including OCT, refractive surgery counselling for ICL & IPCL, and clear explanations in simple English.',
 };
 
 export default function TechnologyPage() {

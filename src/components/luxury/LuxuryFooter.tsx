@@ -19,8 +19,8 @@ const quickLinks = [
 
 const treatLinks = [
   { label: 'Cataract', href: '/treatments/cataract' },
-  { label: 'LASIK', href: '/treatments/lasik' },
-  { label: 'Retina', href: '/treatments/retina' },
+  { label: 'Refractive Surgery', href: '/treatments/refractive' },
+  { label: 'Medical Retina Services', href: '/treatments/retina' },
   { label: 'Glaucoma', href: '/treatments/glaucoma' },
   { label: 'Cornea', href: '/treatments/cornea' },
   { label: 'Pediatric', href: '/treatments/pediatric' },

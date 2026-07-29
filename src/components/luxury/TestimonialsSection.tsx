@@ -19,8 +19,8 @@ const testimonials = [
     name: 'Priya Sharma',
     location: 'Ranchi',
     rating: 5,
-    text: 'After LASIK I stopped wearing glasses completely. I had depended on them for 10 years — everything is clear now. Thank you, SARADA team.',
-    treatment: 'LASIK',
+    text: 'Refractive counselling was clear and honest. ICL options were explained carefully — I felt confident about my decision.',
+    treatment: 'Refractive Surgery',
   },
   {
     name: 'Mohammed Aslam',

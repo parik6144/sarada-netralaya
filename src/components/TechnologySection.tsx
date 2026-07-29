@@ -9,7 +9,7 @@ const equipment = [
   { icon: Scan, name: 'OCT (Optical Coherence Tomography)', desc: 'High-resolution cross-sectional imaging of the retina for accurate diagnosis of retinal conditions.', accent: 'bg-brand-blue/10 text-brand-blue' },
   { icon: Camera, name: 'Fundus Camera', desc: 'Advanced digital imaging system for detailed documentation of the retina, optic disc, and blood vessels.', accent: 'bg-brand-red/10 text-brand-red' },
   { icon: Activity, name: 'Visual Field Analyzer', desc: 'Precision instrument for detecting and monitoring glaucoma and other visual field defects.', accent: 'bg-brand-blue/10 text-brand-blue' },
-  { icon: Zap, name: 'LASIK Laser System', desc: 'FDA-approved excimer laser platform for safe and accurate refractive vision correction surgery.', accent: 'bg-brand-red/10 text-brand-red' },
+  { icon: Zap, name: 'Refractive Surgery (ICL / IPCL)', desc: 'Implantable lens counselling and planning after a full suitability workup for clearer everyday vision.', accent: 'bg-brand-red/10 text-brand-red' },
   { icon: Microscope, name: 'Slit Lamp Biomicroscope', desc: 'Advanced examination microscope for detailed evaluation of the anterior segment of the eye.', accent: 'bg-brand-blue/10 text-brand-blue' },
 ];
 

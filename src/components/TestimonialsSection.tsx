@@ -7,7 +7,7 @@ import { Star, Quote } from 'lucide-react';
 
 const testimonials = [
   { quote: 'The cataract surgery was completely painless. Dr. Dhira and his team made me feel so comfortable. I can see clearly now!', name: 'Rajesh Kumar', treatment: 'Cataract Surgery', stars: 5 },
-  { quote: 'LASIK at SARADA changed my life. No more glasses! The entire process was smooth and quick.', name: 'Priya Singh', treatment: 'LASIK Surgery', stars: 5 },
+  { quote: 'Refractive counselling at SARADA was clear and honest. ICL was explained step by step — I felt confident.', name: 'Priya Singh', treatment: 'Refractive Surgery', stars: 5 },
   { quote: "My son's squint was corrected beautifully. The doctors are very patient with children.", name: 'Amit Sharma', treatment: 'Pediatric Eye Care', stars: 5 },
   { quote: 'Excellent diabetic eye care. They caught my retinopathy early and treated it effectively.', name: 'Sunita Devi', treatment: 'Diabetic Retinopathy', stars: 5 },
 ];

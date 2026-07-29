@@ -14,8 +14,8 @@ const faqs = [
     a: 'A cataract is clouding of the eye’s natural lens. Surgery is one of the safest procedures worldwide. At SARADA we use phacoemulsification with advanced microscopes and phaco systems. The procedure usually takes 15–20 minutes, is painless with anaesthetic drops, and most patients go home the same day.',
   },
   {
-    q: 'Will I need glasses again after LASIK?',
-    a: 'Most suitable candidates achieve excellent distance vision and reduce dependence on glasses. Results are long-lasting. Reading glasses may still be needed later in life due to age-related near-vision changes (presbyopia), which is different from the power LASIK corrects.',
+    q: 'What is refractive surgery with ICL / IPCL?',
+    a: 'ICL and IPCL are implantable lens options that can correct refractive power from inside the eye after a full suitability workup. We counsel honestly on whether you are a good candidate and what everyday vision results to expect.',
   },
   {
     q: 'What is glaucoma and how do you treat it?',
@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     q: 'Is dry eye permanent?',
-    a: 'Dry eye is often chronic, but it is highly manageable. We identify whether the problem is tear quantity, tear quality, or blocked oil glands, then treat with medical therapy, IPL, LLLT, plugs, and lifestyle guidance for lasting comfort.',
+    a: 'Dry eye is often chronic, but it is highly manageable. We identify whether the problem is tear quantity, tear quality, or blocked oil glands, then treat with medical therapy, plugs, and lifestyle guidance for lasting comfort.',
   },
   {
     q: 'How often should diabetic patients check their eyes?',
@@ -35,7 +35,11 @@ const faqs = [
   },
   {
     q: 'How long is recovery after eye surgery?',
-    a: 'Cataract and LASIK: most people resume light activities in 1–2 days. Retina surgery: often 2–4 weeks. Corneal transplant: months of careful healing. Your surgeon will give a personalized recovery plan.',
+    a: 'Cataract and refractive procedures: most people resume light activities in 1–2 days when cleared. Retina surgery: often 2–4 weeks. Corneal transplant: months of careful healing. Your surgeon will give a personalized recovery plan.',
+  },
+  {
+    q: 'What are your clinic timings?',
+    a: 'Monday to Saturday: 10:00 AM – 7:00 PM. Emergency eye care support is available as guided by our team.',
   },
   {
     q: 'Do you offer cashless insurance treatment?',

@@ -147,9 +147,9 @@ export default function AppointmentModal({ open, onOpenChange }: AppointmentModa
                   <SelectTrigger><SelectValue placeholder="Select department" /></SelectTrigger>
                   <SelectContent>
                     <SelectItem value="Cataract">Cataract</SelectItem>
-                    <SelectItem value="LASIK">LASIK</SelectItem>
+                    <SelectItem value="Refractive Surgery">Refractive Surgery</SelectItem>
                     <SelectItem value="Glaucoma">Glaucoma</SelectItem>
-                    <SelectItem value="Retina">Retina</SelectItem>
+                    <SelectItem value="Medical Retina Services">Medical Retina Services</SelectItem>
                     <SelectItem value="Cornea">Cornea</SelectItem>
                     <SelectItem value="Dry Eye">Dry Eye</SelectItem>
                     <SelectItem value="Pediatric Eye Care">Pediatric Eye Care</SelectItem>

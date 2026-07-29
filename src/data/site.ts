@@ -6,15 +6,15 @@ export const site = {
   address: '33, Swastik Ambika Tower, Near HDFC Bank, New Baradwari, Jamshedpur',
   phones: ['+91 70910 90014', '+91 70910 90016'],
   email: 'info@saradanetralaya.com',
-  hours: 'Mon–Sat: 9:00 AM – 7:00 PM',
+  hours: 'Mon–Sat: 10:00 AM – 7:00 PM',
   emergency: '24×7 emergency eye care',
 };
 
 export const navTreatments = [
   { name: 'Cataract Surgery', slug: 'cataract', desc: 'Advanced phacoemulsification' },
-  { name: 'LASIK & Refractive', slug: 'lasik', desc: 'Vision correction surgery' },
+  { name: 'Refractive Surgery', slug: 'refractive', desc: 'ICL, IPCL & vision correction' },
   { name: 'Glaucoma Treatment', slug: 'glaucoma', desc: 'Pressure management' },
-  { name: 'Retina Services', slug: 'retina', desc: 'Retinal diagnostics & surgery' },
+  { name: 'Medical Retina Services', slug: 'retina', desc: 'Retinal diagnostics & care' },
   { name: 'Cornea Treatment', slug: 'cornea', desc: 'Corneal transplant & care' },
   { name: 'Dry Eye Clinic', slug: 'dry-eye', desc: 'Comprehensive dry eye care' },
   { name: 'Pediatric Eye Care', slug: 'pediatric', desc: 'Children eye specialist' },

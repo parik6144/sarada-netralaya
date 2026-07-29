@@ -1,35 +1,46 @@
 'use client';
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { site } from '@/data/site';
 
 const faqs = [
-  { q: 'What are your visiting hours?', a: 'Monday to Saturday: 9:00 AM - 8:00 PM, Sunday: 10:00 AM - 2:00 PM. Emergency services are available 24/7.' },
-  { q: 'Do I need a referral for an appointment?', a: 'No, you can directly book an appointment by calling us or using our online booking form. Walk-in patients are also welcome.' },
-  { q: 'Which insurance plans do you accept?', a: 'We accept most major insurance plans including Star Health, ICICI Lombard, HDFC ERGO, New India Assurance, Bajaj Allianz, and many more. Please contact us to verify your specific plan.' },
-  { q: 'How long does cataract surgery take?', a: 'The actual procedure takes approximately 15-20 minutes per eye. However, you should plan to spend about 2-3 hours at the hospital for pre-operative preparation and post-operative observation.' },
-  { q: 'Is LASIK surgery safe?', a: 'LASIK is one of the safest and most studied elective procedures available. At SARADA Netralaya, we use the latest FDA-approved laser technology. Our surgeons have performed thousands of successful LASIK procedures.' },
-  { q: 'What should I bring to my appointment?', a: 'Please bring your previous prescriptions, current glasses or contact lenses, a list of any medications you are taking, your insurance card, and a valid photo ID.' },
-  { q: 'Do you offer pediatric eye care?', a: "Yes, we have specialized pediatric eye care services. Dr. Nitish Bhardwaj has extensive experience in treating children's eye conditions including squint, lazy eye, and congenital cataracts." },
-  { q: 'How often should I get an eye exam?', a: 'Adults aged 18-60 should have a comprehensive eye exam every 1-2 years. Those over 60 should have annual exams. Children should have their first eye exam at 6 months, then at age 3, and before starting school.' },
+  {
+    q: 'What are your visiting hours?',
+    a: `Monday to Saturday: 10:00 AM – 7:00 PM. ${site.emergency}.`,
+  },
+  {
+    q: 'Do you accept insurance?',
+    a: 'Yes. We support cashless treatment with major TPAs and insurers. Please bring your policy card and ID; our desk will guide you through eligibility.',
+  },
+  {
+    q: 'How long does cataract surgery take?',
+    a: 'The procedure is often around 15–20 minutes per eye. Plan a few hours at the hospital for preparation and observation. Most patients go home the same day.',
+  },
+  {
+    q: 'What is refractive surgery with ICL / IPCL?',
+    a: 'ICL and IPCL are implantable lens options that can correct refractive power from inside the eye after a full suitability workup. We counsel honestly on whether you are a good candidate.',
+  },
+  {
+    q: 'Do you offer pediatric eye care?',
+    a: 'Yes. We provide gentle child eye examinations for glasses, lazy eye (amblyopia), squint, and school vision screening — early care matters while vision is still developing.',
+  },
 ];
 
 export default function FAQSection() {
   return (
-    <section id="faq" className="py-16 md:py-24 px-4 bg-brand-gray-light">
-      <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-14">
-          <p className="text-brand-blue font-semibold text-sm tracking-widest uppercase mb-2">FAQ</p>
-          <h2 className="font-[var(--font-montserrat)] font-extrabold text-3xl md:text-4xl text-brand-black mb-4">Frequently Asked Questions</h2>
-          <div className="w-20 h-1 bg-brand-red mx-auto rounded-full mb-6" />
-        </div>
-        <Accordion type="single" collapsible className="space-y-3">
-          {faqs.map((item, i) => (
-            <AccordionItem key={i} value={`faq-${i}`} className="bg-white border border-gray-100 rounded-xl px-6 data-[state=open]:border-brand-blue data-[state=open]:shadow-md transition-all">
-              <AccordionTrigger className="font-[var(--font-montserrat)] font-semibold text-brand-black text-left hover:no-underline py-5">{item.q}</AccordionTrigger>
-              <AccordionContent className="text-brand-gray text-sm leading-relaxed pb-5">{item.a}</AccordionContent>
-            </AccordionItem>
+    <section className="py-16 sm:py-20 bg-white">
+      <div className="max-w-3xl mx-auto px-5 sm:px-6">
+        <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 text-center">Frequently Asked Questions</h2>
+        <div className="mt-8 space-y-4">
+          {faqs.map((f) => (
+            <details key={f.q} className="group rounded-2xl border border-slate-200 bg-slate-50/80 p-5 open:bg-white open:shadow-sm">
+              <summary className="cursor-pointer list-none font-semibold text-slate-900 pr-6 relative">
+                {f.q}
+                <span className="absolute right-0 top-0 text-brand-red group-open:rotate-45 transition-transform">+</span>
+              </summary>
+              <p className="mt-3 text-sm text-slate-600 leading-relaxed">{f.a}</p>
+            </details>
           ))}
-        </Accordion>
+        </div>
       </div>
     </section>
   );

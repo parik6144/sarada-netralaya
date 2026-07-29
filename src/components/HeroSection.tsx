@@ -37,10 +37,10 @@ export default function HeroSection({ onBookAppointment }: HeroSectionProps) {
               Committed to Care
             </p>
             <p className="text-brand-gray text-base sm:text-lg mb-4 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              Jamshedpur&apos;s premier eye hospital offering world-class ophthalmology services with cutting-edge technology and compassionate patient care. From cataract surgery to LASIK, glaucoma to retinal care — your vision is in expert hands at SARADA Netralaya.
+              Jamshedpur&apos;s premier eye hospital offering world-class ophthalmology services with cutting-edge technology and compassionate patient care. From cataract surgery to refractive care, glaucoma to medical retina services — your vision is in expert hands at SARADA Netralaya.
             </p>
             <div className="flex flex-wrap gap-2 justify-center lg:justify-start mb-8">
-              {['Cataract', 'LASIK', 'Glaucoma', 'Retina', 'Cornea', 'Pediatric', 'Dry Eye'].map((s) => (
+              {['Cataract', 'Refractive Surgery', 'Glaucoma', 'Medical Retina Services', 'Cornea', 'Pediatric', 'Dry Eye'].map((s) => (
                 <span key={s} className="text-xs font-medium px-3 py-1.5 rounded-full border border-gray-200 text-brand-gray hover:border-brand-red hover:text-brand-red transition-colors cursor-default">{s}</span>
               ))}
             </div>

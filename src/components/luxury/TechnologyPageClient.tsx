@@ -11,45 +11,6 @@ import { site } from '@/data/site';
 
 const tech = [
   {
-    name: 'Zeiss Lumera 700',
-    category: 'Surgical Microscope',
-    image: '/images/tech-microscope.png',
-    resultImage: '/images/treatment-cataract.png',
-    simple: 'Like a super-clear camera for the surgeon — so tiny eye structures look sharp during surgery.',
-    howTitle: 'How it works',
-    how: [
-      'The microscope sits above the eye and magnifies every layer.',
-      'Bright, stable light helps the surgeon see depth clearly.',
-      'Integrated imaging can guide precise cuts in real time.',
-    ],
-    resultTitle: 'What result you get',
-    result:
-      'Safer, more precise cataract and cornea surgery — less guesswork, clearer steps, and better control in every delicate moment.',
-    helps: 'Cataract · Cornea · Complex surgery',
-    color: '#0096D6',
-    link: '/treatments/cataract',
-  },
-  {
-    name: 'Alcon Centurion',
-    category: 'Phaco Machine',
-    image: '/images/tech-phaco.png',
-    resultImage: '/images/cataract-lifestyle.png',
-    simple: 'Gently breaks and removes a cloudy cataract lens through a tiny opening — usually stitchless.',
-    howTitle: 'How it works',
-    how: [
-      'A tiny tip enters through a micro opening in the eye.',
-      'Ultrasound energy softens the cloudy natural lens.',
-      'Fluid control keeps eye pressure stable while the lens is removed.',
-      'A clear premium IOL (artificial lens) is placed in its place.',
-    ],
-    resultTitle: 'What result you get',
-    result:
-      'Foggy vision clears. Colours look brighter. Many people return to light daily activity the next day — with usually no stitch.',
-    helps: 'High-end cataract surgery',
-    color: '#0EA5E9',
-    link: '/treatments/cataract',
-  },
-  {
     name: 'Zeiss Cirrus HD-OCT',
     category: 'Eye Scanner (OCT)',
     image: '/images/tech-oct.png',
@@ -65,69 +26,30 @@ const tech = [
     resultTitle: 'What result you get',
     result:
       'Early detection of retina and glaucoma problems — often before you notice big vision loss — so treatment can start in time.',
-    helps: 'Retina · Glaucoma checks',
+    helps: 'Medical Retina Services · Glaucoma checks',
     color: '#0284C7',
     link: '/treatments/retina',
   },
   {
-    name: 'Wavelight EX500',
-    category: 'LASIK Laser',
-    image: '/images/tech-lasik-laser.png',
-    resultImage: '/images/lasik-lifestyle.png',
-    simple: 'Reshapes the front window of the eye in seconds so light focuses clearly — after full safety tests.',
+    name: 'Refractive Surgery',
+    category: 'ICL · IPCL',
+    image: '/images/lasik-lifestyle.png',
+    resultImage: '/images/treatment-lasik.png',
+    simple:
+      'Implantable lens options (ICL and IPCL) that help correct refractive power from inside the eye — after a full suitability workup.',
     howTitle: 'How it works',
     how: [
-      'First we check cornea thickness, shape, dryness, and power.',
-      'If suitable, the laser reshapes the cornea with computer guidance.',
-      'Each pulse is measured for precision — often seconds per eye.',
-      'If LASIK is not right, we explain safer options like PRK or ICL.',
+      'We measure power, cornea, chamber depth, and overall eye health.',
+      'ICL / IPCL suitability is explained in simple English.',
+      'When appropriate, an implantable lens is planned to fine-tune focus.',
+      'Your natural lens stays in place; follow-up care is personalised.',
     ],
     resultTitle: 'What result you get',
     result:
-      'Many patients reduce dependence on glasses for distance vision. Clearer focus for sports, travel, and daily life — when you are a good candidate.',
-    helps: 'LASIK & refractive care',
+      'Clearer everyday vision with less dependence on thick spectacles — when you are a suitable candidate for ICL or IPCL.',
+    helps: 'Refractive Surgery · ICL · IPCL',
     color: '#4FA3D1',
-    link: '/treatments/lasik',
-  },
-  {
-    name: 'Topcon Maestro',
-    category: 'Retina Imaging',
-    image: '/images/tech-fundus.png',
-    resultImage: '/images/treatment-retina.png',
-    simple: 'Combines OCT and fundus photography — one visit, clearer picture of the back of the eye.',
-    howTitle: 'How it works',
-    how: [
-      'A camera photographs the retina (the “film” at the back of the eye).',
-      'OCT adds layered detail of the same area.',
-      'We look for diabetic changes, macular swelling, or bleeding.',
-      'Images are saved so follow-up visits can compare “before vs after”.',
-    ],
-    resultTitle: 'What result you get',
-    result:
-      'Faster, clearer diagnosis for diabetic eye disease and macular problems — so laser, injections, or surgery can be planned early.',
-    helps: 'Diabetic eye · Macula',
-    color: '#059669',
-    link: '/treatments/retina',
-  },
-  {
-    name: 'IPL & LLLT Systems',
-    category: 'Dry Eye Therapy',
-    image: '/images/tech-ipl.png',
-    resultImage: '/images/treatment-dry-eye.png',
-    simple: 'Light-based care for oil glands — when simple drops are not enough for screen-life dry eyes.',
-    howTitle: 'How it works',
-    how: [
-      'We first test tear quality and oil-gland health.',
-      'Gentle light pulses warm blocked eyelid oil glands.',
-      'Better oil flow helps tears stay on the eye longer.',
-      'Home care tips (blink breaks, lid hygiene) support lasting comfort.',
-    ],
-    resultTitle: 'What result you get',
-    result:
-      'Less burning, grit, and fluctuating blur on screens. Eyes feel more comfortable in AC rooms and long work hours.',
-    helps: 'Dry eye clinic',
-    color: '#D97706',
-    link: '/treatments/dry-eye',
+    link: '/treatments/refractive',
   },
 ];
 
@@ -140,7 +62,7 @@ const pillars = [
   {
     title: 'Match the machine',
     body: 'We choose the right technology for your exact eye condition — not one tool for everyone.',
-    image: '/images/tech-phaco.png',
+    image: null as string | null,
   },
   {
     title: 'Measure the result',
@@ -152,7 +74,7 @@ const pillars = [
 export default function TechnologyPageClient() {
   return (
     <SiteLayout>
-      <section className="relative overflow-hidden bg-[#0B1F3A] text-white pt-[88px] sm:pt-[104px]">
+      <section className="relative overflow-hidden bg-[#0B1F3A] text-white pt-[10.5rem] sm:pt-[11.5rem] lg:pt-[12.5rem]">
         <div className="absolute inset-0 opacity-35">
           <Image src="/images/tech-surgery.png" alt="" fill className="object-cover" sizes="100vw" priority />
         </div>
@@ -175,8 +97,8 @@ export default function TechnologyPageClient() {
             Powered by <span className="text-[#F5D565]">Precision</span>
           </h1>
           <p className="mt-4 text-sm sm:text-base text-white/80 max-w-2xl leading-relaxed">
-            Every machine below is explained with pictures — how it works, and what result you can expect — in school-level
-            simple English.
+            Our technology guides are explained with pictures — how they help, and what result you can expect — in
+            school-level simple English.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
@@ -186,12 +108,13 @@ export default function TechnologyPageClient() {
             >
               Explore Cataract Care
             </Link>
-            <BookAppointmentButton className="inline-flex justify-center px-7 py-3.5 rounded-full border border-white/30 text-white text-sm font-medium hover:bg-white/10 transition-colors">Book Check-up</BookAppointmentButton>
+            <BookAppointmentButton className="inline-flex justify-center px-7 py-3.5 rounded-full border border-white/30 text-white text-sm font-medium hover:bg-white/10 transition-colors">
+              Book Check-up
+            </BookAppointmentButton>
           </div>
         </div>
       </section>
 
-      {/* 3 visual pillars */}
       <section className="py-12 sm:py-14 bg-gradient-to-b from-[#F0F7FC] to-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-6">
           <div className="text-center max-w-2xl mx-auto">
@@ -210,8 +133,10 @@ export default function TechnologyPageClient() {
                 transition={{ delay: i * 0.06 }}
                 className="rounded-2xl border border-sky-100 bg-white overflow-hidden shadow-sm"
               >
-                <div className="relative h-36">
-                  <Image src={p.image} alt={p.title} fill className="object-cover" sizes="(max-width:768px) 100vw, 33vw" />
+                <div className="relative h-36 bg-gradient-to-br from-slate-100 to-slate-50">
+                  {p.image ? (
+                    <Image src={p.image} alt={p.title} fill className="object-cover" sizes="(max-width:768px) 100vw, 33vw" />
+                  ) : null}
                 </div>
                 <div className="p-5">
                   <div className="text-2xl font-bold text-sky-200">0{i + 1}</div>
@@ -224,7 +149,6 @@ export default function TechnologyPageClient() {
         </div>
       </section>
 
-      {/* Detailed machine cards with images */}
       <section className="py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-5 sm:px-6">
           <div className="mb-10 text-center max-w-2xl mx-auto">
@@ -250,7 +174,6 @@ export default function TechnologyPageClient() {
                   className="rounded-[1.75rem] border border-slate-200 bg-white overflow-hidden shadow-sm"
                 >
                   <div className={`grid lg:grid-cols-2 ${reverse ? 'lg:[&>*:first-child]:order-2' : ''}`}>
-                    {/* Main machine image */}
                     <div className="relative min-h-[240px] sm:min-h-[320px] lg:min-h-full">
                       <Image
                         src={t.image}
@@ -270,7 +193,6 @@ export default function TechnologyPageClient() {
                       </div>
                     </div>
 
-                    {/* Explanation */}
                     <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
                       <h3 className="text-2xl sm:text-3xl font-bold text-slate-900">{t.name}</h3>
                       <p className="mt-3 text-sm sm:text-base text-slate-700 leading-relaxed font-medium">{t.simple}</p>
@@ -318,7 +240,6 @@ export default function TechnologyPageClient() {
                     </div>
                   </div>
 
-                  {/* Result visual strip */}
                   <div className="grid sm:grid-cols-[0.9fr_1.1fr] border-t border-slate-100 bg-[#F8FAFC]">
                     <div className="relative min-h-[140px] sm:min-h-[160px]">
                       <Image
@@ -352,7 +273,9 @@ export default function TechnologyPageClient() {
               We show you scans and measurements on screen — then explain the plan in simple words.
             </p>
             <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
-              <BookAppointmentButton className="inline-flex justify-center px-8 py-3.5 rounded-full bg-[#F5D565] text-[#0B1F3A] text-sm font-bold">Book Appointment</BookAppointmentButton>
+              <BookAppointmentButton className="inline-flex justify-center px-8 py-3.5 rounded-full bg-[#F5D565] text-[#0B1F3A] text-sm font-bold">
+                Book Appointment
+              </BookAppointmentButton>
               <a
                 href={`tel:${site.phones[0].replace(/\s/g, '')}`}
                 className="inline-flex justify-center px-8 py-3.5 rounded-full border border-white/30 text-white text-sm font-semibold"
@@ -367,7 +290,11 @@ export default function TechnologyPageClient() {
       <ExploreMore
         links={[
           { label: 'Cataract Surgery', href: '/treatments/cataract', desc: 'Premium lens options explained simply.' },
-          { label: 'LASIK', href: '/treatments/lasik', desc: 'Laser vision correction suitability.' },
+          {
+            label: 'Refractive Surgery',
+            href: '/treatments/refractive',
+            desc: 'ICL & IPCL suitability counselling.',
+          },
           { label: 'Book Appointment', href: '/appointment', desc: 'Schedule your consultation.' },
         ]}
       />

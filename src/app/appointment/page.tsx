@@ -14,7 +14,7 @@ function AppointmentBody() {
   }, [openBooking]);
 
   return (
-    <section className="min-h-[70vh] pt-28 sm:pt-32 pb-16 bg-gradient-to-b from-[#F0F6FA] to-white">
+    <section className="min-h-[70vh] pt-[10.5rem] sm:pt-[11.5rem] lg:pt-[12rem] pb-16 bg-gradient-to-b from-[#F0F6FA] to-white">
       <div className="max-w-2xl mx-auto px-5 sm:px-6 text-center">
         <p className="text-[11px] tracking-[0.2em] uppercase font-semibold text-brand-red">Book online</p>
         <h1 className="mt-3 text-3xl sm:text-4xl font-bold text-[#0B1F3A]">Book your appointment</h1>

@@ -4,7 +4,7 @@ import { Calendar, ArrowRight } from 'lucide-react';
 
 const blogs = [
   { title: 'Understanding Cataracts: When Should You Consider Surgery?', date: 'Jun 15, 2024', excerpt: 'Cataracts are one of the most common eye conditions affecting millions worldwide. Learn about the signs, symptoms, and the right time to consider surgical intervention.', accent: 'bg-brand-red' },
-  { title: 'LASIK Myths Debunked: What You Need to Know', date: 'Jun 10, 2024', excerpt: 'Many people hesitate to get LASIK due to common misconceptions. We separate fact from fiction to help you make an informed decision about laser eye surgery.', accent: 'bg-brand-blue' },
+  { title: 'Refractive Surgery Myths Debunked: What You Need to Know', date: 'Jun 10, 2024', excerpt: 'Many people hesitate about vision correction due to common misconceptions. We separate fact from fiction about ICL, IPCL, and refractive counselling.', accent: 'bg-brand-blue' },
   { title: '5 Daily Eye Care Tips for Screen Users', date: 'Jun 5, 2024', excerpt: "In today's digital age, our eyes are under constant strain from screens. Discover simple yet effective habits to protect your vision during long work hours.", accent: 'bg-brand-red' },
 ];
 

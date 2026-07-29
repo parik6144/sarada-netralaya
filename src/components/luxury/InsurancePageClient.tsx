@@ -26,7 +26,7 @@ const fade = {
 export default function InsurancePageClient() {
   return (
     <SiteLayout>
-      <section className="relative overflow-hidden bg-[#0B1F3A] text-white pt-[88px] sm:pt-[104px]">
+      <section className="relative overflow-hidden bg-[#0B1F3A] text-white pt-[10.5rem] sm:pt-[11.5rem] lg:pt-[12.5rem]">
         <div className="absolute inset-0 opacity-25">
           <Image src="/images/hospital-building.png" alt="" fill className="object-cover" sizes="100vw" priority />
         </div>

@@ -11,7 +11,7 @@ const quickLinks = [
   { label: 'Contact Us', href: '#contact' },
 ];
 
-const services = ['Cataract Surgery', 'LASIK', 'Glaucoma', 'Retina', 'Cornea', 'Dry Eye', 'Pediatric', 'Diabetic Eye'];
+const services = ['Cataract Surgery', 'Refractive Surgery', 'Glaucoma', 'Medical Retina Services', 'Cornea', 'Dry Eye', 'Pediatric', 'Diabetic Eye'];
 
 const socialLinks = [
   { icon: Facebook, href: '#', label: 'Facebook' },

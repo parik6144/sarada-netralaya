@@ -9,12 +9,8 @@ import SectionHeader from './SectionHeader';
 gsap.registerPlugin(ScrollTrigger);
 
 const tech = [
-  { name: 'Zeiss Lumera 700', category: 'Microscope', desc: 'World-class surgical microscope with enhanced depth visualization and integrated OCT for real-time imaging during surgery.', color: '#00AEEF' },
-  { name: 'Alcon Centurion', category: 'Phaco Machine', desc: 'Most advanced phacoemulsification system with Active Fluidics technology for safe, efficient cataract removal.', color: '#7DD3FC' },
   { name: 'Zeiss Cirrus HD-OCT', category: 'Diagnostic', desc: 'High-definition optical coherence tomography for ultra-detailed retinal imaging and glaucoma analysis.', color: '#C9A84C' },
-  { name: 'Wavelight EX500', category: 'Laser System', desc: 'Fastest excimer laser for LASIK with 500Hz pulse rate. Precision vision correction in seconds.', color: '#A78BFA' },
-  { name: 'Topcon Maestro', category: 'Retinal Scanner', desc: 'Combines OCT and fundus photography in one device for comprehensive retinal assessment.', color: '#34D399' },
-  { name: 'IPL and LLLT Systems', category: 'Dry Eye', desc: 'Intense Pulsed Light and Low-Level Light Therapy for advanced dry eye and meibomian gland dysfunction treatment.', color: '#FB923C' },
+  { name: 'Refractive Surgery', category: 'ICL · IPCL', desc: 'Implantable lens counselling and planning for ICL and IPCL — after a full suitability workup.', color: '#4FA3D1' },
 ];
 
 export default function TechSection({ hideHeader = false }: { hideHeader?: boolean }) {

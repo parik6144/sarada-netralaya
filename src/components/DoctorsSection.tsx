@@ -19,7 +19,7 @@ const doctors = [
     experience: '10+ Years Experience',
     initials: 'NB',
     color: 'bg-brand-blue',
-    qualifications: ['MBBS, DNB (Ophthalmology)', 'Fellowship in LASIK & Refractive Surgery', 'Specialist in Cornea & Anterior Segment', 'Trained at L V Prasad Eye Institute'],
+    qualifications: ['MBBS, DNB (Ophthalmology)', 'Fellowship in Cornea & Refractive Surgery', 'Specialist in Cornea & Anterior Segment', 'FICO (UK, London), FCRS'],
   },
 ];
 

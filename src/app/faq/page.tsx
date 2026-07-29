@@ -5,7 +5,7 @@ import ExploreMore from '@/components/luxury/ExploreMore';
 
 export const metadata = {
   title: 'FAQ | SARADA Netralaya',
-  description: 'Common questions about cataract surgery, LASIK, glaucoma, insurance, recovery, and pediatric eye care.',
+  description: 'Common questions about cataract surgery, refractive surgery (ICL/IPCL), glaucoma, insurance, recovery, and pediatric eye care.',
 };
 
 export default function FAQPage() {

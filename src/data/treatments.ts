@@ -79,65 +79,61 @@ Advanced care at SARADA: We perform phacoemulsification — a minimally invasive
     ],
     cta: 'Book a cataract evaluation and understand your lens options.',
   },
-  lasik: {
-    name: 'LASIK & Refractive Surgery',
-    subtitle: 'Freedom from Glasses',
+  refractive: {
+    name: 'Refractive Surgery',
+    subtitle: 'ICL · IPCL · Clearer Everyday Vision',
     color: '#0284C7',
     icon: '✦',
-    overview: `Basic: If light does not focus correctly on the retina, you need glasses or contacts for clear vision. This is called a refractive error (myopia, hyperopia, or astigmatism).
+    overview: `Basic: Refractive errors (myopia, hyperopia, astigmatism) mean light does not focus correctly on the retina, so you need glasses or contacts for clear vision.
 
-What happens in the eye: The cornea’s shape bends light. If it is too steep, flat, or irregular, images blur.
+What happens in the eye: The eye’s focusing power is too strong, too weak, or uneven. An implantable lens can fine-tune focus from inside the eye without removing the natural lens.
 
-Advanced care at SARADA: After a full eligibility workup (topography, thickness, wavefront analysis, dry-eye checks), we reshape the cornea with the Wavelight EX500 excimer laser. Treatment time is often seconds per eye. If LASIK is not suitable, alternatives such as PRK or ICL may be discussed.`,
+Advanced care at SARADA: We offer refractive surgery counselling with special focus on ICL (Implantable Collamer Lens) and IPCL options. After a full suitability workup, we recommend the safest path for your prescription, cornea, and lifestyle — so you can reduce dependence on spectacles with confidence.`,
     symptoms: [
       'Dependence on glasses or contact lenses for clear vision',
       'Contact lens intolerance or dryness',
-      'Glasses interfering with sports or outdoor work',
       'High myopia, hyperopia, or astigmatism',
-      'Career or lifestyle needs that make glasses inconvenient',
+      'Glasses interfering with sports, work, or outdoor life',
+      'Desire for clearer vision with implantable lens options',
     ],
     diagnosis: [
       'Precise refraction to measure your power',
-      'Corneal topography to map corneal shape',
-      'Pachymetry to measure corneal thickness',
-      'Wavefront analysis for optical quality',
-      'Dry-eye and retinal evaluation before planning surgery',
+      'Corneal topography and thickness assessment',
+      'Anterior chamber depth and endothelial cell checks for ICL/IPCL',
+      'Dry-eye and retinal evaluation before planning',
+      'Personalised counselling on ICL vs IPCL suitability',
     ],
     treatments: [
       {
-        name: 'LASIK',
-        desc: 'A thin corneal flap is created and the underlying tissue is reshaped with laser for rapid visual recovery.',
+        name: 'ICL (Implantable Collamer Lens)',
+        desc: 'A soft, biocompatible lens placed inside the eye to correct power while preserving the natural lens — ideal for many higher prescriptions.',
       },
       {
-        name: 'Wavefront-optimized LASIK',
-        desc: 'Personalized laser pattern based on your eye’s unique optics.',
+        name: 'IPCL',
+        desc: 'Implantable phakic lens option selected after detailed eye measurements for suitable refractive candidates.',
       },
       {
-        name: 'PRK / surface ablation',
-        desc: 'Flap-free option for thinner corneas; recovery is slower but outcomes are excellent.',
-      },
-      {
-        name: 'ICL (implantable contact lens)',
-        desc: 'An internal lens implant for very high prescriptions when laser is not ideal.',
+        name: 'Comprehensive refractive counselling',
+        desc: 'Full evaluation and honest advice on whether implantable lenses are right for your eyes and lifestyle.',
       },
     ],
     recovery:
-      'Many patients notice clearer vision within hours. Light work and driving often resume the next day after clearance. Eye drops continue for weeks. Full stabilization may take 1–3 months.',
+      'Recovery plans are personalised. Many patients notice clearer vision soon after implantable lens procedures, with drop schedules and follow-ups explained clearly before you go home.',
     faq: [
       {
-        q: 'Is LASIK safe?',
-        a: 'When patients are carefully selected, LASIK has an excellent safety profile and is widely performed worldwide.',
+        q: 'What is ICL?',
+        a: 'ICL is an implantable contact lens placed inside the eye to correct refractive error without removing your natural lens.',
       },
       {
-        q: 'Who should avoid LASIK?',
-        a: 'Thin or irregular corneas, unstable power, advanced dry eye, keratoconus, and pregnancy are common reasons to choose another option.',
+        q: 'Who is suitable for ICL / IPCL?',
+        a: 'Suitability depends on power, cornea, chamber depth, and overall eye health. We confirm this only after a full workup.',
       },
       {
-        q: 'Are results permanent?',
-        a: 'Corneal reshaping is long-lasting. Age-related near vision changes after 40 are separate and may still need reading help.',
+        q: 'Will I still need reading glasses later?',
+        a: 'Age-related near vision changes after 40 are separate and may still need reading help even after refractive correction.',
       },
     ],
-    cta: 'Book a free LASIK suitability evaluation.',
+    cta: 'Book a refractive surgery counselling visit for ICL / IPCL suitability.',
   },
   glaucoma: {
     name: 'Glaucoma Treatment',
@@ -196,7 +192,7 @@ Advanced care at SARADA: We combine pressure measurement, optic-nerve OCT, visua
     cta: 'Book a glaucoma risk assessment — especially if you are over 40.',
   },
   retina: {
-    name: 'Retina Services',
+    name: 'Medical Retina Services',
     subtitle: 'Protecting Sight from Within',
     color: '#DC2626',
     icon: '◎',
@@ -296,7 +292,7 @@ Advanced care at SARADA: We use topography and specialized exams to stage diseas
       'CXL usually has days to weeks of discomfort. Transplant recovery ranges from weeks to many months and requires careful follow-up and protective care.',
     faq: [
       {
-        q: 'Can keratoconus patients have LASIK?',
+        q: 'Can keratoconus patients have refractive laser reshaping?',
         a: 'Usually no. Crosslinking and other cornea-preserving options are safer.',
       },
       {
