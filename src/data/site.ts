@@ -16,7 +16,7 @@ export const site = {
       days: 'Monday – Saturday',
       timing: '10:00 AM – 7:00 PM',
       closed: 'Sunday closed',
-      image: '/images/branch-jamshedpur.png',
+      image: '/images/jamshedpur.jpg',
       mapUrl: 'https://maps.google.com/?q=Swastik+Ambika+Tower+Baradwari+Jamshedpur',
     },
     {
