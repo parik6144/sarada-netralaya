@@ -42,7 +42,7 @@ export default function LuxuryHero() {
       />
 
       {/* Content starts below taller stacked navbar */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-6 pt-[13rem] sm:pt-[14rem] lg:pt-[15rem] pb-16 lg:pb-20">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-6 pt-[15rem] sm:pt-[16.5rem] lg:pt-[18rem] pb-16 lg:pb-20">
         <div
           ref={contentRef}
           className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left rounded-3xl bg-white px-6 py-8 sm:px-9 sm:py-10 shadow-[0_16px_48px_rgba(15,23,42,0.14)] ring-1 ring-slate-200"

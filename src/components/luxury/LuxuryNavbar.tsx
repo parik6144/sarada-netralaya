@@ -67,9 +67,9 @@ export default function LuxuryNavbar() {
               <Image
                 src="/sarada-logo.png"
                 alt="SARADA Netralaya & Maternity"
-                width={480}
-                height={148}
-                className="h-[76px] sm:h-[92px] md:h-[100px] lg:h-[112px] w-auto object-contain object-center"
+                width={560}
+                height={180}
+                className="h-[100px] sm:h-[120px] md:h-[135px] lg:h-[150px] w-auto max-h-none object-contain object-center"
                 priority
               />
             </Link>
@@ -186,7 +186,7 @@ export default function LuxuryNavbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[95] bg-white pt-[7.5rem] sm:pt-[8.5rem] px-5 pb-10 overflow-y-auto lg:hidden"
+            className="fixed inset-0 z-[95] bg-white pt-[9rem] sm:pt-[10rem] px-5 pb-10 overflow-y-auto lg:hidden"
           >
             <div className="space-y-1 max-w-lg mx-auto">
               {mainNav.map((link) => (

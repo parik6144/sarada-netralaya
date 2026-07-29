@@ -74,7 +74,7 @@ const pillars = [
 export default function TechnologyPageClient() {
   return (
     <SiteLayout>
-      <section className="relative overflow-hidden bg-[#0B1F3A] text-white pt-[10.5rem] sm:pt-[11.5rem] lg:pt-[12.5rem]">
+      <section className="relative overflow-hidden bg-[#0B1F3A] text-white pt-[12.5rem] sm:pt-[14rem] lg:pt-[15.5rem]">
         <div className="absolute inset-0 opacity-35">
           <Image src="/images/tech-surgery.png" alt="" fill className="object-cover" sizes="100vw" priority />
         </div>
