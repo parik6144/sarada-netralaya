@@ -138,6 +138,7 @@ export default function AppointmentModal({ open, onOpenChange }: AppointmentModa
                   <SelectContent>
                     <SelectItem value="Dr. Nitin G. Dhira">Dr. Nitin G. Dhira</SelectItem>
                     <SelectItem value="Dr. Nitish Bhardwaj">Dr. Nitish Bhardwaj</SelectItem>
+                    <SelectItem value="Dr. Pallavi Gautam">Dr. Pallavi Gautam</SelectItem>
                   </SelectContent>
                 </Select>
               </div>

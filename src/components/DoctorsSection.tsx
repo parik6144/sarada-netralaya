@@ -21,6 +21,19 @@ const doctors = [
     color: 'bg-brand-blue',
     qualifications: ['MBBS, DNB (Ophthalmology)', 'Fellowship in Cornea & Refractive Surgery', 'Specialist in Cornea & Anterior Segment', 'FICO (UK, London), FCRS'],
   },
+  {
+    name: 'Dr. Pallavi Gautam',
+    title: 'Consultant Anaesthesiologist',
+    experience: 'Anaesthesia & Critical Care',
+    initials: 'PG',
+    color: 'bg-emerald-700',
+    qualifications: [
+      'MBBS, MD (Anaesthesiology & Critical Care)',
+      'Ex-Associate Specialist, Tata Main Hospital (TMH)',
+      'General Council Member, Bihar-Jharkhand Society of Anaesthesiologists',
+      'Regional anaesthesia, nerve blocks & high-risk geriatric care',
+    ],
+  },
 ];
 
 export default function DoctorsSection() {

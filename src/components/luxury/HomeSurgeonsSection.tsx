@@ -17,11 +17,11 @@ export default function HomeSurgeonsSection() {
         <div className="text-center max-w-3xl mx-auto">
           <p className="text-[11px] tracking-[0.2em] uppercase font-semibold text-brand-red">Our Specialists</p>
           <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">
-            Meet Your <span className="text-brand-red">Surgeons</span>
+            Meet Your <span className="text-brand-red">Specialists</span>
           </h2>
           <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed">
-            Two focused specialists — cataract, glaucoma, and cornea — who explain every finding in simple English
-            before they treat.
+            Eye surgeons and a consultant anaesthesiologist — cataract, glaucoma, cornea, and safe anaesthesia —
+            who explain every finding in simple English before they treat.
           </p>
         </div>
 

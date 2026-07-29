@@ -57,9 +57,9 @@ export default function DoctorShowcase({
             <SectionHeader
               eyebrow="Our Specialists"
               titleWhite="Meet Your"
-              titleAccent="Surgeons"
+              titleAccent="Specialists"
               accent="gold"
-              description="Experienced specialists who diagnose carefully, explain clearly, and treat with precision — so you know exactly what is happening in your eye."
+              description="Experienced specialists who diagnose carefully, explain clearly, and treat with precision — eye surgery and safe anaesthesia care."
             />
           )}
         </div>

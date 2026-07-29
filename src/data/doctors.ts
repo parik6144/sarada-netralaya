@@ -96,4 +96,40 @@ export const doctors: DoctorProfile[] = [
       'Community screening & CME at Sarada Netralaya',
     ],
   },
+  {
+    id: 'pallavi',
+    name: 'Dr. Pallavi Gautam',
+    credentials: 'MBBS, MD (Anaesthesiology & Critical Care)',
+    title: 'Consultant Anaesthesiologist',
+    speciality: 'Consultant Anaesthesiologist',
+    experience: 'Ex-TMH · BJSA Council',
+    surgeries: 'Regional blocks',
+    image: '/images/drpallavigautam.jpeg',
+    accent: '#0B7A5C',
+    focus: [
+      'Regional anaesthesia (nerve blocks)',
+      'Segmental anaesthesia',
+      'Perioperative care for high-risk geriatric patients',
+      'Safe, evidence-based anaesthesia & critical care',
+    ],
+    bio: 'Dr. Pallavi Gautam is a skilled Consultant Anaesthesiologist with expertise in Anaesthesia and Critical Care. She is an Ex-Associate Specialist at Tata Main Hospital (TMH) and currently serves as a General Council Member of the Bihar-Jharkhand Society of Anaesthesiologists. Her special interests include regional anaesthesia (nerve blocks), segmental anaesthesia, and the perioperative management of high-risk geriatric patients. She is dedicated to providing safe, evidence-based, and compassionate anaesthesia care for every patient.',
+    education:
+      'MBBS; MD (Anaesthesiology & Critical Care). Ex-Associate Specialist, Tata Main Hospital (TMH). General Council Member, Bihar-Jharkhand Society of Anaesthesiologists.',
+    approach:
+      'Safe, evidence-based, and compassionate anaesthesia care — with special focus on regional and segmental techniques and careful perioperative management of high-risk geriatric patients.',
+    conditions: [
+      'Regional anaesthesia / nerve blocks',
+      'Segmental anaesthesia',
+      'High-risk geriatric perioperative care',
+      'Anaesthesia for eye & surgical procedures',
+      'Critical care support',
+    ],
+    highlights: [
+      'Consultant Anaesthesiologist',
+      'Ex-Associate Specialist, Tata Main Hospital (TMH)',
+      'General Council Member, Bihar-Jharkhand Society of Anaesthesiologists',
+      'Special interest — regional & segmental anaesthesia',
+      'High-risk geriatric perioperative care',
+    ],
+  },
 ];
