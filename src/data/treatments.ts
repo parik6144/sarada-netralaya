@@ -36,7 +36,7 @@ Advanced care at SARADA: We perform phacoemulsification — a minimally invasive
       'Visual acuity testing to measure clarity of sight',
       'Slit-lamp examination of the lens under magnification',
       'Dilated retinal exam to check the back of the eye',
-      'Biometry / IOL Master to calculate implant lens power',
+      'ZEISS IOLMaster 700 biometry to calculate implant lens power',
       'OCT when needed to assess macular health before surgery',
     ],
     treatments: [

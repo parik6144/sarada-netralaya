@@ -11,6 +11,27 @@ import { site } from '@/data/site';
 
 const tech = [
   {
+    name: 'ZEISS IOLMaster 700',
+    category: 'Swept-Source OCT Biometry',
+    image: '/images/tech-iolmaster-700.png',
+    resultImage: '/images/cataract-lifestyle.png',
+    simple:
+      'A fast, non-contact eye measurement system used before cataract surgery to calculate the most suitable intraocular lens (IOL) power for your eye.',
+    howTitle: 'What it measures',
+    how: [
+      'You place your chin on the support and look at a target light — the test is non-contact and painless.',
+      'Swept-Source OCT captures a scan from the cornea to the retina and checks eye length and ocular geometry.',
+      'It measures corneal curvature and other biometric values used for IOL power calculation.',
+      'The built-in fixation check helps the doctor confirm that measurements are aligned and reliable.',
+    ],
+    resultTitle: 'Why it matters for cataract surgery',
+    result:
+      'More precise pre-operative measurements support personalised selection of monofocal, toric, multifocal or EDOF lenses and help reduce unexpected refractive outcomes after surgery.',
+    helps: 'Cataract planning · Premium IOLs · Toric lenses',
+    color: '#C8102E',
+    link: '/treatments/cataract',
+  },
+  {
     name: 'Zeiss Cirrus HD-OCT',
     category: 'Eye Scanner (OCT)',
     image: '/images/tech-oct.png',
@@ -62,7 +83,7 @@ const pillars = [
   {
     title: 'Match the machine',
     body: 'We choose the right technology for your exact eye condition — not one tool for everyone.',
-    image: null as string | null,
+    image: '/images/tech-iolmaster-700.png',
   },
   {
     title: 'Measure the result',
@@ -174,15 +195,45 @@ export default function TechnologyPageClient() {
                   className="rounded-[1.75rem] border border-slate-200 bg-white overflow-hidden shadow-sm"
                 >
                   <div className={`grid lg:grid-cols-2 ${reverse ? 'lg:[&>*:first-child]:order-2' : ''}`}>
-                    <div className="relative min-h-[240px] sm:min-h-[320px] lg:min-h-full">
-                      <Image
-                        src={t.image}
-                        alt={`${t.name} — ${t.category}`}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width:1024px) 100vw, 50vw"
-                        priority={i === 0}
-                      />
+                    <div className="relative min-h-[240px] sm:min-h-[320px] lg:min-h-full overflow-hidden bg-gradient-to-br from-[#071A33] via-[#0B3158] to-[#075985]">
+                      {t.image ? (
+                        <Image
+                          src={t.image}
+                          alt={`${t.name} — ${t.category}`}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width:1024px) 100vw, 50vw"
+                          priority={i === 0}
+                        />
+                      ) : (
+                        <div className="absolute inset-0 flex items-center justify-center p-8 sm:p-12 text-white">
+                          <div className="absolute inset-0 opacity-25 bg-[radial-gradient(circle_at_72%_30%,#38BDF8,transparent_32%)]" />
+                          <div className="absolute -right-16 -top-16 h-64 w-64 rounded-full border border-white/10" />
+                          <div className="absolute -right-6 -top-6 h-44 w-44 rounded-full border border-sky-300/20" />
+                          <div className="relative w-full max-w-md">
+                            <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#F5D565]">
+                              Cataract precision
+                            </p>
+                            <p className="mt-3 text-3xl sm:text-4xl font-bold leading-tight">Measure before you replace.</p>
+                            <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/70">
+                              Cornea-to-retina biometry for personalised IOL power planning.
+                            </p>
+                            <div className="mt-7 grid grid-cols-3 gap-2">
+                              {['Eye length', 'Corneal power', 'IOL planning'].map((label, metricIndex) => (
+                                <div
+                                  key={label}
+                                  className="rounded-xl border border-white/15 bg-white/10 px-3 py-3 text-center backdrop-blur-sm"
+                                >
+                                  <span className="block text-lg font-bold text-sky-300">0{metricIndex + 1}</span>
+                                  <span className="mt-1 block text-[10px] font-semibold uppercase tracking-wide text-white/75">
+                                    {label}
+                                  </span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      )}
                       <div className="absolute top-4 left-4">
                         <span
                           className="inline-flex rounded-full px-3 py-1 text-[10px] font-bold tracking-[0.12em] uppercase text-white border border-white/25 backdrop-blur-sm"
