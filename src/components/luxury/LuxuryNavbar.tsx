@@ -15,6 +15,27 @@ export default function LuxuryNavbar() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const dropdownTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const navRef = useRef<HTMLElement>(null);
+
+  // Publish the real navbar height so page offsets never overlap the header.
+  useEffect(() => {
+    const el = navRef.current;
+    if (!el) return;
+
+    const publishHeight = () => {
+      document.documentElement.style.setProperty('--nav-h', `${Math.round(el.offsetHeight)}px`);
+    };
+
+    publishHeight();
+    const observer = new ResizeObserver(publishHeight);
+    observer.observe(el);
+    window.addEventListener('resize', publishHeight);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', publishHeight);
+    };
+  }, []);
 
   useEffect(() => {
     setMobileOpen(false);
@@ -55,21 +76,26 @@ export default function LuxuryNavbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-[100] bg-white border-b border-slate-200 shadow-[0_4px_24px_rgba(15,23,42,0.06)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col items-center justify-center gap-3 sm:gap-4 py-3 sm:py-4 min-h-0">
+      <nav
+        ref={navRef}
+        className="fixed top-0 left-0 right-0 z-[100] bg-white border-b border-slate-200 shadow-[0_4px_24px_rgba(15,23,42,0.06)]"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col items-center justify-center gap-1 py-2 min-h-0">
           {/* Logo row */}
-          <div className="relative w-full flex items-center justify-center">
+          {/* Side padding reserves room for the absolute mobile toggle. */}
+          <div className="relative w-full flex items-center justify-center leading-none px-14 lg:px-0">
             <Link
               href="/"
               onClick={closeMenus}
-              className="relative z-10 flex-shrink-0 cursor-pointer px-2 py-1"
+              className="relative z-10 min-w-0 cursor-pointer block leading-none"
             >
+              {/* Width-driven sizing keeps the aspect exact, so no letterbox gap appears. */}
               <Image
-                src="/sarada-logo.png"
+                src="/sarada-logo-nav.png"
                 alt="SARADA Netralaya & Maternity"
-                width={560}
-                height={180}
-                className="h-[100px] sm:h-[120px] md:h-[135px] lg:h-[150px] w-auto max-h-none object-contain object-center"
+                width={1769}
+                height={499}
+                className="block h-auto w-[200px] sm:w-[280px] md:w-[340px] lg:w-[440px] xl:w-[480px] max-w-full"
                 priority
               />
             </Link>
@@ -186,7 +212,7 @@ export default function LuxuryNavbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[95] bg-white pt-[9rem] sm:pt-[10rem] px-5 pb-10 overflow-y-auto lg:hidden"
+            className="nav-offset fixed inset-0 z-[95] bg-white px-5 pb-10 overflow-y-auto lg:hidden"
           >
             <div className="space-y-1 max-w-lg mx-auto">
               {mainNav.map((link) => (

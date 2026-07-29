@@ -23,7 +23,7 @@ export default function TreatmentDetailPage() {
   if (!data) {
     return (
       <SiteLayout>
-        <div className="min-h-screen flex items-center justify-center bg-[#F7FBFE] pt-[12.5rem]">
+        <div className="nav-offset min-h-screen flex items-center justify-center bg-[#F7FBFE]">
           <div className="text-center px-5">
             <h1 className="text-3xl font-bold text-slate-900 mb-4">Treatment Not Found</h1>
             <Link href="/treatments" className="text-brand-red font-semibold hover:underline">
@@ -42,7 +42,7 @@ export default function TreatmentDetailPage() {
 
   return (
     <SiteLayout>
-      <div className="min-h-screen pt-[12.5rem] sm:pt-[14rem] lg:pt-[15.5rem] bg-[#F8FAFC]">
+      <div className="nav-offset min-h-screen bg-[#F8FAFC]">
         {/* Flyer-style hero banner */}
         <section
           className={`relative overflow-hidden text-white ${

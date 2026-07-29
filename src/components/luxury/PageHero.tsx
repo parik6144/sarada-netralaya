@@ -10,7 +10,7 @@ interface PageHeroProps {
 
 export default function PageHero({ eyebrow, title, accent, description, breadcrumbs }: PageHeroProps) {
   return (
-    <section className="relative pt-[12.5rem] sm:pt-[14rem] lg:pt-[15rem] pb-12 sm:pb-16 bg-gradient-to-b from-[#F0F6FA] via-white to-white border-b border-slate-200/80">
+    <section className="nav-offset relative pb-12 sm:pb-16 bg-gradient-to-b from-[#F0F6FA] via-white to-white border-b border-slate-200/80">
       <div className="max-w-7xl mx-auto px-5 sm:px-6">
         {breadcrumbs && breadcrumbs.length > 0 && (
           <nav className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-slate-500 mb-6">
