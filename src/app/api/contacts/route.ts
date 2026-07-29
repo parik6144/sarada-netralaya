@@ -1,6 +1,10 @@
 import { NextResponse } from 'next/server';
-import { db } from '@/lib/db';
+import { db, ensureDbSchema } from '@/lib/db';
 import { sendBrandedAdminMail, sendUserThankYouMail } from '@/lib/mail';
+
+function makeReferenceId() {
+  return `WEB-${Date.now().toString(36).toUpperCase()}`;
+}
 
 export async function POST(request: Request) {
   try {
@@ -15,15 +19,30 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
-    const contact = await db.contact.create({
-      data: {
-        name,
-        phone,
-        email,
-        subject,
-        message,
-      },
-    });
+    try {
+      await ensureDbSchema();
+    } catch (schemaError) {
+      console.error('Contact schema init skipped:', schemaError);
+    }
+
+    let contactId = makeReferenceId();
+    let dbSaved = false;
+
+    try {
+      const contact = await db.contact.create({
+        data: {
+          name,
+          phone,
+          email,
+          subject,
+          message,
+        },
+      });
+      contactId = contact.id;
+      dbSaved = true;
+    } catch (dbError) {
+      console.error('Contact DB error:', dbError);
+    }
 
     const detailRows: Array<[string, string]> = [
       ['Name', name],
@@ -31,10 +50,10 @@ export async function POST(request: Request) {
       ['Email', email || ''],
       ['Subject', subject || 'Website enquiry'],
       ['Message', message],
-      ['Contact ID', contact.id],
+      ['Contact ID', contactId],
     ];
 
-    let mailSent = true;
+    let mailSent = false;
     try {
       await sendBrandedAdminMail({
         subject: `New Contact Message — ${name}`,
@@ -44,8 +63,13 @@ export async function POST(request: Request) {
         replyTo: email,
         rows: detailRows,
       });
+      mailSent = true;
+    } catch (mailError) {
+      console.error('Contact admin mail error:', mailError);
+    }
 
-      if (email) {
+    if (email) {
+      try {
         await sendUserThankYouMail({
           to: email,
           kind: 'contact',
@@ -54,16 +78,25 @@ export async function POST(request: Request) {
             ['Name', name],
             ['Phone', phone],
             ['Subject', subject || 'Website enquiry'],
-            ['Reference', contact.id],
+            ['Reference', contactId],
           ],
         });
+      } catch (mailError) {
+        console.error('Contact patient mail error:', mailError);
       }
-    } catch (mailError) {
-      mailSent = false;
-      console.error('Contact mail error:', mailError);
     }
 
-    return NextResponse.json({ success: true, id: contact.id, mailSent }, { status: 201 });
+    if (!dbSaved && !mailSent) {
+      return NextResponse.json(
+        { error: 'Could not send message. Please call the hospital directly.' },
+        { status: 500 }
+      );
+    }
+
+    return NextResponse.json(
+      { success: true, id: contactId, mailSent, dbSaved },
+      { status: 201 }
+    );
   } catch (error) {
     console.error('Contact creation error:', error);
     return NextResponse.json({ error: 'Failed to send message' }, { status: 500 });
@@ -72,6 +105,7 @@ export async function POST(request: Request) {
 
 export async function GET() {
   try {
+    await ensureDbSchema();
     const contacts = await db.contact.findMany({
       orderBy: { createdAt: 'desc' },
       take: 50,

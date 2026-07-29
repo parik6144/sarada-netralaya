@@ -6,6 +6,10 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
   reactStrictMode: false,
+  // `public/` is CDN-only on Vercel; the mail logo must be traced into the function.
+  outputFileTracingIncludes: {
+    '/api/**': ['./public/sarada-logo.png'],
+  },
 };
 
 export default nextConfig;

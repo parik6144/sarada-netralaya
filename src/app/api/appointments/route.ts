@@ -1,6 +1,10 @@
 import { NextResponse } from 'next/server';
-import { db } from '@/lib/db';
+import { db, ensureDbSchema } from '@/lib/db';
 import { sendBrandedAdminMail, sendUserThankYouMail } from '@/lib/mail';
+
+function makeReferenceId() {
+  return `WEB-${Date.now().toString(36).toUpperCase()}`;
+}
 
 export async function POST(request: Request) {
   try {
@@ -21,21 +25,36 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
-    const appointment = await db.appointment.create({
-      data: {
-        patientName,
-        phone,
-        email,
-        doctor,
-        department,
-        preferredDate,
-        preferredTime,
-        symptoms,
-        hasInsurance,
-        insuranceName,
-        status: 'pending',
-      },
-    });
+    try {
+      await ensureDbSchema();
+    } catch (schemaError) {
+      console.error('Appointment schema init skipped:', schemaError);
+    }
+
+    let bookingId = makeReferenceId();
+    let dbSaved = false;
+
+    try {
+      const appointment = await db.appointment.create({
+        data: {
+          patientName,
+          phone,
+          email,
+          doctor,
+          department,
+          preferredDate,
+          preferredTime,
+          symptoms,
+          hasInsurance,
+          insuranceName,
+          status: 'pending',
+        },
+      });
+      bookingId = appointment.id;
+      dbSaved = true;
+    } catch (dbError) {
+      console.error('Appointment DB error:', dbError);
+    }
 
     const detailRows: Array<[string, string]> = [
       ['Patient', patientName],
@@ -47,10 +66,10 @@ export async function POST(request: Request) {
       ['Time', preferredTime],
       ['Message', symptoms || ''],
       ['Insurance', hasInsurance ? insuranceName || 'Yes' : 'No'],
-      ['Booking ID', appointment.id],
+      ['Booking ID', bookingId],
     ];
 
-    let mailSent = true;
+    let mailSent = false;
     try {
       await sendBrandedAdminMail({
         subject: `New Appointment — ${patientName} (${preferredDate} ${preferredTime})`,
@@ -60,8 +79,14 @@ export async function POST(request: Request) {
         replyTo: email,
         rows: detailRows,
       });
+      mailSent = true;
+    } catch (mailError) {
+      console.error('Appointment admin mail error:', mailError);
+    }
 
-      if (email) {
+    // A bad patient address must not invalidate the hospital notification.
+    if (email) {
+      try {
         await sendUserThankYouMail({
           to: email,
           kind: 'appointment',
@@ -72,16 +97,26 @@ export async function POST(request: Request) {
             ['Doctor', doctor],
             ['Date', preferredDate],
             ['Time', preferredTime],
-            ['Booking ID', appointment.id],
+            ['Booking ID', bookingId],
           ],
         });
+      } catch (mailError) {
+        console.error('Appointment patient mail error:', mailError);
       }
-    } catch (mailError) {
-      mailSent = false;
-      console.error('Appointment mail error:', mailError);
     }
 
-    return NextResponse.json({ success: true, id: appointment.id, mailSent }, { status: 201 });
+    if (!dbSaved && !mailSent) {
+      const hint =
+        process.env.NODE_ENV === 'development'
+          ? 'Database and email both failed. Check MAIL_USERNAME / MAIL_PASSWORD in .env and run: npx prisma db push'
+          : 'Could not save booking. Please call the hospital directly.';
+      return NextResponse.json({ error: hint }, { status: 500 });
+    }
+
+    return NextResponse.json(
+      { success: true, id: bookingId, mailSent, dbSaved },
+      { status: 201 }
+    );
   } catch (error) {
     console.error('Appointment creation error:', error);
     return NextResponse.json({ error: 'Failed to create appointment' }, { status: 500 });
@@ -90,6 +125,7 @@ export async function POST(request: Request) {
 
 export async function GET() {
   try {
+    await ensureDbSchema();
     const appointments = await db.appointment.findMany({
       orderBy: { createdAt: 'desc' },
       take: 50,

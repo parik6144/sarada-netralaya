@@ -1,9 +1,52 @@
 import nodemailer from 'nodemailer';
+import fs from 'fs';
 import path from 'path';
 import { site } from '@/data/site';
 
 const notifyTo = process.env.MAIL_NOTIFY_TO || 'info@saradanetralaya.org';
 const LOGO_CID = 'sarada-logo@netralaya';
+
+function publicSiteUrl() {
+  const explicit = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/$/, '');
+  if (explicit) return explicit;
+
+  const vercelHost =
+    process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL;
+  if (vercelHost) return `https://${vercelHost}`;
+
+  return 'http://localhost:3000';
+}
+
+/**
+ * Vercel does not ship `public/` into the serverless bundle, so a missing file
+ * must fall back to a hosted URL instead of failing the whole send.
+ */
+function resolveLogo() {
+  const logoPath = path.join(process.cwd(), 'public', 'sarada-logo.png');
+
+  try {
+    if (fs.existsSync(logoPath)) {
+      return {
+        src: `cid:${LOGO_CID}`,
+        attachments: [
+          {
+            filename: 'sarada-logo.png',
+            path: logoPath,
+            cid: LOGO_CID,
+            contentDisposition: 'inline' as const,
+          },
+        ],
+      };
+    }
+  } catch (error) {
+    console.error('Logo lookup failed, using hosted URL:', error);
+  }
+
+  return {
+    src: `${publicSiteUrl()}/sarada-logo.png`,
+    attachments: [],
+  };
+}
 
 function getTransporter() {
   const host = process.env.MAIL_HOST || 'smtp.gmail.com';
@@ -58,8 +101,10 @@ export function buildBrandedEmailHtml(options: {
   rowsHtml: string;
   badge?: string;
   extraHtml?: string;
+  logoSrc?: string;
 }) {
   const badge = options.badge || 'Website notification';
+  const logoSrc = options.logoSrc || `cid:${LOGO_CID}`;
   return `<!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /></head>
@@ -70,7 +115,7 @@ export function buildBrandedEmailHtml(options: {
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:620px;background:#ffffff;border-radius:18px;overflow:hidden;box-shadow:0 12px 40px rgba(11,31,58,0.12);">
           <tr>
             <td style="background:linear-gradient(135deg,#0B1F3A 0%,#123A5C 100%);padding:22px 28px;text-align:center;">
-              <img src="cid:${LOGO_CID}" alt="SARADA Netralaya" width="220" style="display:block;margin:0 auto 14px auto;max-width:220px;height:auto;background:#ffffff;border-radius:10px;padding:10px 14px;" />
+              <img src="${logoSrc}" alt="SARADA Netralaya" width="220" style="display:block;margin:0 auto 14px auto;max-width:220px;height:auto;background:#ffffff;border-radius:10px;padding:10px 14px;" />
               <div style="display:inline-block;background:rgba(245,213,101,0.18);border:1px solid rgba(245,213,101,0.45);color:#F5D565;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:6px 12px;border-radius:999px;">
                 ${escapeHtml(badge)}
               </div>
@@ -121,7 +166,7 @@ async function sendBrandedTo(options: {
   extraHtml?: string;
 }) {
   const transporter = getTransporter();
-  const logoPath = path.join(process.cwd(), 'public', 'sarada-logo.png');
+  const logo = resolveLogo();
   const rowsHtml = rowsToHtml(options.rows);
   const html = buildBrandedEmailHtml({
     title: options.title,
@@ -129,6 +174,7 @@ async function sendBrandedTo(options: {
     rowsHtml,
     badge: options.badge,
     extraHtml: options.extraHtml,
+    logoSrc: logo.src,
   });
   const text = [options.subtitle, '', ...options.rows.map(([k, v]) => `${k}: ${v || '—'}`)].join('\n');
 
@@ -139,14 +185,7 @@ async function sendBrandedTo(options: {
     text,
     html,
     replyTo: options.replyTo || undefined,
-    attachments: [
-      {
-        filename: 'sarada-logo.png',
-        path: logoPath,
-        cid: LOGO_CID,
-        contentDisposition: 'inline',
-      },
-    ],
+    attachments: logo.attachments,
   });
 }
 

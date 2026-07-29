@@ -33,14 +33,18 @@ export default function AppointmentSection({ hideHeader = false }: { hideHeader?
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await fetch('/api/appointments', {
+      const res = await fetch('/api/appointments', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(data.error || 'Booking failed');
+      }
       setSubmitted(true);
-    } catch {
-      alert('Something went wrong. Please call us directly.');
+    } catch (err) {
+      alert(err instanceof Error ? err.message : 'Something went wrong. Please call us directly.');
     }
   };
 
