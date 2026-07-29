@@ -7,7 +7,6 @@ import WhyChooseSection from '@/components/luxury/WhyChooseSection';
 import BranchesSection from '@/components/luxury/BranchesSection';
 import HomeSurgeonsSection from '@/components/luxury/HomeSurgeonsSection';
 import TreatmentsSection from '@/components/luxury/TreatmentsSection';
-import TestimonialsSection from '@/components/luxury/TestimonialsSection';
 import CashlessFacilityBadge from '@/components/luxury/CashlessFacilityBadge';
 import InsuranceLogoMarquee from '@/components/luxury/InsuranceLogoMarquee';
 
@@ -20,7 +19,7 @@ export default function Home() {
       <BranchesSection />
       <HomeSurgeonsSection />
       <TreatmentsSection limit={6} />
-      <TestimonialsSection />
+      {/* Testimonials hidden until real patient reviews are supplied */}
 
       {/* Catchy cashless trust strip */}
       <section className="relative py-12 sm:py-14 bg-gradient-to-b from-[#F4F8FB] via-white to-[#F4F8FB] overflow-hidden">

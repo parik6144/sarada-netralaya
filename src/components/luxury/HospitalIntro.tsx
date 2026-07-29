@@ -5,9 +5,9 @@ import Link from 'next/link';
 import SectionHeader from './SectionHeader';
 
 const stats = [
+  { label: 'Satisfied Patients Served', sub: 'Families across Jharkhand', display: '50k+' },
   { label: 'Centres', sub: 'Jamshedpur · Ghatshila · Chandil', display: '3' },
-  { label: 'Doctors', sub: 'Skilled Eye Experts', display: '5+' },
-  { label: 'Satisfied Patients Served', sub: '', display: '50k+' },
+  { label: 'Mission', sub: 'Your vision is our mission', display: '1' },
 ];
 
 const explainSteps = [
