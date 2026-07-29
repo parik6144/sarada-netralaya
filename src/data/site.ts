@@ -5,6 +5,26 @@ export const site = {
   location: 'Baradwari, Sakchi, Jamshedpur',
   address: '33, Swastik Ambika Tower, Near HDFC Bank, New Baradwari, Jamshedpur',
   phones: ['+91 70910 90014', '+91 70910 90016'],
+  branches: [
+    {
+      name: 'Jamshedpur',
+      address: '33, Swastik Ambika Tower, Near HDFC Bank, New Baradwari, Sakchi, Jamshedpur',
+      phones: ['+91 70910 90014', '+91 70910 90016'],
+      mapUrl: 'https://maps.google.com/?q=Swastik+Ambika+Tower+Baradwari+Jamshedpur',
+    },
+    {
+      name: 'Ghatshila',
+      address: 'Pani Nursing Home, Near Canara Bank, Main Road, Ghatshila, Jharkhand – 832303',
+      phones: [],
+      mapUrl: 'https://maps.google.com/?q=Pani+Nursing+Home+Near+Canara+Bank+Main+Road+Ghatshila+Jharkhand+832303',
+    },
+    {
+      name: 'Chandil',
+      address: 'Dam Road, Beside Post Office, Chandil, Jharkhand – 832401',
+      phones: ['+91 78579 45948'],
+      mapUrl: 'https://maps.google.com/?q=Dam+Road+Beside+Post+Office+Chandil+Jharkhand+832401',
+    },
+  ],
   email: 'info@saradanetralaya.com',
   hours: 'Mon–Sat: 10:00 AM – 7:00 PM',
   emergency: '24×7 emergency eye care',

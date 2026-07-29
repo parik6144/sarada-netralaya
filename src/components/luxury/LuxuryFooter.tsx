@@ -90,11 +90,22 @@ export default function LuxuryFooter() {
           </div>
 
           <div>
-            <h4 className="text-xs tracking-[0.15em] uppercase text-slate-300 font-semibold mb-4">Contact</h4>
-            <div className="space-y-2.5 text-sm text-slate-400">
-              <p>{site.address}</p>
-              {site.phones.map((phone) => (
-                <p key={phone}>{phone}</p>
+            <h4 className="text-xs tracking-[0.15em] uppercase text-slate-300 font-semibold mb-4">Our Locations</h4>
+            <div className="space-y-4 text-sm text-slate-400">
+              {site.branches.map((branch) => (
+                <div key={branch.name}>
+                  <p className="font-semibold text-slate-300">{branch.name}</p>
+                  <p className="mt-1 leading-relaxed">{branch.address}</p>
+                  {branch.phones.map((phone) => (
+                    <a
+                      key={phone}
+                      href={`tel:${phone.replace(/\s/g, '')}`}
+                      className="mt-1 block hover:text-white transition-colors"
+                    >
+                      {phone}
+                    </a>
+                  ))}
+                </div>
               ))}
               <p>{site.email}</p>
               <p>{site.hours}</p>
