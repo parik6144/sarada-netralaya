@@ -73,25 +73,35 @@ export default function DoctorShowcase({
               } flex flex-col lg:flex-row`}
             >
               {/* Business portrait panel */}
-              <div className="relative lg:w-[340px] xl:w-[380px] flex-shrink-0 bg-gradient-to-b from-slate-100 to-slate-50">
-                <div className="relative mx-auto w-full max-w-[320px] aspect-[3/4] lg:max-w-none lg:h-full lg:min-h-[420px]">
+              <div className="relative lg:w-[300px] xl:w-[320px] flex-shrink-0 bg-gradient-to-b from-slate-100 to-slate-50 flex items-center justify-center py-6 lg:py-8 px-5">
+                <div className="relative w-full max-w-[260px] aspect-[3/4] mx-auto overflow-hidden rounded-xl ring-1 ring-slate-200/80 shadow-sm bg-slate-100">
                   <Image
                     src={doc.image}
                     alt={doc.name}
                     fill
-                    sizes="(max-width: 1024px) 320px, 380px"
-                    className="object-cover object-[center_20%]"
+                    sizes="260px"
+                    className="object-cover object-[center_15%]"
                     priority={index === 0}
                   />
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/80 via-slate-950/40 to-transparent px-5 pb-5 pt-16">
-                    <p className="text-white text-lg font-semibold leading-tight">{doc.name}</p>
-                    <p className="text-white/85 text-xs mt-1 tracking-wide uppercase">{doc.speciality}</p>
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/80 via-slate-950/35 to-transparent px-4 pb-4 pt-14">
+                    <p className="text-white text-base font-semibold leading-tight">
+                      {doc.name}
+                      {doc.credentials ? (
+                        <span className="block text-white/90 text-xs font-medium mt-0.5 normal-case tracking-normal">
+                          {doc.credentials}
+                        </span>
+                      ) : null}
+                    </p>
+                    <p className="text-white/85 text-[11px] mt-1 tracking-wide uppercase">{doc.speciality}</p>
                   </div>
                 </div>
               </div>
 
               {/* Content */}
               <div className="flex-1 p-6 sm:p-8 lg:p-10">
+                {doc.title ? (
+                  <p className="text-sm font-semibold text-slate-800 mb-3">{doc.title}</p>
+                ) : null}
                 <div className="flex flex-wrap gap-3 text-sm">
                   <div className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2">
                     <span className="font-semibold text-slate-900">{doc.experience}</span>
@@ -103,7 +113,9 @@ export default function DoctorShowcase({
                   </div>
                 </div>
 
-                <p className="mt-5 text-sm sm:text-base text-slate-600 leading-relaxed">{doc.bio}</p>
+                <p className="mt-5 text-sm sm:text-base text-slate-600 leading-relaxed whitespace-pre-line">
+                  {doc.bio}
+                </p>
 
                 {detailed && (
                   <>

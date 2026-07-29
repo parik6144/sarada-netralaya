@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { doctors } from '@/data/doctors';
 
-/** Full-bleed homepage surgeons section (col-12 cinematic layout) */
+/** Homepage surgeons — balanced portrait + content, not oversized face crop */
 export default function HomeSurgeonsSection() {
   return (
     <section id="doctors" className="relative py-16 sm:py-20 bg-white overflow-hidden">
@@ -24,100 +24,106 @@ export default function HomeSurgeonsSection() {
             before they treat.
           </p>
         </div>
-      </div>
 
-      <div className="mt-12 space-y-0">
-        {doctors.map((doc, index) => {
-          const reverse = index % 2 === 1;
-          return (
-            <motion.div
-              key={doc.id}
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.55 }}
-              className={`grid lg:grid-cols-12 min-h-[480px] lg:min-h-[520px] ${
-                reverse ? 'bg-[#F7FAFC]' : 'bg-white'
-              }`}
-            >
-              <div
-                className={`relative lg:col-span-5 min-h-[320px] lg:min-h-full ${
-                  reverse ? 'lg:order-2' : ''
+        <div className="mt-12 space-y-8">
+          {doctors.map((doc, index) => {
+            const reverse = index % 2 === 1;
+            return (
+              <motion.article
+                key={doc.id}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.5 }}
+                className={`overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-[0_8px_28px_rgba(15,23,42,0.05)] ${
+                  reverse ? 'bg-[#F8FBFD]' : ''
                 }`}
               >
-                <Image
-                  src={doc.image}
-                  alt={doc.name}
-                  fill
-                  className="object-cover object-[center_18%]"
-                  sizes="(max-width:1024px) 100vw, 42vw"
-                  priority={index === 0}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-transparent" />
-                <div className="absolute bottom-5 left-5 right-5 lg:hidden">
-                  <p className="text-white text-2xl font-bold">{doc.name}</p>
-                  <p className="text-white/85 text-sm mt-1">{doc.speciality}</p>
-                </div>
-              </div>
-
-              <div
-                className={`lg:col-span-7 flex items-center px-6 sm:px-10 lg:px-14 xl:px-16 py-10 lg:py-14 ${
-                  reverse ? 'lg:order-1' : ''
-                }`}
-              >
-                <div className="w-full max-w-xl">
-                  <p
-                    className="text-[11px] tracking-[0.16em] uppercase font-bold"
-                    style={{ color: doc.accent }}
-                  >
-                    {doc.speciality}
-                  </p>
-                  <h3 className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 hidden lg:block">
-                    {doc.name}
-                  </h3>
-
-                  <div className="mt-5 flex flex-wrap gap-3">
-                    <div className="rounded-xl border border-slate-200 bg-white px-4 py-2.5 shadow-sm">
-                      <span className="text-lg font-bold text-slate-900">{doc.experience}</span>
-                      <span className="block text-[11px] uppercase tracking-wide text-slate-500 mt-0.5">
-                        Experience
-                      </span>
-                    </div>
-                    <div className="rounded-xl border border-slate-200 bg-white px-4 py-2.5 shadow-sm">
-                      <span className="text-lg font-bold text-slate-900">{doc.surgeries}</span>
-                      <span className="block text-[11px] uppercase tracking-wide text-slate-500 mt-0.5">
-                        Surgeries
-                      </span>
+                <div
+                  className={`flex flex-col lg:flex-row items-center gap-6 sm:gap-8 lg:gap-12 p-5 sm:p-7 lg:p-10 ${
+                    reverse ? 'lg:flex-row-reverse' : ''
+                  }`}
+                >
+                  {/* Contained studio portrait */}
+                  <div className="w-full max-w-[240px] sm:max-w-[260px] lg:max-w-[280px] flex-shrink-0 mx-auto lg:mx-0">
+                    <div className="relative aspect-[3/4] w-full overflow-hidden rounded-xl bg-slate-100 ring-1 ring-slate-200/80 shadow-sm">
+                      <Image
+                        src={doc.image}
+                        alt={doc.name}
+                        fill
+                        className="object-cover object-[center_15%]"
+                        sizes="(max-width:640px) 240px, 280px"
+                        priority={index === 0}
+                      />
                     </div>
                   </div>
 
-                  <p className="mt-6 text-sm sm:text-base text-slate-600 leading-relaxed">{doc.bio}</p>
-
-                  <ul className="mt-5 grid sm:grid-cols-2 gap-2">
-                    {doc.focus.slice(0, 4).map((f) => (
-                      <li key={f} className="flex items-start gap-2 text-sm text-slate-700">
-                        <span className="mt-1 font-bold" style={{ color: doc.accent }}>
-                          ✓
-                        </span>
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="mt-8 flex flex-wrap gap-3">
-                    <BookAppointmentButton className="inline-flex px-7 py-3 rounded-full text-sm font-semibold text-white transition-opacity hover:opacity-90">Book Consultation</BookAppointmentButton>
-                    <Link
-                      href="/doctors"
-                      className="inline-flex px-7 py-3 rounded-full border border-slate-200 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
+                  <div className="flex-1 w-full min-w-0 text-center lg:text-left">
+                    <p
+                      className="text-[11px] tracking-[0.16em] uppercase font-bold"
+                      style={{ color: doc.accent }}
                     >
-                      Full profile →
-                    </Link>
+                      {doc.speciality}
+                    </p>
+                    <h3 className="mt-2 text-2xl sm:text-3xl font-bold text-slate-900">
+                      {doc.name}
+                      {doc.credentials ? (
+                        <span className="block sm:inline text-lg sm:text-xl font-semibold text-slate-600 sm:ml-2">
+                          {doc.credentials}
+                        </span>
+                      ) : null}
+                    </h3>
+                    {doc.title ? (
+                      <p className="mt-1.5 text-sm font-medium text-slate-700">{doc.title}</p>
+                    ) : null}
+
+                    <div className="mt-4 flex flex-wrap gap-2.5 justify-center lg:justify-start">
+                      <div className="rounded-lg border border-slate-200 bg-white px-3.5 py-2 shadow-sm">
+                        <span className="text-base font-bold text-slate-900">{doc.experience}</span>
+                        <span className="block text-[10px] uppercase tracking-wide text-slate-500 mt-0.5">
+                          Experience
+                        </span>
+                      </div>
+                      <div className="rounded-lg border border-slate-200 bg-white px-3.5 py-2 shadow-sm">
+                        <span className="text-base font-bold text-slate-900">{doc.surgeries}</span>
+                        <span className="block text-[10px] uppercase tracking-wide text-slate-500 mt-0.5">
+                          Surgeries
+                        </span>
+                      </div>
+                    </div>
+
+                    <p className="mt-5 text-sm sm:text-[15px] text-slate-600 leading-relaxed line-clamp-5 lg:line-clamp-6">
+                      {doc.bio.split('\n\n')[0]}
+                    </p>
+
+                    <ul className="mt-5 grid sm:grid-cols-2 gap-2 text-left max-w-xl mx-auto lg:mx-0">
+                      {doc.focus.slice(0, 4).map((f) => (
+                        <li key={f} className="flex items-start gap-2 text-sm text-slate-700">
+                          <span className="mt-0.5 font-bold" style={{ color: doc.accent }}>
+                            ✓
+                          </span>
+                          {f}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="mt-7 flex flex-wrap gap-3 justify-center lg:justify-start">
+                      <BookAppointmentButton className="inline-flex px-6 py-2.5 rounded-full text-sm font-semibold text-white transition-opacity hover:opacity-90">
+                        Book Consultation
+                      </BookAppointmentButton>
+                      <Link
+                        href="/doctors"
+                        className="inline-flex px-6 py-2.5 rounded-full border border-slate-200 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
+                      >
+                        Full profile →
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          );
-        })}
+              </motion.article>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
