@@ -11,7 +11,7 @@ const doctors = [
     experience: '18+ Years Experience',
     initials: 'ND',
     color: 'bg-brand-red',
-    qualifications: ['DO, DNB', 'Fellowship in Phaco & Refractive Surgery', 'Specialist in Cataract & Glaucoma Surgery', 'Former Consultant at Apollo Hospitals'],
+    qualifications: ['DNB, FICO (UK, London)', 'Fellowship in Phaco & Refractive Surgery', 'Specialist in Cataract & Glaucoma Surgery', 'Former Consultant at Apollo Hospitals'],
   },
   {
     name: 'Dr. Nitish Bhardwaj',
