@@ -4,6 +4,7 @@ import SiteLayout from '@/components/luxury/SiteLayout';
 import LuxuryHero from '@/components/luxury/LuxuryHero';
 import HospitalIntro from '@/components/luxury/HospitalIntro';
 import WhyChooseSection from '@/components/luxury/WhyChooseSection';
+import BranchesSection from '@/components/luxury/BranchesSection';
 import HomeSurgeonsSection from '@/components/luxury/HomeSurgeonsSection';
 import TreatmentsSection from '@/components/luxury/TreatmentsSection';
 import TestimonialsSection from '@/components/luxury/TestimonialsSection';
@@ -16,6 +17,7 @@ export default function Home() {
       <LuxuryHero />
       <HospitalIntro />
       <WhyChooseSection />
+      <BranchesSection />
       <HomeSurgeonsSection />
       <TreatmentsSection limit={6} />
       <TestimonialsSection />

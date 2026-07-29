@@ -188,7 +188,8 @@ export default function ContactPageClient() {
           <p className="text-[11px] tracking-[0.18em] uppercase font-semibold text-brand-red">Our locations</p>
           <h2 className="mt-2 text-2xl sm:text-3xl font-bold text-[#0B1F3A]">Care closer to you</h2>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-600">
-            Visit the SARADA centre most convenient for you. Tap a location for directions.
+            All three centres run the same hours — {site.branches[0].days}, {site.branches[0].timing}. Tap a location
+            for directions.
           </p>
 
           <div className="mt-7 grid gap-5 md:grid-cols-3">
@@ -199,36 +200,55 @@ export default function ContactPageClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.06 }}
-                className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+                className="flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
               >
-                <div className="flex items-center justify-between gap-4">
-                  <h3 className="text-xl font-bold text-[#0B1F3A]">{branch.name}</h3>
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-red-50 text-brand-red" aria-hidden>
-                    📍
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-white">
+                  <Image
+                    src={branch.image}
+                    alt={`SARADA Netralaya ${branch.name} centre`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width:768px) 100vw, 33vw"
+                  />
+                  <span className="absolute left-3 top-3 rounded-full bg-brand-red px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-white">
+                    {branch.badge}
                   </span>
                 </div>
-                <p className="mt-4 flex-1 text-sm leading-relaxed text-slate-600">{branch.address}</p>
-                {branch.phones.length > 0 && (
-                  <div className="mt-4 space-y-1">
-                    {branch.phones.map((phone) => (
-                      <a
-                        key={phone}
-                        href={`tel:${phone.replace(/\s/g, '')}`}
-                        className="block text-sm font-semibold text-[#0B1F3A] hover:text-brand-red"
-                      >
-                        {phone}
-                      </a>
-                    ))}
-                  </div>
-                )}
-                <a
-                  href={branch.mapUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-5 inline-flex w-fit rounded-full border border-slate-200 px-5 py-2.5 text-xs font-bold text-[#0B1F3A] transition-colors hover:border-brand-red hover:text-brand-red"
-                >
-                  Get directions →
-                </a>
+
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="text-xl font-bold text-[#0B1F3A]">{branch.name}</h3>
+                  <p className="mt-1 text-xs text-slate-500">{branch.area}</p>
+                  <p className="mt-4 flex-1 text-sm leading-relaxed text-slate-600">{branch.address}</p>
+
+                  <p className="mt-4 rounded-xl bg-[#F4F8FB] px-4 py-3 text-sm text-slate-700">
+                    <span className="font-semibold text-[#0B1F3A]">{branch.days}</span>
+                    <span className="block text-xs text-slate-500">
+                      {branch.timing} · {branch.closed}
+                    </span>
+                  </p>
+
+                  {branch.phones.length > 0 && (
+                    <div className="mt-4 space-y-1">
+                      {branch.phones.map((phone) => (
+                        <a
+                          key={phone}
+                          href={`tel:${phone.replace(/\s/g, '')}`}
+                          className="block text-sm font-semibold text-[#0B1F3A] hover:text-brand-red"
+                        >
+                          {phone}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                  <a
+                    href={branch.mapUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-5 inline-flex w-fit rounded-full border border-slate-200 px-5 py-2.5 text-xs font-bold text-[#0B1F3A] transition-colors hover:border-brand-red hover:text-brand-red"
+                  >
+                    Get directions →
+                  </a>
+                </div>
               </motion.article>
             ))}
           </div>
