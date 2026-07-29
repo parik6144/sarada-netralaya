@@ -20,7 +20,7 @@ export const doctors: DoctorProfile[] = [
   {
     id: 'nitin',
     name: 'Dr. Nitin G. Dhira',
-    credentials: 'MS (Ophthalmology)',
+    credentials: 'DO, DNB',
     title: 'Founder & Director, Sarada Netralaya',
     speciality: 'Senior Consultant – Cataract & Glaucoma Services',
     experience: 'Founder & Director',
@@ -35,7 +35,7 @@ export const doctors: DoctorProfile[] = [
     ],
     bio: 'Dr. Nitin G. Dhira is a distinguished ophthalmologist with extensive expertise in cataract and glaucoma management. He completed his undergraduate medical education from the prestigious B. J. Medical College and Sassoon General Hospital, Pune, Maharashtra, followed by postgraduate training in Ophthalmology at the internationally acclaimed L. V. Prasad Eye Institute, Hyderabad.\n\nWith a rich surgical experience of over 15,000 cataract surgeries, Dr. Dhira is recognized for his precision, meticulous surgical technique, and exceptional ability to successfully manage complex and challenging cataract cases. His commitment to clinical excellence and innovation has earned him the trust of thousands of patients and the respect of colleagues across the ophthalmic fraternity.\n\nHis areas of specialization include Advanced and Premium Cataract Surgery, with expertise in the implantation of the latest intraocular lenses, including Trifocal, Extended Depth of Focus (EDOF), and Toric IOLs, helping patients achieve superior visual outcomes and greater spectacle independence. He also has a special interest in the diagnosis, medical management, and surgical treatment of Glaucoma.\n\nA passionate academician and educator, Dr. Dhira actively contributes to the advancement of ophthalmology through teaching and scientific exchange. He is a regular faculty member and instructor at national and international ophthalmic conferences, where he delivers invited lectures and conducts instructional courses on advanced cataract surgery and related topics.\n\nIn recognition of his academic leadership, Dr. Dhira currently serves as the Chairman, Scientific Committee, Eastern India Zonal Ophthalmological Committee (2024–2027).\n\nAs the Founder & Director of Sarada Netralaya, Dr. Dhira is dedicated to building a centre of excellence in eye care by combining cutting-edge technology, evidence-based medicine, ethical practice, and compassionate patient care.',
     education:
-      'Undergraduate medical education — B. J. Medical College and Sassoon General Hospital, Pune, Maharashtra. Postgraduate training in Ophthalmology — L. V. Prasad Eye Institute, Hyderabad. MS (Ophthalmology).',
+      'Undergraduate medical education — B. J. Medical College and Sassoon General Hospital, Pune, Maharashtra. Postgraduate training in Ophthalmology — L. V. Prasad Eye Institute, Hyderabad. DO, DNB.',
     approach:
       'As Founder & Director of Sarada Netralaya, Dr. Dhira builds a centre of excellence by combining cutting-edge technology, evidence-based medicine, ethical practice, and compassionate patient care — with advanced premium cataract surgery and comprehensive glaucoma services.',
     conditions: [
