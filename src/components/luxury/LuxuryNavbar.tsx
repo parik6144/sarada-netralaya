@@ -175,7 +175,7 @@ export default function LuxuryNavbar() {
                       {doctors.map((d) => (
                         <Link
                           key={d.id}
-                          href="/doctors"
+                          href={`/doctors#doctor-${d.id}`}
                           onClick={closeMenus}
                           className="w-full text-left block p-3 rounded-xl hover:bg-sky-50 transition-colors cursor-pointer"
                         >
@@ -234,6 +234,20 @@ export default function LuxuryNavbar() {
                           className="w-full text-left block py-2.5 text-sm font-medium text-slate-500 hover:text-brand-red cursor-pointer"
                         >
                           {t.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                  {link.hasDropdown === 'doctors' && (
+                    <div className="pl-3 pb-2">
+                      {doctors.map((d) => (
+                        <Link
+                          key={d.id}
+                          href={`/doctors#doctor-${d.id}`}
+                          onClick={closeMenus}
+                          className="w-full text-left block py-2.5 text-sm font-medium text-slate-500 hover:text-brand-red cursor-pointer"
+                        >
+                          {d.name}
                         </Link>
                       ))}
                     </div>

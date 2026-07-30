@@ -68,7 +68,8 @@ export default function DoctorShowcase({
           {doctors.map((doc, index) => (
             <article
               key={doc.id}
-              className={`doctor-card overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_8px_30px_rgba(15,23,42,0.06)] ${
+              id={`doctor-${doc.id}`}
+              className={`doctor-card scroll-mt-[calc(var(--nav-h)+1.5rem)] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_8px_30px_rgba(15,23,42,0.06)] ${
                 index % 2 === 1 ? 'lg:flex-row-reverse' : ''
               } flex flex-col lg:flex-row`}
             >

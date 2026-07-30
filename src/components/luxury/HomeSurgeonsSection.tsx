@@ -116,7 +116,7 @@ export default function HomeSurgeonsSection() {
                         Book Consultation
                       </BookAppointmentButton>
                       <Link
-                        href="/doctors"
+                        href={`/doctors#doctor-${doc.id}`}
                         className="inline-flex px-6 py-2.5 rounded-full border border-slate-200 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
                       >
                         Full profile →
