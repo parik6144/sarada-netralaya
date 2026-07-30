@@ -14,7 +14,7 @@ const subjects = ['General Inquiry', 'Appointment', 'Billing', 'Feedback', 'Comp
 const contactInfo = [
   { icon: MapPin, label: 'Address', value: '33, Swastik Ambika Tower, Near BDFC Bank, New Baradwari, Jamshedpur' },
   { icon: Phone, label: 'Phone', value: '7091090014, 7091090016' },
-  { icon: Mail, label: 'Email', value: 'info@saradanetralaya.com' },
+  { icon: Mail, label: 'Email', value: 'info@saradanetralaya.org' },
   { icon: Clock, label: 'Working Hours', value: 'Mon-Sat 9AM-8PM, Sun 10AM-2PM' },
 ];
 

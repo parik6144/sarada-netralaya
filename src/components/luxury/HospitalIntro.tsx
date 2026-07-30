@@ -14,17 +14,17 @@ const explainSteps = [
   {
     n: '01',
     title: 'Diagnose clearly',
-    body: 'Everyday words for what is wrong, which eye structure is involved, why it happened, and how serious it is today.',
+    body: 'Everyday words for what is wrong, which part of the eye is involved, why it happened, and how serious it is today.',
   },
   {
     n: '02',
     title: 'Plan the right treatment',
-    body: 'Medicines, laser, or premium cataract surgery with IOLs — matched to disease stage, lifestyle, and insurance.',
+    body: 'Medicines, laser, or cataract surgery with a new lens — chosen for your stage, lifestyle, and insurance.',
   },
   {
     n: '03',
     title: 'Guide recovery',
-    body: 'Drop schedules, warning signs, work limits, and follow-up dates written clearly so healing stays safe.',
+    body: 'Drop schedule, warning signs, work limits, and follow-up dates written clearly so healing stays safe.',
   },
 ];
 
@@ -52,7 +52,7 @@ export default function HospitalIntro({
             eyebrow="About Us"
             titleWhite="Where Precision Meets"
             titleAccent="Compassion"
-            description="SARADA Netralaya & Maternity is an Advanced Eye Care Center in Jamshedpur dedicated to restoring and preserving vision through modern technology, experienced surgeons, and clear patient education."
+            description="SARADA Netralaya & Maternity is an eye hospital in Jamshedpur. We use modern machines, experienced doctors, and simple explanations so every patient understands their eye problem and treatment."
           />
         )}
 
@@ -102,8 +102,8 @@ export default function HospitalIntro({
                     Your vision is <span className="text-[#F5D565]">our mission</span>
                   </h3>
                   <p className="mt-3 text-sm sm:text-[15px] text-white/80 leading-relaxed max-w-md">
-                    We make advanced eye care accessible — combining clinical excellence with clear education so you
-                    understand your condition, your options, and your recovery with confidence.
+                    We want good eye care to feel easy to reach. Our doctors treat carefully and explain in
+                    simple words — so you know what is wrong, what we can do, and how you will recover.
                   </p>
                   <div className="mt-5 flex flex-wrap gap-2">
                     {['Clinical excellence', 'Clear education', 'Confident recovery'].map((t) => (
@@ -150,9 +150,8 @@ export default function HospitalIntro({
                     Your trust is <span className="text-brand-red">our strength</span>
                   </h3>
                   <p className="mt-3 text-sm sm:text-[15px] text-slate-600 leading-relaxed max-w-md">
-                    We aim to be Jamshedpur&apos;s most trusted eye hospital — where modern facilities, specialist
-                    surgeons, and compassionate service work together so no one loses sight because care was unclear or
-                    delayed.
+                    We want families in Jamshedpur to trust us. Modern facilities, specialist doctors, and kind
+                    service — so no one loses sight because care felt confusing or came too late.
                   </p>
                   <div className="mt-5 flex flex-wrap gap-2">
                     {['Trusted in Jamshedpur', 'Modern facilities', 'Specialist surgeons'].map((t) => (
@@ -179,8 +178,8 @@ export default function HospitalIntro({
             <p className="text-[11px] tracking-[0.2em] uppercase font-semibold text-brand-red">Patient education</p>
             <h3 className="mt-2 text-xl sm:text-2xl font-bold text-[#0B1F3A]">How we explain your eye problem</h3>
             <p className="mt-3 text-sm text-slate-600 leading-relaxed max-w-3xl">
-              Many patients feel anxious because medical language is hard. We break every condition into three simple
-              layers — what you feel, what is happening inside the eye, and how we fix it.
+              Many people feel worried because medical words are hard. We explain every eye problem in three
+              simple steps — what you feel, what is happening inside the eye, and how we fix it.
             </p>
             <div className="mt-8 grid sm:grid-cols-3 gap-5 sm:gap-6">
               {explainSteps.map((s) => (

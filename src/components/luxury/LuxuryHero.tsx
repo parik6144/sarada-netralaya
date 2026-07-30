@@ -57,8 +57,8 @@ export default function LuxuryHero() {
           </h1>
 
           <p className="mt-5 text-base text-slate-600 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-            High-end cataract surgery and complete eye care — explained clearly from first symptoms
-            to advanced treatment with modern technology and premium lenses.
+            Clear cataract care and complete eye treatment — explained simply from first check-up to
+            recovery, with modern machines and good quality lenses.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3">

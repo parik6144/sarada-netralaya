@@ -63,7 +63,7 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-start gap-3"><MapPin className="h-4 w-4 text-brand-red shrink-0 mt-0.5" /><span className="text-gray-400 text-sm">33, Swastik Ambika Tower, Near BDFC Bank, New Baradwari, Jamshedpur</span></div>
               <div className="flex items-center gap-3"><Phone className="h-4 w-4 text-brand-red shrink-0" /><span className="text-gray-400 text-sm">7091090014, 7091090016</span></div>
-              <div className="flex items-center gap-3"><Mail className="h-4 w-4 text-brand-red shrink-0" /><span className="text-gray-400 text-sm">info@saradanetralaya.com</span></div>
+              <div className="flex items-center gap-3"><Mail className="h-4 w-4 text-brand-red shrink-0" /><span className="text-gray-400 text-sm">info@saradanetralaya.org</span></div>
               <div className="flex items-start gap-3"><Clock className="h-4 w-4 text-brand-red shrink-0 mt-0.5" /><span className="text-gray-400 text-sm">Mon-Sat 9AM-8PM<br />Sun 10AM-2PM</span></div>
             </div>
           </div>

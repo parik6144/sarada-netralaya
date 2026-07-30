@@ -72,8 +72,8 @@ export default function TreatmentsSection({ hideHeader = false, limit }: { hideH
                 <span className="text-brand-red">Know the solution.</span>
               </h2>
               <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
-                Not old brochure cards — living guides with visuals. Tap any condition to see how we care for it as our
-                dharma: clear words, modern tools, honest plans.
+                Simple guides with pictures. Tap any condition to see what you feel, what is happening in the eye,
+                and how we treat it — in clear words.
               </p>
             </div>
             <Link

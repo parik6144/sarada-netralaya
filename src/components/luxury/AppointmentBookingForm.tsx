@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { doctors } from '@/data/doctors';
 import { site } from '@/data/site';
 
 const TIME_SLOTS = [
@@ -19,7 +18,6 @@ const emptyForm = {
   name: '',
   phone: '',
   email: '',
-  doctor: '',
   date: '',
   time: '',
   message: '',
@@ -49,9 +47,9 @@ export default function AppointmentBookingForm({ compact = false, onSuccess }: P
     e.preventDefault();
     e.stopPropagation();
 
-    if (!form.name.trim() || !form.phone.trim() || !form.doctor || !form.date || !form.time) {
+    if (!form.name.trim() || !form.phone.trim() || !form.date || !form.time) {
       setStatus('error');
-      setErrorMsg('Please fill all required fields (name, phone, doctor, date, time).');
+      setErrorMsg('Please fill all required fields (name, phone, date, time).');
       return;
     }
 
@@ -62,7 +60,10 @@ export default function AppointmentBookingForm({ compact = false, onSuccess }: P
       const res = await fetch('/api/appointments', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          ...form,
+          doctor: 'Any Available',
+        }),
       });
       const data = await res.json().catch(() => ({}));
 
@@ -118,14 +119,8 @@ export default function AppointmentBookingForm({ compact = false, onSuccess }: P
     );
   }
 
-  const doctorOptions = [
-    ...doctors.map((d) => ({ name: d.name, spec: d.speciality })),
-    { name: 'Any Available', spec: 'First available specialist' },
-  ];
-
   return (
     <form onSubmit={handleSubmit} className="box-border flex w-full min-w-0 flex-col gap-4">
-      {/* Name + Phone — equal columns, full width */}
       <div className={`grid w-full min-w-0 gap-3 ${compact ? 'grid-cols-1' : 'grid-cols-1 sm:grid-cols-2'}`}>
         <div className="min-w-0 w-full">
           <label className={labelCls}>Full name *</label>
@@ -150,7 +145,6 @@ export default function AppointmentBookingForm({ compact = false, onSuccess }: P
         </div>
       </div>
 
-      {/* Email — full row */}
       <div className="w-full min-w-0">
         <label className={labelCls}>Email</label>
         <input
@@ -162,40 +156,6 @@ export default function AppointmentBookingForm({ compact = false, onSuccess }: P
         />
       </div>
 
-      {/* Doctors — stacked full-width for clean alignment */}
-      <div className="w-full min-w-0">
-        <label className={labelCls}>Preferred doctor *</label>
-        <div className="grid w-full grid-cols-1 gap-2">
-          {doctorOptions.map((d) => (
-            <button
-              key={d.name}
-              type="button"
-              onClick={() => setForm({ ...form, doctor: d.name })}
-              className={`box-border flex w-full min-w-0 items-center justify-between gap-3 rounded-xl border px-3.5 py-3 text-left transition-all ${
-                form.doctor === d.name
-                  ? 'border-brand-red bg-red-50/80 shadow-sm'
-                  : 'border-slate-200 bg-white hover:border-sky-200 hover:bg-sky-50/50'
-              }`}
-            >
-              <span className="min-w-0 flex-1">
-                <span className="block truncate text-sm font-semibold text-slate-900">{d.name}</span>
-                <span className="mt-0.5 block truncate text-[11px] text-slate-500">{d.spec}</span>
-              </span>
-              <span
-                className={`flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full border text-[10px] font-bold ${
-                  form.doctor === d.name
-                    ? 'border-brand-red bg-brand-red text-white'
-                    : 'border-slate-300 text-transparent'
-                }`}
-              >
-                ✓
-              </span>
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Date + Time — equal columns */}
       <div className={`grid w-full min-w-0 gap-3 ${compact ? 'grid-cols-1' : 'grid-cols-1 sm:grid-cols-2'}`}>
         <div className="min-w-0 w-full">
           <label className={labelCls}>Preferred date *</label>
@@ -226,7 +186,6 @@ export default function AppointmentBookingForm({ compact = false, onSuccess }: P
         </div>
       </div>
 
-      {/* Message — full width */}
       <div className="w-full min-w-0">
         <label className={labelCls}>Message</label>
         <textarea

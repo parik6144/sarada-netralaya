@@ -55,8 +55,8 @@ export default function MissionVisionRich() {
             <span className="text-[#F5D565]">and where we are going</span>
           </h2>
           <p className="mt-4 text-sm sm:text-base text-white/70 leading-relaxed max-w-2xl">
-            {site.tagline} We protect sight with clinical excellence, clear education, and a promise that no family
-            should lose vision because care felt confusing or delayed.
+            {site.tagline} We protect sight with careful treatment, clear explanations, and a promise that no family
+            should lose vision because care felt confusing or came too late.
           </p>
         </motion.div>
 

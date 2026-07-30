@@ -18,7 +18,7 @@ export default function AboutPage() {
         eyebrow="About SARADA"
         title="Advanced Eye Care Center in"
         accent="Jamshedpur"
-        description="World-class care, modern facilities, and compassionate service — with clear explanations at every step of your eye care journey."
+        description="Good eye care, modern facilities, and kind service — with clear explanations at every step of your journey."
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'About', href: '/about' },

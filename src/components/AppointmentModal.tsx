@@ -30,7 +30,6 @@ export default function AppointmentModal({ open, onOpenChange }: AppointmentModa
     patientName: '',
     phone: '',
     email: '',
-    doctor: '',
     department: '',
     preferredDate: '',
     preferredTime: '',
@@ -54,7 +53,7 @@ export default function AppointmentModal({ open, onOpenChange }: AppointmentModa
       const res = await fetch('/api/appointments', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, doctor: 'Any Available' }),
       });
       if (res.ok) {
         setSuccess(true);
@@ -62,7 +61,7 @@ export default function AppointmentModal({ open, onOpenChange }: AppointmentModa
           setSuccess(false);
           onOpenChange(false);
           setFormData({
-            patientName: '', phone: '', email: '', doctor: '',
+            patientName: '', phone: '', email: '',
             department: '', preferredDate: '', preferredTime: '',
             symptoms: '', hasInsurance: false, insuranceName: '',
           });
@@ -130,35 +129,23 @@ export default function AppointmentModal({ open, onOpenChange }: AppointmentModa
               />
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium mb-1 text-gray-700">Preferred Doctor *</label>
-                <Select value={formData.doctor} onValueChange={(v) => handleChange('doctor', v)}>
-                  <SelectTrigger><SelectValue placeholder="Select doctor" /></SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="Dr. Nitin G. Dhira">Dr. Nitin G. Dhira</SelectItem>
-                    <SelectItem value="Dr. Nitish Bhardwaj">Dr. Nitish Bhardwaj</SelectItem>
-                    <SelectItem value="Dr. Pallavi Gautam">Dr. Pallavi Gautam</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-1 text-gray-700">Department *</label>
-                <Select value={formData.department} onValueChange={(v) => handleChange('department', v)}>
-                  <SelectTrigger><SelectValue placeholder="Select department" /></SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="Cataract">Cataract</SelectItem>
-                    <SelectItem value="Refractive Surgery">Refractive Surgery</SelectItem>
-                    <SelectItem value="Glaucoma">Glaucoma</SelectItem>
-                    <SelectItem value="Medical Retina Services">Medical Retina Services</SelectItem>
-                    <SelectItem value="Cornea">Cornea</SelectItem>
-                    <SelectItem value="Dry Eye">Dry Eye</SelectItem>
-                    <SelectItem value="Pediatric Eye Care">Pediatric Eye Care</SelectItem>
-                    <SelectItem value="Diabetic Eye Care">Diabetic Eye Care</SelectItem>
-                    <SelectItem value="General">General Consultation</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
+            <div>
+              <label className="block text-sm font-medium mb-1 text-gray-700">Department *</label>
+              <Select value={formData.department} onValueChange={(v) => handleChange('department', v)}>
+                <SelectTrigger><SelectValue placeholder="Select department" /></SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="Cataract">Cataract</SelectItem>
+                  <SelectItem value="Refractive Surgery">Refractive Surgery</SelectItem>
+                  <SelectItem value="Glaucoma">Glaucoma</SelectItem>
+                  <SelectItem value="Medical Retina Services">Medical Retina Services</SelectItem>
+                  <SelectItem value="Cornea">Cornea</SelectItem>
+                  <SelectItem value="Dry Eye">Dry Eye</SelectItem>
+                  <SelectItem value="Pediatric Eye Care">Pediatric Eye Care</SelectItem>
+                  <SelectItem value="Diabetic Eye Care">Diabetic Eye Care</SelectItem>
+                  <SelectItem value="Obstetrics & Gynaecology">Obstetrics & Gynaecology</SelectItem>
+                  <SelectItem value="General">General Consultation</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

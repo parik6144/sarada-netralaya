@@ -8,20 +8,20 @@ import { motion } from 'framer-motion';
 
 const pillars = [
   {
-    title: 'Seva before surgery',
-    body: 'Care is our dharma. We listen first, explain in simple English, and only then treat — so every family feels respected.',
+    title: 'Listen first, then treat',
+    body: 'We listen carefully, explain in simple words, and only then start treatment — so every family feels respected.',
     image: '/images/hero-eye-care.png',
     tag: 'Compassion',
   },
   {
-    title: 'Clarity is kindness',
-    body: 'We show scans, name the eye part in everyday words, and share options honestly — no fear, no jargon wall.',
+    title: 'Clear words, clear plans',
+    body: 'We show your scans, name the eye part in everyday words, and share options honestly — no fear, no confusing medical talk.',
     image: '/images/tech-oct.png',
     tag: 'Education',
   },
   {
-    title: 'Precision with heart',
-    body: 'Latest technology for cataract, retina, glaucoma and more — used gently, explained clearly, followed with care.',
+    title: 'Careful, modern treatment',
+    body: 'Latest machines for cataract, retina, glaucoma and more — used gently, explained clearly, followed with care.',
     image: '/images/tech-surgery.png',
     tag: 'Excellence',
   },
@@ -49,14 +49,14 @@ export default function WhyChooseSection({ hideHeader = false }: { hideHeader?: 
         {!hideHeader && (
           <div className="max-w-3xl">
             <p className="text-[11px] tracking-[0.2em] uppercase font-semibold text-[#F5D565]">
-              Care is Our Dharma
+              Why Families Choose Us
             </p>
             <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
               We treat your vision as{' '}
               <span className="text-[#F5D565]">our responsibility</span>
             </h2>
             <p className="mt-4 text-sm sm:text-base text-white/75 leading-relaxed max-w-2xl">
-              Not just appointments and operations — a promise to protect sight with honesty, modern skill, and
+              Not only appointments and operations — a promise to protect sight with honesty, modern skill, and
               human warmth. Passion for Excellence. Committed to Care.
             </p>
           </div>

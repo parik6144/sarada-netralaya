@@ -18,11 +18,11 @@ export const treatmentsData: Record<string, TreatmentData> = {
     subtitle: 'Clear Vision, Restored Life',
     color: '#0096D6',
     icon: '◉',
-    overview: `Basic: A cataract is when the natural lens inside your eye becomes cloudy — like looking through fogged glass. It usually develops slowly with age.
+    overview: `In simple words: A cataract means the natural lens inside your eye has become cloudy — like looking through foggy glass. It usually grows slowly with age.
 
-What happens in the eye: Light must pass through a clear lens to focus on the retina. When the lens proteins clump and cloud, images become blurry, colours look dull, and night glare increases.
+What happens inside the eye: Light needs a clear lens to focus at the back of the eye. When the lens becomes cloudy, vision turns blurry, colours look dull, and night lights may glare.
 
-Advanced care at SARADA: We perform phacoemulsification — a minimally invasive procedure through a tiny incision (about 2.2 mm). Ultrasound softens and removes the cloudy lens, then we implant a clear intraocular lens (IOL). Using the Alcon Centurion system and Zeiss Lumera 700 microscope, surgery is typically completed in about 15 minutes with same-day discharge. Premium IOLs can also reduce dependence on glasses for distance, near, and intermediate vision based on your lifestyle.`,
+How we treat it at SARADA: We remove the cloudy lens through a tiny cut (about 2.2 mm) using gentle ultrasound, then place a clear artificial lens. Surgery usually takes about 15 minutes and most people go home the same day. Special lenses can also help reduce the need for glasses, depending on your lifestyle.`,
     symptoms: [
       'Blurry or foggy vision that glasses no longer fully correct',
       'Glare and halos around lights, especially at night',
@@ -33,28 +33,28 @@ Advanced care at SARADA: We perform phacoemulsification — a minimally invasive
       'Sudden temporary improvement in near vision (“second sight”)',
     ],
     diagnosis: [
-      'Visual acuity testing to measure clarity of sight',
-      'Slit-lamp examination of the lens under magnification',
-      'Dilated retinal exam to check the back of the eye',
-      'ZEISS IOLMaster 700 biometry to calculate implant lens power',
-      'OCT when needed to assess macular health before surgery',
+      'Vision test to check how clearly you see',
+      'Close look at the lens with a special microscope',
+      'Dilated exam to check the back of the eye',
+      'ZEISS IOLMaster 700 scan to choose the right lens power',
+      'OCT scan when needed to check the centre of vision before surgery',
     ],
     treatments: [
       {
         name: 'Phacoemulsification',
-        desc: 'Gold-standard cataract removal through a tiny, usually stitchless incision with ultrasound and IOL implant.',
+        desc: 'Standard cataract removal through a tiny cut that usually needs no stitches, then a new clear lens is placed.',
       },
       {
         name: 'Micro-incision cataract surgery (MICS)',
-        desc: 'Even smaller incision technique for faster healing and reduced induced astigmatism in selected cases.',
+        desc: 'An even smaller cut for faster healing in suitable patients.',
       },
       {
-        name: 'Femtosecond laser-assisted cataract surgery',
-        desc: 'Computer-guided laser steps for highly precise cuts in suitable patients.',
+        name: 'Laser-assisted cataract surgery',
+        desc: 'Computer-guided laser helps with precise steps in selected cases.',
       },
       {
-        name: 'Premium intraocular lenses',
-        desc: 'Multifocal, toric, or extended-depth-of-focus lenses customized to your visual needs.',
+        name: 'Special intraocular lenses',
+        desc: 'Lenses that can help distance, near, or cylinder power — chosen for your daily needs.',
       },
     ],
     recovery:
@@ -84,11 +84,11 @@ Advanced care at SARADA: We perform phacoemulsification — a minimally invasive
     subtitle: 'ICL · IPCL · Clearer Everyday Vision',
     color: '#0284C7',
     icon: '✦',
-    overview: `Basic: Refractive errors (myopia, hyperopia, astigmatism) mean light does not focus correctly on the retina, so you need glasses or contacts for clear vision.
+    overview: `In simple words: Refractive errors (short-sight, long-sight, or cylinder) mean light does not focus correctly on the back of the eye, so you need glasses or contacts.
 
-What happens in the eye: The eye’s focusing power is too strong, too weak, or uneven. An implantable lens can fine-tune focus from inside the eye without removing the natural lens.
+What happens inside the eye: The eye focuses too strongly, too weakly, or unevenly. An implantable lens can fine-tune focus from inside the eye without removing your natural lens.
 
-Advanced care at SARADA: We offer refractive surgery counselling with special focus on ICL (Implantable Collamer Lens) and IPCL options. After a full suitability workup, we recommend the safest path for your prescription, cornea, and lifestyle — so you can reduce dependence on spectacles with confidence.`,
+How we treat it at SARADA: We counsel carefully on ICL and IPCL implantable lens options. After a full eye check, we suggest the safest plan for your power, cornea, and lifestyle — so you can depend less on spectacles with confidence.`,
     symptoms: [
       'Dependence on glasses or contact lenses for clear vision',
       'Contact lens intolerance or dryness',
@@ -97,24 +97,24 @@ Advanced care at SARADA: We offer refractive surgery counselling with special fo
       'Desire for clearer vision with implantable lens options',
     ],
     diagnosis: [
-      'Precise refraction to measure your power',
-      'Corneal topography and thickness assessment',
-      'Anterior chamber depth and endothelial cell checks for ICL/IPCL',
-      'Dry-eye and retinal evaluation before planning',
-      'Personalised counselling on ICL vs IPCL suitability',
+      'Exact measurement of your glass power',
+      'Cornea shape and thickness check',
+      'Front-chamber depth and cell health checks for ICL/IPCL',
+      'Dry-eye and retina check before planning',
+      'Clear counselling on whether ICL or IPCL suits you',
     ],
     treatments: [
       {
         name: 'ICL (Implantable Collamer Lens)',
-        desc: 'A soft, biocompatible lens placed inside the eye to correct power while preserving the natural lens — ideal for many higher prescriptions.',
+        desc: 'A soft lens placed inside the eye to correct power while keeping your natural lens — useful for many higher powers.',
       },
       {
         name: 'IPCL',
-        desc: 'Implantable phakic lens option selected after detailed eye measurements for suitable refractive candidates.',
+        desc: 'Another implantable lens option, chosen after detailed eye measurements for suitable patients.',
       },
       {
-        name: 'Comprehensive refractive counselling',
-        desc: 'Full evaluation and honest advice on whether implantable lenses are right for your eyes and lifestyle.',
+        name: 'Full refractive counselling',
+        desc: 'Honest advice on whether implantable lenses are right for your eyes and daily life.',
       },
     ],
     recovery:
@@ -140,41 +140,41 @@ Advanced care at SARADA: We offer refractive surgery counselling with special fo
     subtitle: 'Protecting the Optic Nerve',
     color: '#D97706',
     icon: '◐',
-    overview: `Basic: Glaucoma is a group of diseases that damage the optic nerve — often linked to high eye pressure. Early stages usually have no symptoms, so regular checks matter.
+    overview: `In simple words: Glaucoma damages the optic nerve — often linked to high eye pressure. Early stages usually have no symptoms, so regular checks matter.
 
-What happens in the eye: Raised pressure or nerve vulnerability damages nerve fibres. Peripheral vision is lost first; untreated disease can lead to tunnel vision or blindness.
+What happens inside the eye: High pressure or a weak nerve can slowly damage nerve fibres. Side vision goes first; if untreated, vision can become tunnel-like or be lost.
 
-Advanced care at SARADA: We combine pressure measurement, optic-nerve OCT, visual fields, and angle assessment. Treatment may start with drops, progress to laser (such as SLT), or require surgery (trabeculectomy / tube shunt) to preserve remaining vision.`,
+How we treat it at SARADA: We check pressure, nerve scans, visual fields, and the drainage angle. Treatment may start with drops, then laser, or surgery if needed — to protect the vision you still have.`,
     symptoms: [
       'Often no early symptoms — silent progression',
       'Gradual loss of side vision',
       'Tunnel vision in advanced disease',
       'Halos around lights',
-      'Severe eye pain, redness, nausea (acute angle-closure emergency)',
+      'Severe eye pain, redness, nausea (sudden pressure rise — urgent care needed)',
     ],
     diagnosis: [
-      'Tonometry to measure eye pressure',
-      'OCT of the optic nerve and nerve fibre layer',
-      'Visual field testing for peripheral vision',
-      'Gonioscopy to examine the drainage angle',
-      'Pachymetry for corneal thickness',
+      'Pressure check (tonometry)',
+      'OCT scan of the optic nerve',
+      'Visual field test for side vision',
+      'Angle check (gonioscopy)',
+      'Cornea thickness measurement',
     ],
     treatments: [
       {
-        name: 'Medical therapy (eye drops)',
-        desc: 'Daily drops lower pressure and are the first line for many patients.',
+        name: 'Eye drops',
+        desc: 'Daily drops lower pressure and are often the first step.',
       },
       {
         name: 'SLT laser',
-        desc: 'A quick clinic laser that improves drainage; can be repeated in selected cases.',
+        desc: 'A quick clinic laser that helps drainage; can be repeated in some cases.',
       },
       {
         name: 'Trabeculectomy',
-        desc: 'Surgery that creates a new drainage pathway when medicines and laser are not enough.',
+        desc: 'Surgery that creates a new drainage path when drops and laser are not enough.',
       },
       {
-        name: 'Glaucoma drainage devices',
-        desc: 'Implanted tubes for complex or advanced pressure control.',
+        name: 'Drainage devices',
+        desc: 'Small tubes for harder or advanced pressure control.',
       },
     ],
     recovery:
@@ -196,11 +196,11 @@ Advanced care at SARADA: We combine pressure measurement, optic-nerve OCT, visua
     subtitle: 'Protecting Sight from Within',
     color: '#DC2626',
     icon: '◎',
-    overview: `Basic: The retina is the thin light-sensing layer at the back of the eye. When it is damaged, images cannot be formed properly.
+    overview: `In simple words: The retina is the thin layer at the back of the eye that senses light. When it is damaged, clear images cannot form.
 
-What happens in the eye: Diabetes, ageing, tears, or detachment disrupt retinal cells and blood vessels. Symptoms may include floaters, flashes, shadows, or sudden blur.
+What happens inside the eye: Diabetes, ageing, tears, or detachment can harm retinal cells and blood vessels. You may notice floaters, flashes, shadows, or sudden blur.
 
-Advanced care at SARADA: High-resolution OCT, fundus imaging, laser therapy, anti-VEGF injections, and vitrectomy surgery help diagnose and treat diabetic retinopathy, macular disease, and retinal detachment early.`,
+How we treat it at SARADA: Clear scans (OCT and fundus photos), laser, injections into the eye, and surgery when needed help treat diabetic eye disease, macular problems, and retinal detachment early.`,
     symptoms: [
       'New floaters or cobweb-like spots',
       'Flashes of light in the side vision',
@@ -209,24 +209,24 @@ Advanced care at SARADA: High-resolution OCT, fundus imaging, laser therapy, ant
       'Gradual vision loss in people with diabetes',
     ],
     diagnosis: [
-      'Dilated fundus examination',
-      'OCT imaging of retinal layers',
+      'Dilated look at the back of the eye',
+      'OCT scan of retinal layers',
       'Fluorescein angiography when vessel detail is needed',
-      'B-scan ultrasound if the view is cloudy',
-      'OCT angiography in selected macular cases',
+      'Ultrasound if the view is cloudy',
+      'Special OCT vessel scan in selected macular cases',
     ],
     treatments: [
       {
         name: 'Anti-VEGF injections',
-        desc: 'Medicines injected into the eye to control swelling and abnormal vessels in macular and diabetic disease.',
+        desc: 'Medicine injected into the eye to control swelling and abnormal vessels.',
       },
       {
         name: 'Retinal laser',
-        desc: 'Focal, grid, or pan-retinal laser to seal leaks or reduce high-risk diabetic changes.',
+        desc: 'Laser to seal leaks or reduce high-risk diabetic changes.',
       },
       {
         name: 'Vitrectomy',
-        desc: 'Microsurgery to repair detachment, remove blood, or treat complex vitreoretinal disease.',
+        desc: 'Microsurgery to repair detachment, clear blood, or treat complex retina problems.',
       },
       {
         name: 'Scleral buckling',
@@ -252,11 +252,11 @@ Advanced care at SARADA: High-resolution OCT, fundus imaging, laser therapy, ant
     subtitle: 'The Window to Your World',
     color: '#7C3AED',
     icon: '◑',
-    overview: `Basic: The cornea is the clear front surface of the eye. If it scars, thins, or becomes irregular, vision suffers.
+    overview: `In simple words: The cornea is the clear front window of the eye. If it scars, thins, or becomes uneven, vision suffers.
 
-What happens in the eye: Infection, injury, keratoconus, or endothelial failure distort how light enters the eye.
+What happens inside the eye: Infection, injury, keratoconus, or cell failure can bend or cloud how light enters the eye.
 
-Advanced care at SARADA: We use topography and specialized exams to stage disease, then treat with medicines, corneal crosslinking (CXL) for keratoconus, or partial/full-thickness transplant techniques when needed.`,
+How we treat it at SARADA: We map the cornea shape, then treat with medicines, crosslinking for keratoconus, or partial/full transplant when needed.`,
     symptoms: [
       'Progressive blur not fully corrected by glasses',
       'Light sensitivity and glare',
@@ -265,27 +265,27 @@ Advanced care at SARADA: We use topography and specialized exams to stage diseas
       'Halos around lights',
     ],
     diagnosis: [
-      'Slit-lamp biomicroscopy',
-      'Corneal topography (shape mapping)',
-      'Pachymetry for thickness',
-      'Specular microscopy for endothelial cells when indicated',
+      'Close exam of the cornea',
+      'Cornea shape map (topography)',
+      'Thickness measurement',
+      'Cell-count test when needed',
     ],
     treatments: [
       {
-        name: 'Medical therapy',
-        desc: 'Infection, inflammation, and surface disease are treated with targeted medicines first.',
+        name: 'Medicines first',
+        desc: 'Infection, inflammation, and surface problems are treated with targeted medicines.',
       },
       {
         name: 'Corneal crosslinking (CXL)',
         desc: 'Strengthens the cornea to slow or stop keratoconus progression.',
       },
       {
-        name: 'Partial-thickness transplant (DSEK/DMEK)',
+        name: 'Partial-thickness transplant',
         desc: 'Replaces only the diseased inner layer for faster recovery in suitable cases.',
       },
       {
-        name: 'Full-thickness transplant (PKP)',
-        desc: 'Replaces the entire corneal button when deeper scarring or advanced disease is present.',
+        name: 'Full-thickness transplant',
+        desc: 'Replaces the full cornea button when deeper scarring or advanced disease is present.',
       },
     ],
     recovery:
@@ -307,11 +307,11 @@ Advanced care at SARADA: We use topography and specialized exams to stage diseas
     subtitle: 'Comfortable Eyes, Clear Focus',
     color: '#2563EB',
     icon: '◑',
-    overview: `Basic: Dry eye means your tears are insufficient or of poor quality, so the eye surface becomes irritated.
+    overview: `In simple words: Dry eye means your tears are too few or of poor quality, so the eye surface feels irritated.
 
-What happens in the eye: Screens, air-conditioning, ageing, and blocked oil glands (meibomian gland dysfunction) destabilize the tear film.
+What happens inside the eye: Screens, AC, ageing, and blocked oil glands can break the tear film.
 
-Advanced care at SARADA: We test tear production, breakup time, inflammation, and gland health (meibography), then build a plan with medicines, lid therapy, IPL, LLLT, or punctal plugs.`,
+How we treat it at SARADA: We check tear amount, tear quality, and gland health, then plan lubricants, lid care, IPL, light therapy, or tiny plugs that keep tears longer.`,
     symptoms: [
       'Burning, stinging, or gritty sensation',
       'Redness and fluctuating blur',
@@ -323,20 +323,20 @@ Advanced care at SARADA: We test tear production, breakup time, inflammation, an
       'Schirmer test for tear volume',
       'Tear breakup time',
       'Meibography for oil-gland health',
-      'Inflammation and osmolarity tests when needed',
+      'Inflammation tests when needed',
     ],
     treatments: [
       {
-        name: 'Medical & lid care',
-        desc: 'Lubricants, anti-inflammatory therapy, warm compresses, and lid hygiene for foundational relief.',
+        name: 'Medicines & lid care',
+        desc: 'Lubricants, anti-inflammatory drops, warm compresses, and lid hygiene for basic relief.',
       },
       {
         name: 'IPL therapy',
-        desc: 'Intense pulsed light to improve gland function and reduce inflammation in selected patients.',
+        desc: 'Gentle light treatment to improve gland function and reduce inflammation in suitable patients.',
       },
       {
         name: 'LLLT',
-        desc: 'Low-level light therapy supporting surface healing and comfort.',
+        desc: 'Low-level light therapy to support surface healing and comfort.',
       },
       {
         name: 'Punctal plugs',
@@ -362,11 +362,11 @@ Advanced care at SARADA: We test tear production, breakup time, inflammation, an
     subtitle: 'Caring for Developing Eyes',
     color: '#059669',
     icon: '◈',
-    overview: `Basic: A child’s vision system is still learning. Problems missed early can become permanent.
+    overview: `In simple words: A child’s vision system is still learning. Problems missed early can become permanent.
 
-What happens in the eye: Uncorrected power, squint, or lazy eye can stop one eye from developing clear vision pathways in the brain.
+What happens inside the eye: Uncorrected power, squint, or lazy eye can stop one eye from developing clear vision in the brain.
 
-Advanced care at SARADA: We screen for refractive errors, amblyopia, squint, congenital cataract/glaucoma, and tear-duct blockage — then treat with glasses, patching, therapy, or surgery while the visual system can still improve.`,
+How we treat it at SARADA: We check for glass power, lazy eye, squint, congenital cataract/glaucoma, and tear-duct blockage — then treat with glasses, patching, therapy, or surgery while vision can still improve.`,
     symptoms: [
       'Squinting or closing one eye',
       'Head tilting while looking',
@@ -377,9 +377,9 @@ Advanced care at SARADA: We screen for refractive errors, amblyopia, squint, con
     ],
     diagnosis: [
       'Age-appropriate vision testing',
-      'Cycloplegic refraction for true power',
-      'Squint and binocular vision assessment',
-      'Dilated retinal examination when indicated',
+      'Special refraction for true power in children',
+      'Squint and both-eyes-together assessment',
+      'Dilated retina check when needed',
     ],
     treatments: [
       {
@@ -387,12 +387,12 @@ Advanced care at SARADA: We screen for refractive errors, amblyopia, squint, con
         desc: 'Often the first and most important step for clear focused vision.',
       },
       {
-        name: 'Patching / amblyopia therapy',
-        desc: 'Strengthens the weaker eye during the critical developmental window.',
+        name: 'Patching / lazy-eye therapy',
+        desc: 'Strengthens the weaker eye while the brain can still learn.',
       },
       {
         name: 'Vision therapy',
-        desc: 'Guided exercises for tracking, focusing, and binocular skills.',
+        desc: 'Guided exercises for tracking, focusing, and using both eyes together.',
       },
       {
         name: 'Pediatric eye surgery',
@@ -418,11 +418,11 @@ Advanced care at SARADA: We screen for refractive errors, amblyopia, squint, con
     subtitle: 'Aligned Eyes, Confident Vision',
     color: '#EA580C',
     icon: '◇',
-    overview: `Basic: Squint (strabismus) means the eyes do not point in the same direction.
+    overview: `In simple words: Squint means the eyes do not point in the same direction.
 
-What happens in the eye: Misalignment can cause double vision, reduced depth perception, or lazy eye in children. Adults may seek functional relief and cosmetic alignment.
+What happens inside the eye: Misalignment can cause double vision, poor depth sense, or lazy eye in children. Adults may want better function and a more natural look.
 
-Advanced care at SARADA: We assess muscle balance and binocular vision, then treat with glasses, prisms, vision therapy, or eye-muscle surgery using modern techniques.`,
+How we treat it at SARADA: We check muscle balance and both-eye vision, then treat with glasses, prisms, vision therapy, or eye-muscle surgery.`,
     symptoms: [
       'Visible eye turn inward, outward, up, or down',
       'Double vision (more common in adults)',
@@ -432,14 +432,14 @@ Advanced care at SARADA: We assess muscle balance and binocular vision, then tre
     ],
     diagnosis: [
       'Cover and prism tests for alignment',
-      'Ocular motility assessment',
-      'Sensory evaluation of binocular vision',
-      'Amblyopia screening in children',
+      'Eye movement assessment',
+      'Both-eyes-together vision check',
+      'Lazy-eye screening in children',
     ],
     treatments: [
       {
         name: 'Glasses / prism correction',
-        desc: 'Can straighten refractive squint or ease double vision.',
+        desc: 'Can straighten some squints or ease double vision.',
       },
       {
         name: 'Vision therapy',

@@ -91,7 +91,7 @@ const diseases: Disease[] = [
     diagnosis: ['Dilated fundus examination', 'Optical coherence tomography (OCT)', 'Fluorescein and ICG angiography', 'OCT Angiography (OCTA)', 'B-scan ultrasonography', 'Electroretinography (ERG)'],
     treatment: ['Laser photocoagulation', 'Anti-VEGF intravitreal injections', 'Vitrectomy surgery', 'Scleral buckling for detachment', 'Retinal cryotherapy', 'Photodynamic therapy for AMD'],
     prevention: ['Regular comprehensive eye exams', 'Control systemic conditions (diabetes, BP)', 'Wear protective eyewear during sports', 'Seek immediate care for flashes/floaters', 'Eat leafy greens and omega-3 rich foods', 'Do not ignore sudden vision changes'],
-    whenToSee: 'Sudden flashes of light, a shower of new floaters, or a dark curtain coming over your vision are EMERGENCIES. Call our 24/7 emergency line immediately at 7091090014.',
+    whenToSee: 'Sudden flashes of light, a shower of new floaters, or a dark curtain coming over your vision need urgent care. Call us at 7091090014 during working hours.',
     doctor: 'Dr. Nitin G. Dhira',
   },
   {

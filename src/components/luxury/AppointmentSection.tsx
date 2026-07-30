@@ -8,14 +8,14 @@ import SectionHeader from './SectionHeader';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const steps = ['Personal Info', 'Select Doctor', 'Pick Date', 'Confirm'];
+const steps = ['Personal Info', 'Pick Date', 'Confirm'];
 
 export default function AppointmentSection({ hideHeader = false }: { hideHeader?: boolean }) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLDivElement>(null);
   const [currentStep, setCurrentStep] = useState(0);
   const [form, setForm] = useState({
-    name: '', phone: '', email: '', doctor: '', date: '', time: '', message: '',
+    name: '', phone: '', email: '', date: '', time: '', message: '',
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -36,7 +36,7 @@ export default function AppointmentSection({ hideHeader = false }: { hideHeader?
       const res = await fetch('/api/appointments', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, doctor: 'Any Available' }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
@@ -128,43 +128,6 @@ export default function AppointmentSection({ hideHeader = false }: { hideHeader?
 
                 {currentStep === 1 && (
                   <div className="space-y-5">
-                    <h3 className="text-lg font-medium text-slate-900 mb-6">Select Doctor</h3>
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      {[{ name: 'Dr. Nitin G. Dhira', spec: 'Cataract & Glaucoma' }, { name: 'Dr. Nitish Bhardwaj', spec: 'Cornea, Cataract & Refractive' }, { name: 'Dr. Pallavi Gautam', spec: 'Anaesthesiology & Critical Care' }].map(d => (
-                        <button key={d.name} type="button"
-                          onClick={() => setForm({ ...form, doctor: d.name })}
-                          className={`p-5 rounded-xl text-left transition-all duration-300 ${
-                            form.doctor === d.name
-                              ? 'glass-strong border-brand-red/40'
-                              : 'glass-card border-transparent'
-                          }`}>
-                          <div className="text-sm font-medium text-slate-900">{d.name}</div>
-                          <div className="text-xs text-slate-500 mt-1">{d.spec}</div>
-                        </button>
-                      ))}
-                      <button type="button"
-                        onClick={() => setForm({ ...form, doctor: 'Any Available' })}
-                        className={`p-5 rounded-xl text-left transition-all duration-300 ${
-                          form.doctor === 'Any Available'
-                            ? 'glass-strong border-brand-red/40'
-                            : 'glass-card border-transparent'
-                        }`}>
-                        <div className="text-sm font-medium text-slate-900">First Available</div>
-                        <div className="text-xs text-slate-500 mt-1">Any doctor available</div>
-                      </button>
-                    </div>
-                    <div className="flex justify-between">
-                      <button type="button" onClick={() => setCurrentStep(0)} className="text-sm text-slate-500 hover:text-slate-900 transition-colors">← Back</button>
-                      <button type="button" onClick={() => setCurrentStep(2)}
-                        className="magnetic-btn px-8 py-3 rounded-full bg-brand-red text-white text-sm font-medium">
-                        Next →
-                      </button>
-                    </div>
-                  </div>
-                )}
-
-                {currentStep === 2 && (
-                  <div className="space-y-5">
                     <h3 className="text-lg font-medium text-slate-900 mb-6">Pick Date & Time</h3>
                     <div className="grid sm:grid-cols-2 gap-5">
                       <input className="luxury-input" type="date" required
@@ -179,8 +142,8 @@ export default function AppointmentSection({ hideHeader = false }: { hideHeader?
                     <textarea className="luxury-input" rows={3} placeholder="Any message for the doctor..."
                       value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} />
                     <div className="flex justify-between">
-                      <button type="button" onClick={() => setCurrentStep(1)} className="text-sm text-slate-500 hover:text-slate-900 transition-colors">← Back</button>
-                      <button type="button" onClick={() => setCurrentStep(3)}
+                      <button type="button" onClick={() => setCurrentStep(0)} className="text-sm text-slate-500 hover:text-slate-900 transition-colors">← Back</button>
+                      <button type="button" onClick={() => setCurrentStep(2)}
                         className="magnetic-btn px-8 py-3 rounded-full bg-brand-red text-white text-sm font-medium">
                         Review →
                       </button>
@@ -188,18 +151,17 @@ export default function AppointmentSection({ hideHeader = false }: { hideHeader?
                   </div>
                 )}
 
-                {currentStep === 3 && (
+                {currentStep === 2 && (
                   <div className="space-y-6">
                     <h3 className="text-lg font-medium text-slate-900 mb-6">Confirm Appointment</h3>
                     <div className="glass rounded-xl p-6 space-y-3">
                       <div className="flex justify-between"><span className="text-slate-500 text-sm">Name</span><span className="text-slate-900 text-sm">{form.name}</span></div>
                       <div className="flex justify-between"><span className="text-slate-500 text-sm">Phone</span><span className="text-slate-900 text-sm">{form.phone}</span></div>
-                      <div className="flex justify-between"><span className="text-slate-500 text-sm">Doctor</span><span className="text-slate-900 text-sm">{form.doctor}</span></div>
                       <div className="flex justify-between"><span className="text-slate-500 text-sm">Date</span><span className="text-slate-900 text-sm">{form.date}</span></div>
                       <div className="flex justify-between"><span className="text-slate-500 text-sm">Time</span><span className="text-slate-900 text-sm">{form.time}</span></div>
                     </div>
                     <div className="flex justify-between">
-                      <button type="button" onClick={() => setCurrentStep(2)} className="text-sm text-slate-500 hover:text-slate-900 transition-colors">← Back</button>
+                      <button type="button" onClick={() => setCurrentStep(1)} className="text-sm text-slate-500 hover:text-slate-900 transition-colors">← Back</button>
                       <button type="submit"
                         className="magnetic-btn px-10 py-3.5 rounded-full bg-brand-red text-white text-sm font-medium hover:shadow-[0_0_30px_rgba(0,174,239,0.4)] transition-all">
                         Confirm Booking
@@ -215,10 +177,10 @@ export default function AppointmentSection({ hideHeader = false }: { hideHeader?
         <div className="mt-12 glass-card rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
             <h4 className="text-base font-medium text-slate-900">Eye Emergency?</h4>
-            <p className="text-sm text-slate-500 mt-1">24x7 emergency care available. Call now.</p>
+            <p className="text-sm text-slate-500 mt-1">Need help? Call us during working hours.</p>
           </div>
           <a href="tel:+917091090014" className="px-8 py-3 rounded-full bg-red-600/20 border border-red-500/30 text-red-500 text-sm font-medium hover:bg-red-600/30 transition-all whitespace-nowrap">
-            Emergency: +91 70910 90014
+            Call: +91 70910 90014
           </a>
         </div>
       </div>

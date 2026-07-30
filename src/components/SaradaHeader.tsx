@@ -60,7 +60,7 @@ export default function SaradaHeader({ onBookAppointment }: SaradaHeaderProps) {
             <a href="tel:7091090016" className="hidden sm:inline font-semibold hover:underline">7091090016</a>
           </div>
           <Badge variant="outline" className="bg-white/20 border-white/40 text-white text-[10px] px-2 py-0 hover:bg-white/30">
-            24/7 Emergency Eye Care
+            Mon–Sat · 10 AM – 7 PM
           </Badge>
         </div>
       </div>

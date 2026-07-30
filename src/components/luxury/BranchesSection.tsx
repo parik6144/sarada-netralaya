@@ -25,8 +25,8 @@ export default function BranchesSection() {
             Three centres. <span className="text-[#F5D565]">One standard of care.</span>
           </h2>
           <p className="mt-4 text-sm sm:text-base text-white/75 leading-relaxed">
-            Jamshedpur, Ghatshila and Chandil — the same specialists, the same technology and the same clear
-            explanations, now closer to your home.
+            Jamshedpur, Ghatshila and Chandil — same doctors, same care quality, and the same clear explanations,
+            now closer to your home.
           </p>
         </div>
 

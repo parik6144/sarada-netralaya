@@ -15,6 +15,7 @@ const quickLinks = [
   { label: 'Appointment', href: '#book' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Contact', href: '/contact' },
+  { label: 'Feedback', href: '/feedback' },
 ];
 
 const treatLinks = [

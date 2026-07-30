@@ -8,7 +8,7 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Our Doctors | SARADA Netralaya & Maternity',
   description:
-    'Meet Dr. Nitin G. Dhira (Cataract & Glaucoma), Dr. Nitish Bhardwaj (Cornea, Cataract & Refractive), and Dr. Pallavi Gautam (Anaesthesiology) at SARADA Netralaya, Jamshedpur.',
+    'Meet Dr. Nitin G. Dhira (Cataract & Glaucoma), Dr. Nitish Bhardwaj (Cornea, Cataract & Refractive), Dr. Shabnam Kumari Dhira (Gynaecology & Infertility), and Dr. Pallavi Gautam (Anaesthesiology) at SARADA Netralaya, Jamshedpur.',
 };
 
 export default function DoctorsPage() {
@@ -18,7 +18,7 @@ export default function DoctorsPage() {
         eyebrow="Our Specialists"
         title="Our Specialists."
         accent="One Trusted Team."
-        description="At SARADA Netralaya, your care is led by experienced ophthalmologists and a consultant anaesthesiologist who diagnose carefully, explain in plain language, and treat with precision — from high-end cataract surgery to glaucoma, cornea, and safe anaesthesia care."
+        description="At SARADA Netralaya, your care is led by experienced ophthalmologists, a consultant gynaecologist, and a consultant anaesthesiologist who diagnose carefully, explain in plain language, and treat with precision — from high-end cataract surgery to glaucoma, cornea, women’s health, and safe anaesthesia care."
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'Doctors', href: '/doctors' },
@@ -60,7 +60,7 @@ export default function DoctorsPage() {
               Ready to meet your surgeon?
             </h2>
             <p className="mt-3 text-sm text-white/80 max-w-xl mx-auto">
-              Book a consultation with our eye specialists and anaesthesia team at our Baradwari centre.
+              Book a consultation with our eye specialists, gynaecology, and anaesthesia team at our Baradwari centre.
             </p>
             <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
               <BookAppointmentButton className="inline-flex justify-center px-7 py-3 rounded-full bg-brand-red text-white text-sm font-semibold hover:bg-brand-red-dark transition-colors">Book Appointment</BookAppointmentButton>

@@ -15,11 +15,24 @@ const doctors = [
   },
   {
     name: 'Dr. Nitish Bhardwaj',
-    title: 'Ophthalmologist & Refractive Surgeon',
+    title: 'Senior Consultant – Cataract, Cornea and Refractive Services',
     experience: '10+ Years Experience',
     initials: 'NB',
     color: 'bg-brand-blue',
     qualifications: ['MBBS, DNB (Ophthalmology)', 'Fellowship in Cornea & Refractive Surgery', 'Specialist in Cornea & Anterior Segment', 'FICO (UK, London), FCRS'],
+  },
+  {
+    name: 'Dr. Shabnam Kumari Dhira',
+    title: 'Consultant Gynaecologist | Laparoscopic Surgeon | Infertility Specialist',
+    experience: 'Apollo · Fernandez · IVF',
+    initials: 'SD',
+    color: 'bg-rose-800',
+    qualifications: [
+      'MD (Obstetrics & Gynaecology), RIMS, Ranchi',
+      'Fellowship in Gynecological Endoscopic Surgery, Apollo Hyderabad',
+      'Fellowship in Infertility and IVF, CIMER / EDAPAL',
+      'Experience at Apollo Hospital & Fernandez Hospital, Hyderabad',
+    ],
   },
   {
     name: 'Dr. Pallavi Gautam',

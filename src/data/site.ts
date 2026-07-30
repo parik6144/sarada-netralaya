@@ -17,7 +17,7 @@ export const site = {
       timing: '10:00 AM – 7:00 PM',
       closed: 'Sunday closed',
       image: '/images/jamshedpur.jpg',
-      mapUrl: 'https://maps.google.com/?q=Swastik+Ambika+Tower+Baradwari+Jamshedpur',
+      mapUrl: 'https://maps.app.goo.gl/Qnr6vVBu6XebAUSV8?g_st=aw',
     },
     {
       name: 'Ghatshila',
@@ -43,12 +43,12 @@ export const site = {
       timing: '10:00 AM – 7:00 PM',
       closed: 'Sunday closed',
       image: '/images/branch-chandil.jpg',
-      mapUrl: 'https://maps.google.com/?q=Dam+Road+Beside+Post+Office+Chandil+Jharkhand+832401',
+      mapUrl: 'https://maps.app.goo.gl/AM439YEuJfJ2ysCAA?g_st=aw',
     },
   ],
-  email: 'info@saradanetralaya.com',
+  email: 'info@saradanetralaya.org',
   hours: 'Mon–Sat: 10:00 AM – 7:00 PM',
-  emergency: '24×7 emergency eye care',
+  emergency: 'Call us during working hours for urgent eye care',
 };
 
 export const navTreatments = [

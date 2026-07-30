@@ -59,7 +59,7 @@ export default function DoctorShowcase({
               titleWhite="Meet Your"
               titleAccent="Specialists"
               accent="gold"
-              description="Experienced specialists who diagnose carefully, explain clearly, and treat with precision — eye surgery and safe anaesthesia care."
+              description="Experienced specialists who diagnose carefully, explain clearly, and treat with precision — eye surgery, women’s health, and safe anaesthesia care."
             />
           )}
         </div>
@@ -72,28 +72,29 @@ export default function DoctorShowcase({
                 index % 2 === 1 ? 'lg:flex-row-reverse' : ''
               } flex flex-col lg:flex-row`}
             >
-              {/* Business portrait panel */}
-              <div className="relative lg:w-[300px] xl:w-[320px] flex-shrink-0 bg-gradient-to-b from-slate-100 to-slate-50 flex items-center justify-center py-6 lg:py-8 px-5">
-                <div className="relative w-full max-w-[260px] aspect-[3/4] mx-auto overflow-hidden rounded-xl ring-1 ring-slate-200/80 shadow-sm bg-slate-100">
-                  <Image
-                    src={doc.image}
-                    alt={doc.name}
-                    fill
-                    sizes="260px"
-                    className="object-cover object-[center_15%]"
-                    priority={index === 0}
-                  />
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/80 via-slate-950/35 to-transparent px-4 pb-4 pt-14">
-                    <p className="text-white text-base font-semibold leading-tight">
-                      {doc.name}
-                      {doc.credentials ? (
-                        <span className="block text-white/90 text-xs font-medium mt-0.5 normal-case tracking-normal">
-                          {doc.credentials}
-                        </span>
-                      ) : null}
-                    </p>
-                    <p className="text-white/85 text-[11px] mt-1 tracking-wide uppercase">{doc.speciality}</p>
-                  </div>
+              {/* Fixed 3:4 portrait flush with the card's top edge */}
+              <div
+                className={`relative w-[180px] sm:w-[200px] lg:w-[230px] flex-shrink-0 self-start aspect-[3/4] overflow-hidden bg-slate-100 mx-auto lg:mx-0 ${
+                  index % 2 === 1 ? 'lg:rounded-tr-2xl' : 'lg:rounded-tl-2xl'
+                }`}
+              >
+                <Image
+                  src={doc.image}
+                  alt={doc.name}
+                  fill
+                  sizes="(max-width:640px) 180px, (max-width:1024px) 200px, 230px"
+                  className="object-cover object-top"
+                  priority={index === 0}
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/85 via-slate-950/40 to-transparent px-3 pb-3 pt-10">
+                  <p className="text-white text-sm font-semibold leading-tight">
+                    {doc.name}
+                    {doc.credentials ? (
+                      <span className="block text-white/90 text-[10px] font-medium mt-0.5 normal-case tracking-normal">
+                        {doc.credentials}
+                      </span>
+                    ) : null}
+                  </p>
                 </div>
               </div>
 
@@ -154,7 +155,9 @@ export default function DoctorShowcase({
                     </div>
 
                     <div className="mt-6 rounded-xl border border-slate-200 bg-slate-50/80 p-5">
-                      <h4 className="text-sm font-semibold text-slate-900">How he explains care</h4>
+                      <h4 className="text-sm font-semibold text-slate-900">
+                        {doc.id === 'pallavi' || doc.id === 'shabnam' ? 'How she explains care' : 'How he explains care'}
+                      </h4>
                       <p className="mt-2 text-sm text-slate-600 leading-relaxed">{doc.approach}</p>
                       <p className="mt-3 text-sm text-slate-600 leading-relaxed">
                         <span className="font-semibold text-slate-900">Training: </span>
@@ -187,7 +190,12 @@ export default function DoctorShowcase({
                   </ul>
                 )}
 
-                <BookAppointmentButton className="mt-7 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition-colors">Book Consultation →</BookAppointmentButton>
+                <BookAppointmentButton
+                  className="mt-7 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white shadow-sm transition-opacity hover:opacity-90"
+                  style={{ backgroundColor: doc.accent }}
+                >
+                  Book Consultation →
+                </BookAppointmentButton>
               </div>
             </article>
           ))}

@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { doctors } from '@/data/doctors';
 
-/** Homepage surgeons — balanced portrait + content, not oversized face crop */
+/** Homepage specialists — photo flush to card top, contained inside borders */
 export default function HomeSurgeonsSection() {
   return (
     <section id="doctors" className="relative py-16 sm:py-20 bg-white overflow-hidden">
@@ -19,8 +19,8 @@ export default function HomeSurgeonsSection() {
             Our <span className="text-brand-red">Specialists</span>
           </h2>
           <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed">
-            Eye surgeons and a consultant anaesthesiologist — cataract, glaucoma, cornea, and safe anaesthesia —
-            who explain every finding clearly before they treat.
+            Eye doctors, a gynaecologist, and an anaesthesiologist — here to check your eyes, guide women’s health,
+            and keep surgery safe. We explain everything in clear, simple words.
           </p>
         </div>
 
@@ -39,25 +39,27 @@ export default function HomeSurgeonsSection() {
                 }`}
               >
                 <div
-                  className={`flex flex-col lg:flex-row items-center gap-6 sm:gap-8 lg:gap-12 p-5 sm:p-7 lg:p-10 ${
+                  className={`flex flex-col lg:flex-row items-start ${
                     reverse ? 'lg:flex-row-reverse' : ''
                   }`}
                 >
-                  {/* Contained studio portrait */}
-                  <div className="w-full max-w-[240px] sm:max-w-[260px] lg:max-w-[280px] flex-shrink-0 mx-auto lg:mx-0">
-                    <div className="relative aspect-[3/4] w-full overflow-hidden rounded-xl bg-slate-100 ring-1 ring-slate-200/80 shadow-sm">
-                      <Image
-                        src={doc.image}
-                        alt={doc.name}
-                        fill
-                        className="object-cover object-[center_15%]"
-                        sizes="(max-width:640px) 240px, 280px"
-                        priority={index === 0}
-                      />
-                    </div>
+                  {/* Fixed 3:4 frame flush with the card's top edge — never stretched */}
+                  <div
+                    className={`relative w-[170px] sm:w-[190px] lg:w-[210px] xl:w-[220px] flex-shrink-0 self-start aspect-[3/4] overflow-hidden bg-slate-100 mx-auto lg:mx-0 ${
+                      reverse ? 'lg:rounded-tr-2xl' : 'lg:rounded-tl-2xl'
+                    }`}
+                  >
+                    <Image
+                      src={doc.image}
+                      alt={doc.name}
+                      fill
+                      className="object-cover object-top"
+                      sizes="(max-width:640px) 170px, (max-width:1024px) 190px, 220px"
+                      priority={index === 0}
+                    />
                   </div>
 
-                  <div className="flex-1 w-full min-w-0 text-center lg:text-left">
+                  <div className="flex-1 w-full min-w-0 text-center lg:text-left p-5 sm:p-7 lg:p-10">
                     <p
                       className="text-[11px] tracking-[0.16em] uppercase font-bold"
                       style={{ color: doc.accent }}
@@ -72,7 +74,7 @@ export default function HomeSurgeonsSection() {
                         </span>
                       ) : null}
                     </h3>
-                    {doc.title ? (
+                    {doc.title && doc.title !== doc.speciality ? (
                       <p className="mt-1.5 text-sm font-medium text-slate-700">{doc.title}</p>
                     ) : null}
 
@@ -107,7 +109,10 @@ export default function HomeSurgeonsSection() {
                     </ul>
 
                     <div className="mt-7 flex flex-wrap gap-3 justify-center lg:justify-start">
-                      <BookAppointmentButton className="inline-flex px-6 py-2.5 rounded-full text-sm font-semibold text-white transition-opacity hover:opacity-90">
+                      <BookAppointmentButton
+                        className="inline-flex px-6 py-2.5 rounded-full text-sm font-semibold text-white shadow-sm transition-opacity hover:opacity-90"
+                        style={{ backgroundColor: doc.accent }}
+                      >
                         Book Consultation
                       </BookAppointmentButton>
                       <Link
