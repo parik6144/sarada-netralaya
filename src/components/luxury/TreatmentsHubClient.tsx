@@ -14,18 +14,18 @@ import { navTreatments, site } from '@/data/site';
 const guideSteps = [
   {
     n: '01',
-    title: 'Choose what bothers you',
-    body: 'Foggy vision, glasses not working, flashes, eye pressure — pick the problem that feels closest to yours.',
+    title: 'Pick your problem',
+    body: 'Choose the condition that matches your symptoms — foggy vision, glasses power, retina warning signs, and more.',
   },
   {
     n: '02',
-    title: 'Read the short guide',
-    body: 'Each page tells you what is wrong, how it feels, and how we treat it — in plain words, with simple pictures.',
+    title: 'Read the simple guide',
+    body: 'Every page explains what it is, how it feels, and how we fix it — in easy to understand language with clear visuals.',
   },
   {
     n: '03',
-    title: 'Book a check-up',
-    body: 'When you are ready, book online or call us. Bring old glasses papers and diabetes reports if you have them.',
+    title: 'Book the right check',
+    body: 'When you are ready, book online or call. Bring old prescriptions and any diabetes reports if you have them.',
   },
 ];
 
@@ -56,15 +56,15 @@ export default function TreatmentsHubClient() {
           </nav>
 
           <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-[11px] tracking-[0.14em] uppercase font-semibold text-[#F5D565] mb-4">
-            Eye Guides · Simple Words
+            Smart Eye Guides · Easy English
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight max-w-3xl leading-tight">
-            See What Is Wrong. <span className="text-[#F5D565]">Know How We Fix It.</span>
+            Understand the Problem. <span className="text-[#F5D565]">Know the Solution.</span>
           </h1>
           <p className="mt-4 text-sm sm:text-base text-white/80 max-w-2xl leading-relaxed">
-            Short, clear guides for common eye problems — what you feel, what is happening in the eye, and how we treat
-            it at SARADA. Tap a card below to open the full guide.
+            School-level simple guides for every major eye condition — what you feel, what is happening inside the eye,
+            and exactly how SARADA treats it. Pick a card below to open the full visual guide.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
@@ -82,8 +82,8 @@ export default function TreatmentsHubClient() {
       <section className="py-12 sm:py-14 bg-gradient-to-b from-[#F0F7FC] to-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-6">
           <div className="text-center max-w-2xl mx-auto">
-            <p className="text-[11px] tracking-[0.18em] uppercase font-semibold text-brand-blue">How to use this page</p>
-            <h2 className="mt-2 text-2xl sm:text-3xl font-bold text-slate-900">Three easy steps</h2>
+            <p className="text-[11px] tracking-[0.18em] uppercase font-semibold text-brand-blue">How this page works</p>
+            <h2 className="mt-2 text-2xl sm:text-3xl font-bold text-slate-900">Three steps to clarity</h2>
           </div>
 
           <div className="mt-8 grid md:grid-cols-3 gap-4 sm:gap-5">
@@ -110,13 +110,13 @@ export default function TreatmentsHubClient() {
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-8">
             <div>
               <p className="text-[11px] tracking-[0.18em] uppercase font-semibold text-brand-red">
-                All eye guides
+                Full condition library
               </p>
-              <h2 className="mt-2 text-2xl sm:text-3xl font-bold text-slate-900">Pick your guide</h2>
+              <h2 className="mt-2 text-2xl sm:text-3xl font-bold text-slate-900">Choose your eye care guide</h2>
             </div>
             <p className="text-sm text-slate-500 max-w-md">
-              Each card opens a page with simple pictures, what to watch for, and treatment choices — easy for the whole
-              family to read.
+              Each card opens a visual page with metaphors, checklists, and treatment options — written for the whole
+              family.
             </p>
           </div>
 
@@ -205,10 +205,10 @@ export default function TreatmentsHubClient() {
             <p className="text-[#F5D565] text-xs tracking-[0.16em] uppercase font-semibold">
               Not sure which guide to open?
             </p>
-            <h2 className="mt-2 text-2xl sm:text-3xl font-bold text-white">Book a full eye check-up</h2>
+            <h2 className="mt-2 text-2xl sm:text-3xl font-bold text-white">Book a complete eye evaluation</h2>
             <p className="mt-3 text-sm text-white/70 max-w-xl mx-auto">
-              Our doctors will check your eyes, tell you what they find in simple words, and help you choose the right
-              treatment.
+              Our specialists will examine your eyes, explain findings in simple words, and guide you to the right
+              treatment path.
             </p>
             <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
               <BookAppointmentButton className="inline-flex justify-center px-8 py-3.5 rounded-full bg-[#F5D565] text-[#0B1F3A] text-sm font-bold hover:bg-yellow-300 transition-colors">Book Appointment</BookAppointmentButton>
@@ -225,9 +225,9 @@ export default function TreatmentsHubClient() {
 
       <ExploreMore
         links={[
-          { label: 'Doctors', href: '/doctors', desc: 'Meet our eye doctors and care team.' },
-          { label: 'Technology', href: '/technology', desc: 'Modern machines we use for eye care.' },
-          { label: 'Book Appointment', href: '/appointment', desc: 'Book your visit with us.' },
+          { label: 'Doctors', href: '/doctors', desc: 'Meet our specialists.' },
+          { label: 'Technology', href: '/technology', desc: 'Phaco, OCT, lasers & microscopes.' },
+          { label: 'Book Appointment', href: '/appointment', desc: 'Schedule your consultation.' },
         ]}
       />
     </SiteLayout>
