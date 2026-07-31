@@ -1,7 +1,10 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-/** ACME HTTP-01 challenges for SSL / domain verification */
+/**
+ * Serve ACME HTTP-01 challenge files.
+ * Prefer public/.well-known when possible; this is a fallback for extensionless tokens.
+ */
 const CHALLENGES: Record<string, string> = {
   BVNMn0fKoy0lKbIrD1u6l85BqQOlczbGsIIIf68aVEc:
     'BVNMn0fKoy0lKbIrD1u6l85BqQOlczbGsIIIf68aVEc.yRwGqobGgyXziY36dsAxhQZu8SOH2WGbDVYC7wkk_mQ',
@@ -11,25 +14,25 @@ const CHALLENGES: Record<string, string> = {
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  const prefix = '/.well-known/acme-challenge/';
-  if (!pathname.startsWith(prefix)) return NextResponse.next();
-
-  const token = decodeURIComponent(pathname.slice(prefix.length).replace(/\/$/, ''));
-  const body = CHALLENGES[token];
-  if (!body) {
-    return new NextResponse('Not Found', { status: 404 });
+  if (!pathname.startsWith('/.well-known/acme-challenge/')) {
+    return NextResponse.next();
   }
+
+  const token = decodeURIComponent(
+    pathname.replace(/^\/\.well-known\/acme-challenge\//, '').replace(/\/$/, '')
+  );
+  const body = CHALLENGES[token];
+  if (!body) return NextResponse.next();
 
   return new NextResponse(body, {
     status: 200,
     headers: {
-      'Content-Type': 'text/plain',
+      'Content-Type': 'text/plain; charset=utf-8',
       'Cache-Control': 'no-store',
     },
   });
 }
 
 export const config = {
-  // Broad matcher — path-to-regexp can miss leading-dot segments otherwise
-  matcher: ['/((?!_next/static|_next/image|favicon.ico).*)'],
+  matcher: ['/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)'],
 };

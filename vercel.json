@@ -1,11 +1,5 @@
 {
   "framework": "nextjs",
   "installCommand": "npm install --legacy-peer-deps",
-  "buildCommand": "npm run build",
-  "rewrites": [
-    {
-      "source": "/.well-known/acme-challenge/:token",
-      "destination": "/api/acme-challenge/:token"
-    }
-  ]
+  "buildCommand": "npm run build"
 }
