@@ -20,7 +20,7 @@ export const testimonials: Testimonial[] = [
 
 Beyond his technical brilliance, Dr. Dhira treats every patient with genuine warmth and clarity, making them feel safe and informed. I confidently recommend him to anyone seeking top-class eye care.
 
-Ex. Chief Anaesthetist, Jamshedpur Eye Hospital, Jamshedpur.`,
+Note: Surgery by Dr. Nitin G. Dhira was performed at Jamshedpur Eye Hospital, Jamshedpur.`,
   },
   {
     id: 'nand-singh',

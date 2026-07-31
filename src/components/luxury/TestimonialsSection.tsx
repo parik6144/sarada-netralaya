@@ -57,7 +57,7 @@ export default function TestimonialsSection() {
             Patient voices
           </p>
           <h2 className="mt-2 text-2xl sm:text-3xl font-bold text-[#0B1F3A]">
-            What families say about <span className="text-brand-red">SARADA</span>
+            Our Testimonials
           </h2>
           <p className="mt-3 text-sm text-slate-600 leading-relaxed">
             Real words from patients and fellow doctors — short peeks below. Tap Read more for the full story.
