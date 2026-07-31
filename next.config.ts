@@ -10,6 +10,14 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     '/api/**': ['./public/sarada-logo.png'],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/.well-known/acme-challenge/:token',
+        destination: '/api/acme-challenge/:token',
+      },
+    ];
+  },
 };
 
 export default nextConfig;
