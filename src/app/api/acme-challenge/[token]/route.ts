@@ -4,6 +4,8 @@ import { NextResponse } from 'next/server';
 const CHALLENGES: Record<string, string> = {
   BVNMn0fKoy0lKbIrD1u6l85BqQOlczbGsIIIf68aVEc:
     'BVNMn0fKoy0lKbIrD1u6l85BqQOlczbGsIIIf68aVEc.yRwGqobGgyXziY36dsAxhQZu8SOH2WGbDVYC7wkk_mQ',
+  WM4MSZSUnfjUF5FLxfLGm_NxtNN1HOOu-wdXHPVSCOU:
+    'WM4MSZSUnfjUF5FLxfLGm_NxtNN1HOOu-wdXHPVSCOU.fZBnGubut55syIF8x_eis8LuX1rnnGkVWbmdhYOejn0',
 };
 
 export async function GET(

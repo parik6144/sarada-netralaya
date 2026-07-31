@@ -5,6 +5,8 @@ import type { NextRequest } from 'next/server';
 const CHALLENGES: Record<string, string> = {
   BVNMn0fKoy0lKbIrD1u6l85BqQOlczbGsIIIf68aVEc:
     'BVNMn0fKoy0lKbIrD1u6l85BqQOlczbGsIIIf68aVEc.yRwGqobGgyXziY36dsAxhQZu8SOH2WGbDVYC7wkk_mQ',
+  WM4MSZSUnfjUF5FLxfLGm_NxtNN1HOOu-wdXHPVSCOU:
+    'WM4MSZSUnfjUF5FLxfLGm_NxtNN1HOOu-wdXHPVSCOU.fZBnGubut55syIF8x_eis8LuX1rnnGkVWbmdhYOejn0',
 };
 
 export function middleware(request: NextRequest) {
@@ -12,7 +14,7 @@ export function middleware(request: NextRequest) {
   const prefix = '/.well-known/acme-challenge/';
   if (!pathname.startsWith(prefix)) return NextResponse.next();
 
-  const token = pathname.slice(prefix.length);
+  const token = decodeURIComponent(pathname.slice(prefix.length).replace(/\/$/, ''));
   const body = CHALLENGES[token];
   if (!body) {
     return new NextResponse('Not Found', { status: 404 });
@@ -28,5 +30,6 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/.well-known/acme-challenge/:path*'],
+  // Broad matcher — path-to-regexp can miss leading-dot segments otherwise
+  matcher: ['/((?!_next/static|_next/image|favicon.ico).*)'],
 };
