@@ -77,4 +77,17 @@ As a very satisfied patient after my phaco surgery, I highly appreciate his pers
 
 The operation theatre was neat, clean, and well-maintained. I am very satisfied with the treatment and overall experience.`,
   },
+  {
+    id: 'bimal-kishore',
+    name: 'Mr. Bimal Kishore',
+    role: 'Chief, Raw Material Management, Tata Steel',
+    image: '/images/testimonials/Mr Bimal Kishore.png',
+    preview:
+      'I underwent cataract surgery performed by Dr. Nitin G. Dhira, and I am extremely satisfied with the entire experience…',
+    full: `I underwent cataract surgery performed by Dr. Nitin G. Dhira, and I am extremely satisfied with the entire experience. Dr. Dhira demonstrated exceptional surgical expertise, professionalism, and compassion throughout my treatment. The procedure was smooth, and my vision has improved significantly.
+
+I sincerely thank Dr. Nitin G. Dhira and would highly recommend him to anyone seeking advanced cataract treatment.
+
+Note: Surgery by Dr. Nitin G. Dhira was performed at Jamshedpur Eye Hospital, Jamshedpur.`,
+  },
 ];
