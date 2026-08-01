@@ -53,6 +53,12 @@ export const site = {
 
 export const navTreatments = [
   { name: 'Cataract Surgery', slug: 'cataract', desc: 'Advanced phacoemulsification' },
+  {
+    name: "Patient's guide for choosing Intraocular lenses",
+    slug: 'iol-guide',
+    href: '/guides/iol',
+    desc: 'Far, mid & near — pick the right IOL',
+  },
   { name: 'Refractive Surgery', slug: 'refractive', desc: 'ICL, IPCL & vision correction' },
   { name: 'Glaucoma Treatment', slug: 'glaucoma', desc: 'Pressure management' },
   { name: 'Medical Retina Services', slug: 'retina', desc: 'Retinal diagnostics & care' },

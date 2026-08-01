@@ -90,4 +90,52 @@ I sincerely thank Dr. Nitin G. Dhira and would highly recommend him to anyone se
 
 Note: Surgery by Dr. Nitin G. Dhira was performed at Jamshedpur Eye Hospital, Jamshedpur.`,
   },
+  {
+    id: 'sridhar-pradhan',
+    name: 'Dr. Sridhar Pradhan',
+    role: 'Ex Chief of Medical & Indoor Services, Tata Main Hospital, Jamshedpur',
+    image: '/images/testimonials/Dr Sridhar Pradhan.png',
+    preview:
+      'My cataract surgery went very well. Vision was perfect just after surgery. As a general surgeon I appreciate Dr. Nitin Dhira’s skills…',
+    full: `My cataract surgery went very well. Vision was perfect just after surgery. As a general surgeon I appreciate Dr. Nitin Dhira’s skills and expertise.
+
+I wish him well for his success in future as an ophthalmologist and as a person. God bless!!`,
+  },
+  {
+    id: 'dk-mishra',
+    name: 'Dr. D.K. Mishra',
+    role: 'Senior Urologist, Jamshedpur',
+    image: '/images/testimonials/D.K.Mishra.png',
+    preview:
+      'I had the privilege of undergoing cataract surgery under the expert care of Dr. Nitin G. Dhira. I am highly impressed by his exceptional surgical skill…',
+    full: `I had the privilege of undergoing cataract surgery under the expert care of Dr. Nitin G. Dhira. I am highly impressed by his exceptional surgical skill, meticulous attention to detail, and professional approach throughout the entire treatment process.
+
+The surgery was performed with utmost precision, and my postoperative recovery was smooth and uneventful. My visual outcome has been excellent, reflecting the high standards of care and clinical excellence maintained by Dr. Dhira and his team.
+
+I sincerely appreciate the compassionate care, efficient patient management, and commitment to quality demonstrated by the entire team. I wholeheartedly recommend Dr. Nitin G. Dhira to anyone seeking advanced cataract surgery and comprehensive ophthalmic care.`,
+  },
+  {
+    id: 'sarda-pal',
+    name: 'Sarda Pal',
+    role: 'Housewife',
+    image: '/images/testimonials/Sarda Pal.png',
+    preview:
+      'I recently underwent cataract surgery performed by Dr. Nitish R. Bhardwaj and I am truly grateful for the excellent care I received…',
+    full: `I recently underwent cataract surgery performed by Dr. Nitish R. Bhardwaj and I am truly grateful for the excellent care I received. He is an outstanding doctor—it's hard to express in words how kind, skilled, and reassuring he is.
+
+I was very scared about the surgery, but his calm approach and compassionate care took away half of my fear even before the procedure. The surgery went smoothly, and I felt I was in safe hands throughout.
+
+I would highly recommend Dr. Nitish and Sarada Netralaya to anyone seeking the best eye care. Thank you for the wonderful treatment and support.`,
+  },
+  {
+    id: 'aman-singh',
+    name: 'Aman Singh',
+    role: 'Tata Motors',
+    image: '/images/testimonials/Aman Singh.png',
+    preview:
+      'I underwent Corneal tear repair surgery performed by Dr. Nitish R. Bhardwaj, and I am extremely satisfied with the care and treatment I received…',
+    full: `I underwent Corneal tear repair surgery performed by Dr. Nitish R. Bhardwaj, and I am extremely satisfied with the care and treatment I received. Dr. Bhardwaj handled my case with great expertise, explained the procedure clearly, and made me feel confident throughout the treatment.
+
+The surgery was successful, and my recovery has been smooth. The hospital staff were professional, caring, and supportive at every step.`,
+  },
 ];

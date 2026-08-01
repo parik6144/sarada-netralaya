@@ -142,7 +142,7 @@ export default function LuxuryNavbar() {
                         {navTreatments.map((t) => (
                           <Link
                             key={t.slug}
-                            href={`/treatments/${t.slug}`}
+                            href={'href' in t && t.href ? t.href : `/treatments/${t.slug}`}
                             onClick={closeMenus}
                             className="text-left group flex items-start gap-3 p-3 rounded-xl hover:bg-sky-50 transition-colors cursor-pointer"
                           >
@@ -229,7 +229,7 @@ export default function LuxuryNavbar() {
                       {navTreatments.map((t) => (
                         <Link
                           key={t.slug}
-                          href={`/treatments/${t.slug}`}
+                          href={'href' in t && t.href ? t.href : `/treatments/${t.slug}`}
                           onClick={closeMenus}
                           className="w-full text-left block py-2.5 text-sm font-medium text-slate-500 hover:text-brand-red cursor-pointer"
                         >

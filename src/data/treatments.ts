@@ -62,7 +62,7 @@ How we treat it at SARADA: We remove the cloudy lens through a tiny cut (about 2
     faq: [
       {
         q: 'Is cataract surgery painful?',
-        a: 'No. Anaesthetic drops numb the eye. You may feel mild pressure, not pain. Sedation is available if you are anxious.',
+        a: 'No. Anaesthetic drops numb the eye. You may feel mild pressure, not pain.',
       },
       {
         q: 'Can both eyes be operated on the same day?',
