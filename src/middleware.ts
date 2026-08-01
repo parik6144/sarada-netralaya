@@ -1,29 +1,21 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-/**
- * Serve ACME HTTP-01 challenge files.
- * Prefer public/.well-known when possible; this is a fallback for extensionless tokens.
- */
-const CHALLENGES: Record<string, string> = {
+/** ACME HTTP-01 tokens */
+const ACME: Record<string, string> = {
   BVNMn0fKoy0lKbIrD1u6l85BqQOlczbGsIIIf68aVEc:
     'BVNMn0fKoy0lKbIrD1u6l85BqQOlczbGsIIIf68aVEc.yRwGqobGgyXziY36dsAxhQZu8SOH2WGbDVYC7wkk_mQ',
   WM4MSZSUnfjUF5FLxfLGm_NxtNN1HOOu-wdXHPVSCOU:
     'WM4MSZSUnfjUF5FLxfLGm_NxtNN1HOOu-wdXHPVSCOU.fZBnGubut55syIF8x_eis8LuX1rnnGkVWbmdhYOejn0',
 };
 
-export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
-  if (!pathname.startsWith('/.well-known/acme-challenge/')) {
-    return NextResponse.next();
-  }
+/** Sectigo / Comodo SSL Domain Control Validation files */
+const PKI: Record<string, string> = {
+  'EBDC98045FA603E65DF7D7B69FA7A2DF.txt':
+    '18E00BD208DAAD4959A20B89F37FAE4E7F60FC3A11451BB3872A44533F7998EA\ncomodoca.com\n28c237aaf7f6cd3\n',
+};
 
-  const token = decodeURIComponent(
-    pathname.replace(/^\/\.well-known\/acme-challenge\//, '').replace(/\/$/, '')
-  );
-  const body = CHALLENGES[token];
-  if (!body) return NextResponse.next();
-
+function plain(body: string) {
   return new NextResponse(body, {
     status: 200,
     headers: {
@@ -31,6 +23,28 @@ export function middleware(request: NextRequest) {
       'Cache-Control': 'no-store',
     },
   });
+}
+
+export function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  if (pathname.startsWith('/.well-known/acme-challenge/')) {
+    const token = decodeURIComponent(
+      pathname.replace(/^\/\.well-known\/acme-challenge\//, '').replace(/\/$/, '')
+    );
+    const body = ACME[token];
+    if (body) return plain(body);
+  }
+
+  if (pathname.startsWith('/.well-known/pki-validation/')) {
+    const file = decodeURIComponent(
+      pathname.replace(/^\/\.well-known\/pki-validation\//, '').replace(/\/$/, '')
+    );
+    const body = PKI[file];
+    if (body) return plain(body);
+  }
+
+  return NextResponse.next();
 }
 
 export const config = {
