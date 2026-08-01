@@ -13,8 +13,8 @@ const ACME: Record<string, string> = {
 
 /** Sectigo / Comodo SSL Domain Control Validation files */
 const PKI: Record<string, string> = {
-  'EBDC98045FA603E65DF7D7B69FA7A2DF.txt':
-    '18E00BD208DAAD4959A20B89F37FAE4E7F60FC3A11451BB3872A44533F7998EA\ncomodoca.com\n28c237aaf7f6cd3\n',
+  '30487DD6EC1B2C75FC191895EC7D2257.txt':
+    '707C1F750DF745BEF4E5E78DAFCB425334F9C2B54BDDD0CFD4BCE8E80D61AC80\ncomodoca.com\nd2eea157985e7c4\n',
 };
 
 function plain(body: string) {
