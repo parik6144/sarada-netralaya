@@ -11,6 +11,7 @@ const quickLinks = [
   { label: 'Doctors', href: '/doctors' },
   { label: 'Treatments', href: '/treatments' },
   { label: 'Technology', href: '/technology' },
+  { label: 'IOL Guide', href: '/guides/iol' },
   { label: 'Insurance', href: '/insurance' },
   { label: 'Appointment', href: '#book' },
   { label: 'FAQ', href: '/faq' },

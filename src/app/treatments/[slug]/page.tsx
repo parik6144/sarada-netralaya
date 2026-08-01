@@ -342,12 +342,21 @@ export default function TreatmentDetailPage() {
               </p>
               <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
                 <BookAppointmentButton className="inline-flex justify-center px-8 py-3.5 rounded-full bg-[#F5D565] text-[#0B1F3A] text-sm font-bold hover:bg-yellow-300 transition-colors">{isGlaucoma ? 'Book Glaucoma Assessment' : 'Book Online'}</BookAppointmentButton>
-                <a
-                  href={`tel:${site.phones[0].replace(/\s/g, '')}`}
-                  className="inline-flex justify-center px-8 py-3.5 rounded-full border border-white/30 text-white text-sm font-semibold hover:bg-white/10 transition-colors"
-                >
-                  Call Now
-                </a>
+                {key === 'cataract' ? (
+                  <Link
+                    href="/guides/iol"
+                    className="inline-flex justify-center px-8 py-3.5 rounded-full border border-white/30 text-white text-sm font-semibold hover:bg-white/10 transition-colors"
+                  >
+                    IOL lens guide →
+                  </Link>
+                ) : (
+                  <a
+                    href={`tel:${site.phones[0].replace(/\s/g, '')}`}
+                    className="inline-flex justify-center px-8 py-3.5 rounded-full border border-white/30 text-white text-sm font-semibold hover:bg-white/10 transition-colors"
+                  >
+                    Call Now
+                  </a>
+                )}
               </div>
               <div className="mt-8 flex flex-wrap justify-center gap-4 text-[11px] uppercase tracking-wider text-white/55">
                 <span>Experienced Doctors</span>
