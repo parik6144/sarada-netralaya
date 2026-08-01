@@ -1,12 +1,14 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-/** ACME HTTP-01 tokens */
+/** ACME HTTP-01 tokens — keys with hyphens MUST be quoted */
 const ACME: Record<string, string> = {
   BVNMn0fKoy0lKbIrD1u6l85BqQOlczbGsIIIf68aVEc:
     'BVNMn0fKoy0lKbIrD1u6l85BqQOlczbGsIIIf68aVEc.yRwGqobGgyXziY36dsAxhQZu8SOH2WGbDVYC7wkk_mQ',
-  WM4MSZSUnfjUF5FLxfLGm_NxtNN1HOOu-wdXHPVSCOU:
+  'WM4MSZSUnfjUF5FLxfLGm_NxtNN1HOOu-wdXHPVSCOU':
     'WM4MSZSUnfjUF5FLxfLGm_NxtNN1HOOu-wdXHPVSCOU.fZBnGubut55syIF8x_eis8LuX1rnnGkVWbmdhYOejn0',
+  'jMqFe9z6tTNgQ_epH9c7yaGv-Nbv1diP7NC7qI2KC8Y':
+    'jMqFe9z6tTNgQ_epH9c7yaGv-Nbv1diP7NC7qI2KC8Y.ziKr66M-zY24vrtywobbg4XdltLWS8mrVQY_Sqv8yII',
 };
 
 /** Sectigo / Comodo SSL Domain Control Validation files */
