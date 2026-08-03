@@ -61,7 +61,7 @@ const tech = [
     howTitle: 'How it works',
     how: [
       'We measure power, cornea, chamber depth, and overall eye health.',
-      'ICL / IPCL suitability is explained in simple English.',
+      'ICL / IPCL suitability is explained in clear, simple words.',
       'When appropriate, an implantable lens is planned to fine-tune focus.',
       'Your natural lens stays in place; follow-up care is personalised.',
     ],
@@ -77,7 +77,7 @@ const tech = [
 const pillars = [
   {
     title: 'See the problem',
-    body: 'Scans and maps show what is wrong — we explain findings in easy English on screen.',
+    body: 'Scans and maps show what is wrong — we explain findings clearly on screen.',
     image: '/images/tech-oct.png',
   },
   {
@@ -119,7 +119,7 @@ export default function TechnologyPageClient() {
           </h1>
           <p className="mt-4 text-sm sm:text-base text-white/80 max-w-2xl leading-relaxed">
             Our technology guides are explained with pictures — how they help, and what result you can expect — in
-            school-level simple English.
+            clear, simple words.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-3">

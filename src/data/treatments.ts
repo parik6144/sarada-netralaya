@@ -49,10 +49,6 @@ How we treat it at SARADA: We remove the cloudy lens through a tiny cut (about 2
         desc: 'An even smaller cut for faster healing in suitable patients.',
       },
       {
-        name: 'Laser-assisted cataract surgery',
-        desc: 'Computer-guided laser helps with precise steps in selected cases.',
-      },
-      {
         name: 'Special intraocular lenses',
         desc: 'Lenses that can help distance, near, or cylinder power — chosen for your daily needs.',
       },

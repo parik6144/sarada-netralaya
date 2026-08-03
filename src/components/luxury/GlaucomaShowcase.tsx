@@ -17,7 +17,7 @@ const fadeUp = {
 export default function GlaucomaShowcase() {
   return (
     <>
-      {/* Vision comparison — school-level visual */}
+      {/* Vision comparison visual */}
       <section className="py-12 sm:py-16 bg-gradient-to-b from-[#FFF8F0] to-[#F8FAFC]">
         <div className="max-w-7xl mx-auto px-5 sm:px-6">
           <motion.div {...fadeUp} className="text-center max-w-2xl mx-auto">

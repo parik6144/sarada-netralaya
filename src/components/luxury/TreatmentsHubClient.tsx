@@ -56,14 +56,14 @@ export default function TreatmentsHubClient() {
           </nav>
 
           <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-[11px] tracking-[0.14em] uppercase font-semibold text-[#F5D565] mb-4">
-            Smart Eye Guides · Easy English
+            Smart Eye Guides · Clear & Simple
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight max-w-3xl leading-tight">
             Understand the Problem. <span className="text-[#F5D565]">Know the Solution.</span>
           </h1>
           <p className="mt-4 text-sm sm:text-base text-white/80 max-w-2xl leading-relaxed">
-            School-level simple guides for every major eye condition — what you feel, what is happening inside the eye,
+            Easy guides for every major eye condition — what you feel, what is happening inside the eye,
             and exactly how SARADA treats it. Pick a card below to open the full visual guide.
           </p>
 

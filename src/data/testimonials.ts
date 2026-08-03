@@ -138,4 +138,13 @@ I would highly recommend Dr. Nitish and Sarada Netralaya to anyone seeking the b
 
 The surgery was successful, and my recovery has been smooth. The hospital staff were professional, caring, and supportive at every step.`,
   },
+  {
+    id: 'atul-taunk',
+    name: 'Mr. Atul Taunk',
+    role: 'Managing Director, Apex Auto Pvt. Ltd.',
+    image: '/images/testimonials/AtulTaunk.jpg',
+    preview:
+      'My cataract surgery was performed by Dr. Nitin Dhira who is an excellent surgeon. He is a very humble and kind person…',
+    full: `My cataract surgery was performed by Dr. Nitin Dhira who is an excellent surgeon. He is a very humble and kind person who looks after his patients.`,
+  },
 ];

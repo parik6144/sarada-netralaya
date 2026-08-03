@@ -95,7 +95,7 @@ export const treatmentExtras: Record<string, TreatmentExtras> = {
       { label: 'ICL', hint: 'Implantable Collamer Lens' },
       { label: 'IPCL', hint: 'Phakic lens option' },
       { label: 'Full Workup', hint: 'Power, cornea & chamber checks' },
-      { label: 'Clear Plan', hint: 'Simple English counselling' },
+      { label: 'Clear Plan', hint: 'Simple counselling' },
     ],
     image: '/images/treatment-lasik.png',
     lifestyleImage: '/images/lasik-lifestyle.png',

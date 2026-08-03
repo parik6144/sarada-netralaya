@@ -39,7 +39,7 @@ export default function TreatmentSmartStory({
               Easy visual understanding
             </h2>
             <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
-              Simple English + clear pictures — so school level and family members can understand {name.toLowerCase()}.
+              Clear pictures and simple words — so the whole family can understand {name.toLowerCase()}.
             </p>
           </motion.div>
 

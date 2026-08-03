@@ -38,7 +38,7 @@ const diseases: Disease[] = [
     causes: ['Aging - natural protein breakdown in the lens', 'Diabetes mellitus', 'Exposure to UV radiation', 'Smoking and alcohol consumption', 'Previous eye injury or inflammation', 'Prolonged use of corticosteroid medications', 'Family history of cataracts'],
     riskFactors: ['Age above 60 years', 'Diabetes', 'Excessive sunlight exposure', 'Obesity', 'High blood pressure', 'Previous eye surgery', 'Smoking'],
     diagnosis: ['Visual acuity test (Snellen chart)', 'Slit-lamp examination', 'Retinal exam with dilated pupils', 'Tonometry to measure eye pressure', 'Optical coherence tomography (OCT)'],
-    treatment: ['Phacoemulsification surgery (stitch-less, painless)', 'Premium IOL implantation (Toric, Multifocal, EDOF)', 'Laser-assisted cataract surgery', 'Post-operative care and follow-up'],
+    treatment: ['Phacoemulsification surgery (stitch-less, painless)', 'Premium IOL implantation (Toric, Multifocal, EDOF)', 'Post-operative care and follow-up'],
     prevention: ['Wear UV-protective sunglasses outdoors', 'Manage diabetes and blood pressure', 'Quit smoking', 'Eat a diet rich in antioxidants', 'Get regular eye exams after age 50'],
     whenToSee: 'If you notice gradual blurring of vision, difficulty driving at night, or colors appearing faded, schedule an appointment immediately. Cataracts worsen over time and early intervention ensures better outcomes.',
     doctor: 'Dr. Nitin G. Dhira',

@@ -8,10 +8,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { doctors } from '@/data/doctors';
 import { mainNav, navTreatments } from '@/data/site';
 import { useBookingModal } from '@/components/luxury/BookingModalContext';
+import { useTestimonialsModal } from '@/components/luxury/TestimonialsModalContext';
 
 export default function LuxuryNavbar() {
   const pathname = usePathname();
   const { openBooking } = useBookingModal();
+  const { openTestimonials } = useTestimonialsModal();
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const dropdownTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -124,6 +126,16 @@ export default function LuxuryNavbar() {
 
           {/* Desktop menu — centered under logo */}
           <div className="hidden lg:flex items-center justify-center flex-wrap gap-0.5 xl:gap-1 w-full">
+            <button
+              type="button"
+              onClick={() => {
+                setActiveDropdown(null);
+                openTestimonials();
+              }}
+              className="mr-1 inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-brand-red text-white text-[13px] font-bold tracking-wide hover:bg-brand-red-dark transition-colors shadow-sm cursor-pointer"
+            >
+              Testimonials
+            </button>
             {mainNav.map((link) => (
               <div
                 key={link.label}
@@ -215,6 +227,16 @@ export default function LuxuryNavbar() {
             className="nav-offset fixed inset-0 z-[95] bg-white px-5 pb-10 overflow-y-auto lg:hidden"
           >
             <div className="space-y-1 max-w-lg mx-auto">
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileOpen(false);
+                  openTestimonials();
+                }}
+                className="mb-2 block w-full text-center px-6 py-4 rounded-full bg-brand-red text-white font-bold cursor-pointer"
+              >
+                Testimonials
+              </button>
               {mainNav.map((link) => (
                 <div key={link.label}>
                   <Link

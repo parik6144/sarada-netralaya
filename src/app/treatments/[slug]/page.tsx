@@ -120,12 +120,12 @@ export default function TreatmentDetailPage() {
                     }`}
                   >
                     <p className="text-[10px] tracking-[0.16em] uppercase text-[#F5D565] font-semibold">
-                      {isGlaucoma ? 'Silent thief of sight' : 'Clear explanation · Easy English'}
+                      {isGlaucoma ? 'Silent thief of sight' : 'Clear explanation · Easy to follow'}
                     </p>
                     <p className="mt-1 text-sm text-white font-medium">
                       {isGlaucoma
                         ? 'No early pain — regular checks protect the vision you still have.'
-                        : 'School-level simple — so the whole family understands.'}
+                        : 'Simple words — so the whole family understands.'}
                     </p>
                   </div>
                 </div>
@@ -140,14 +140,14 @@ export default function TreatmentDetailPage() {
           <TreatmentSmartStory extras={extras} accent={color} name={data.name} />
         ) : null}
 
-        {/* Simple 3-step school-level explanation */}
+        {/* Simple 3-step explanation */}
         <section className="py-12 sm:py-14">
           <div className="max-w-7xl mx-auto px-5 sm:px-6">
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 text-center">
               Understand in 3 easy steps
             </h2>
             <p className="mt-2 text-sm text-slate-500 text-center max-w-2xl mx-auto">
-              Written in simple English — so anyone in the family can understand.
+              Written in simple words — so anyone in the family can understand.
             </p>
 
             <div className="mt-8 grid md:grid-cols-3 gap-4 sm:gap-5">
@@ -310,6 +310,33 @@ export default function TreatmentDetailPage() {
             </div>
           </div>
         </section>
+
+        {/* Your IOL Guide — cataract only */}
+        {key === 'cataract' && (
+          <section className="pb-2">
+            <div className="max-w-4xl mx-auto px-5 sm:px-6">
+              <Link
+                href="/guides/iol"
+                className="group flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 rounded-2xl border border-[#4FA3D1]/40 bg-gradient-to-r from-[#F0F7FC] to-white px-6 py-6 sm:px-8 hover:border-brand-red/40 hover:shadow-md transition-all"
+              >
+                <div>
+                  <p className="text-[11px] tracking-[0.16em] uppercase font-semibold text-brand-blue">
+                    Lens counselling
+                  </p>
+                  <p className="mt-1 text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-brand-red transition-colors">
+                    Your IOL Guide
+                  </p>
+                  <p className="mt-1 text-sm text-slate-600">
+                    Far, mid and near — see which intraocular lens fits your daily life.
+                  </p>
+                </div>
+                <span className="inline-flex items-center text-sm font-bold text-brand-red shrink-0">
+                  Open guide →
+                </span>
+              </Link>
+            </div>
+          </section>
+        )}
 
         {/* FAQ */}
         <section className="py-12 sm:py-14">

@@ -114,6 +114,35 @@ const startFrom = [
   { q: 'My vision feels warped / stretched', lensId: 'toric' },
 ];
 
+const guideCompareCols = [
+  'Monofocal',
+  'Enhanced Monofocal (Eyhance)',
+  'EDOF (Vivity)',
+  'EDOF (PureSee)',
+  'Trifocal (Odyssey)',
+  'Multifocal (PanOptix)',
+];
+
+const guideCompareRows: { label: string; scores: number[] }[] = [
+  { label: 'Distance vision', scores: [5, 5, 5, 5, 5, 4] },
+  { label: 'Intermediate vision', scores: [2, 3, 5, 5, 5, 5] },
+  { label: 'Near vision', scores: [1, 2, 3, 3, 5, 5] },
+  { label: 'Contrast sensitivity', scores: [5, 5, 5, 5, 4, 3] },
+  { label: 'Night driving', scores: [5, 5, 4, 5, 3, 3] },
+];
+
+function Stars({ n }: { n: number }) {
+  return (
+    <span className="inline-flex gap-0.5 text-amber-500 tracking-tight" aria-label={`${n} out of 5`}>
+      {Array.from({ length: 5 }).map((_, i) => (
+        <span key={i} className={i < n ? 'opacity-100' : 'opacity-20'}>
+          ★
+        </span>
+      ))}
+    </span>
+  );
+}
+
 export default function IolGuideClient() {
   const [activeId, setActiveId] = useState(lenses[0].id);
   const active = lenses.find((l) => l.id === activeId) ?? lenses[0];
@@ -379,70 +408,48 @@ export default function IolGuideClient() {
         </div>
       </section>
 
-      {/* Step 3 — Quick compare (compact, not repeating stories) */}
+      {/* Step 3 — Guide comparison table */}
       <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-6">
           <div className="max-w-2xl mb-8">
             <p className="text-[11px] tracking-[0.18em] uppercase font-semibold text-brand-blue">Step 3</p>
-            <h2 className="mt-2 text-2xl sm:text-3xl font-bold text-slate-900">Side-by-side snapshot</h2>
+            <h2 className="mt-2 text-2xl sm:text-3xl font-bold text-slate-900">How common lenses stack up</h2>
             <p className="mt-2 text-sm text-slate-600">
-              One row each — no long cards. Tap a name above to open full detail.
+              Star ratings from our patient IOL guide — your surgeon matches the lens to your eye tests.
             </p>
           </div>
 
           <div className="overflow-x-auto border border-slate-200">
-            <table className="min-w-[640px] w-full text-sm text-left">
+            <table className="min-w-[780px] w-full text-left text-sm">
               <thead>
                 <tr className="bg-[#0B1F3A] text-white">
-                  <th className="px-4 py-3 font-semibold">Lens</th>
-                  <th className="px-3 py-3 font-medium">Far</th>
-                  <th className="px-3 py-3 font-medium">Mid</th>
-                  <th className="px-3 py-3 font-medium">Near</th>
-                  <th className="px-4 py-3 font-medium">In one line</th>
+                  <th className="px-4 py-3 font-semibold sticky left-0 bg-[#0B1F3A]">Parameters</th>
+                  {guideCompareCols.map((c) => (
+                    <th key={c} className="px-3 py-3 font-medium text-xs sm:text-sm whitespace-nowrap">
+                      {c}
+                    </th>
+                  ))}
                 </tr>
               </thead>
               <tbody>
-                {lenses
-                  .filter((l) => l.id !== 'toric')
-                  .map((lens, i) => (
-                    <tr
-                      key={lens.id}
-                      className={`${i % 2 === 0 ? 'bg-white' : 'bg-slate-50'} cursor-pointer hover:bg-[#F0F7FC]`}
-                      onClick={() => {
-                        setActiveId(lens.id);
-                        document.getElementById('choose')?.scrollIntoView({ behavior: 'smooth' });
-                      }}
-                    >
-                      <td className="px-4 py-3 font-semibold text-slate-900">
-                        <span className="inline-flex items-center gap-2">
-                          <span className="h-2.5 w-2.5 rounded-full" style={{ background: lens.color }} />
-                          {lens.name}
-                        </span>
+                {guideCompareRows.map((row, i) => (
+                  <tr key={row.label} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                    <td className="px-4 py-3 font-medium text-slate-800 sticky left-0 bg-inherit border-r border-slate-100 whitespace-nowrap">
+                      {row.label}
+                    </td>
+                    {row.scores.map((s, j) => (
+                      <td key={`${row.label}-${j}`} className="px-3 py-3">
+                        <Stars n={s} />
                       </td>
-                      {(['far', 'mid', 'near'] as Zone[]).map((z) => (
-                        <td key={z} className="px-3 py-3">
-                          <span
-                            className={
-                              lens.clarity[z] === 'sharp'
-                                ? 'font-bold text-slate-900'
-                                : lens.clarity[z] === 'soft'
-                                  ? 'text-slate-600'
-                                  : 'text-slate-400'
-                            }
-                          >
-                            {clarityCopy[lens.clarity[z]].label}
-                          </span>
-                        </td>
-                      ))}
-                      <td className="px-4 py-3 text-slate-600">{lens.short}</td>
-                    </tr>
-                  ))}
+                    ))}
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
           <p className="mt-4 text-sm text-slate-500">
-            <span className="font-semibold text-[#4FA3D1]">Toric</span> can be added to any of the above when
-            you have astigmatism — it fixes warped blur, not the Far / Mid / Near pattern itself.
+            <span className="font-semibold text-[#4FA3D1]">Toric</span> can be added to suitable lenses when you have
+            astigmatism — it corrects warped blur, not the Far / Mid / Near pattern itself.
           </p>
         </div>
       </section>

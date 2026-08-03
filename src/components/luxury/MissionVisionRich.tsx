@@ -7,7 +7,7 @@ import { site } from '@/data/site';
 const missionPoints = [
   {
     title: 'See clearly, decide calmly',
-    body: 'We explain scans and findings in everyday English — so fear never replaces understanding.',
+    body: 'We explain scans and findings in everyday words — so fear never replaces understanding.',
   },
   {
     title: 'Treat with precision',
