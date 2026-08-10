@@ -182,8 +182,8 @@ export default function LuxuryNavbar() {
                 )}
 
                 {link.hasDropdown === 'doctors' && activeDropdown === 'doctors' && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[300px] z-[110]">
-                    <div className="bg-white rounded-2xl p-3 border border-slate-200 shadow-xl">
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[340px] z-[110]">
+                    <div className="bg-white rounded-2xl p-3 border border-slate-200 shadow-xl max-h-[min(70vh,420px)] overflow-y-auto">
                       {doctors.map((d) => (
                         <Link
                           key={d.id}
@@ -192,7 +192,7 @@ export default function LuxuryNavbar() {
                           className="w-full text-left block p-3 rounded-xl hover:bg-sky-50 transition-colors cursor-pointer"
                         >
                           <div className="text-sm font-semibold text-slate-800">{d.name}</div>
-                          <div className="text-xs text-brand-blue mt-0.5">{d.speciality}</div>
+                          <div className="text-xs text-brand-blue mt-0.5 leading-snug">{d.speciality}</div>
                         </Link>
                       ))}
                     </div>
