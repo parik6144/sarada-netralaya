@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 import BookAppointmentButton from '@/components/luxury/BookAppointmentButton';
 import { useTestimonialsModal } from '@/components/luxury/TestimonialsModalContext';
+import { site } from '@/data/site';
 import { testimonials } from '@/data/testimonials';
 
 const AUTO_MS = 4800;
@@ -95,13 +96,15 @@ export default function LuxuryHero() {
                   </p>
                   <p className="mt-0.5 truncate text-sm font-bold text-[#0B1F3A]">What our patients say</p>
                 </div>
-                <button
-                  type="button"
-                  onClick={() => openTestimonials(index)}
-                  className="shrink-0 text-[11px] font-semibold text-brand-red hover:text-brand-red-dark cursor-pointer"
+                <a
+                  href={site.googleReviewsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shrink-0 text-right text-[11px] font-semibold text-brand-red hover:text-brand-red-dark leading-tight"
                 >
-                  View all →
-                </button>
+                  <span className="sm:hidden">View all →</span>
+                  <span className="hidden sm:inline">View all Google Reviews →</span>
+                </a>
               </div>
 
               <div className="relative mt-2.5 min-h-0 flex-1 overflow-hidden sm:mt-3">

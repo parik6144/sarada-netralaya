@@ -49,6 +49,9 @@ export const site = {
   email: 'info@saradanetralaya.org',
   hours: 'Mon–Sat: 10:00 AM – 7:00 PM',
   emergency: 'Call us during working hours for urgent eye care',
+  /** Sarada Netralaya Google Reviews (Place ID) */
+  googleReviewsUrl:
+    'https://search.google.com/local/reviews?placeid=ChIJdXBOmfzi9TkRm7Rq399lK-Y',
 };
 
 export const navTreatments = [
