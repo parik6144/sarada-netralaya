@@ -19,9 +19,8 @@ export default function HomeSurgeonsSection() {
             Our <span className="text-brand-red">Specialists</span>
           </h2>
           <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed">
-            Eye doctors, a gynaecologist, an anaesthesiologist, and our administration & quality lead — here to
-            check your eyes, guide women’s health, keep surgery safe, and run care smoothly. We explain everything in
-            clear, simple words.
+            Eye doctors, a gynaecologist, and an anaesthesiologist — here to check your eyes, guide women’s health,
+            and keep surgery safe. We explain everything in clear, simple words.
           </p>
         </div>
 

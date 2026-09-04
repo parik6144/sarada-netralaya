@@ -168,39 +168,4 @@ export const doctors: DoctorProfile[] = [
       'High-risk geriatric perioperative care',
     ],
   },
-  {
-    id: 'anurag',
-    name: 'Dr. Anurag',
-    credentials: 'PhD (Biotechnology — Proteins), PhD (Hospital Administration)',
-    title: 'Senior Manager — Administration and Quality',
-    speciality: 'Senior Manager — Administration and Quality',
-    experience: '21+ years',
-    surgeries: 'Hospital Admin',
-    image: '/images/dr-anurag.jpeg',
-    accent: '#1F4E79',
-    focus: [
-      'Hospital administration & operations',
-      'Quality systems and patient experience',
-      'Process excellence across clinical services',
-      'Leadership from leading hospital networks',
-    ],
-    bio: 'Dr. Anurag is Senior Manager — Administration and Quality at SARADA Netralaya. He holds dual doctorate degrees — PhD in Biotechnology (Proteins) and PhD in Hospital Administration — and brings more than 21 years of experience in hospital administration.\n\nHe has worked with reputed organisations including Apollo, Fortis, Rani Children Hospital, and Meditrina. His background spans quality-driven hospital operations, service excellence, and structured administrative leadership that supports safe, organised, and patient-friendly care.',
-    education:
-      'PhD (Biotechnology — Proteins); PhD (Hospital Administration). Extensive hospital administration experience across leading healthcare organisations.',
-    approach:
-      'Quality-led hospital administration — clear processes, strong systems, and a patient-first service culture that supports clinical teams and smooth care journeys.',
-    conditions: [
-      'Hospital operations & administration',
-      'Quality management',
-      'Patient experience systems',
-      'Cross-department coordination',
-      'Service excellence programmes',
-    ],
-    highlights: [
-      'Senior Manager — Administration and Quality',
-      'PhD Biotechnology (Proteins) & PhD Hospital Administration',
-      '21+ years in hospital administration',
-      'Experience — Apollo, Fortis, Rani Children Hospital, Meditrina',
-    ],
-  },
 ];
