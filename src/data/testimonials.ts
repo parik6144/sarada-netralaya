@@ -10,6 +10,23 @@ export type Testimonial = {
 /** Real patient & peer reviews — photos live in /public/images/testimonials */
 export const testimonials: Testimonial[] = [
   {
+    id: 'koshy-varghese',
+    name: 'Dr. Koshy Varghese',
+    role: 'Retired Senior Consultant in Anesthesia, Tata Steel · Honorary Director, Meherbhai Tata Memorial Hospital',
+    image: '/images/Dr. Koshy Varghese.png',
+    preview:
+      'Dr. Nitin’s steady hands and reassurance gave us the confidence for cataract surgery. Today I have 6/6 vision for distance and reading…',
+    full: `I am Dr. Koshy Varghese. I retired from Tata Steel as a Senior Consultant in Anesthesia, and I was the Honorary Director of Meherbhai Tata Memorial Hospital.
+
+I approached different people to find out who would do my cataract surgery without interfering with my medicines, because my cardiologist said that none of the medications could be stopped. Dr. Nitin Ganesh Dhira was referred to as one of the most steady hands. I first consulted him at Jamshedpur Eye Hospital, where he did the initial workup and advised that my right-eye cataract should be done as soon as possible.
+
+After five months I consulted him again at his beautiful new setup, Sarada Netralaya and Maternity Centre at Sakchi. He was gracious enough to see me on a Sunday, the day my wife and I were free. He opened the centre, called in his team, and they reassessed my eyes. His reassurance and confidence gave me — and more importantly my wife — the confidence that this is the centre, and this is the person, who should do the surgery.
+
+Yesterday I had my surgery. I was given topical local anesthesia. He kept reassuring me throughout, describing each step, stayed in full contact with me, and kept me comfortable under the drapes. This morning I came back and he checked me. I have 6/6 vision both for distance and for reading.
+
+I thank Dr. Dhira and the whole team of Sarada Netralaya and Maternity Centre for restoring my eyesight on this World Sight Day, 8 October 2026. Thank you so much.`,
+  },
+  {
     id: 'rajiv-shukla',
     name: 'Dr. Rajiv Shukla',
     role: 'Ex. Head Consultant & HOD Anesthesiology, Tata Main Hospital, Jamshedpur',
