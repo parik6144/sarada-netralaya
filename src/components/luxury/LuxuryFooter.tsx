@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { site } from '@/data/site';
 import { useBookingModal } from '@/components/luxury/BookingModalContext';
+import VisitorCounter from '@/components/luxury/VisitorCounter';
 
 const quickLinks = [
   { label: 'Home', href: '/' },
@@ -115,8 +116,11 @@ export default function LuxuryFooter() {
           </div>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-slate-500">© 2026 {site.name}. All rights reserved.</p>
+        <div className="mt-12 pt-6 border-t border-slate-700 flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:justify-between">
+          <div className="flex flex-col items-center gap-3 sm:flex-row">
+            <p className="text-center text-xs text-slate-500 sm:text-left">© 2026 {site.name}. All rights reserved.</p>
+            <VisitorCounter />
+          </div>
           <div className="flex gap-6">
             <Link href="/privacy-policy" className="text-xs text-slate-500 hover:text-slate-300">
               Privacy Policy
