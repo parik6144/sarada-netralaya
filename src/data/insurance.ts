@@ -5,6 +5,7 @@ export type InsurancePartner = {
 };
 
 export const corporatePartners: InsurancePartner[] = [
+  { name: 'NIT', logo: '/images/insurance/nit.jpg' },
   { name: 'LIC', logo: '/images/insurance/lic.png' },
   { name: 'MediAssist', logo: '/images/insurance/mediassist.png' },
   { name: 'MD India', logo: '/images/insurance/mdindia.png' },
@@ -45,5 +46,5 @@ export const cashlessChecklist = [
   'Ayushman Bharat / PM-JAY card for eligible beneficiaries',
   'Referral letter if required by your insurer or TPA',
   'Previous eye reports, prescriptions, and diabetes records if applicable',
-  'Employer details for corporate schemes (NML and other empanelled organisations)',
+  'Employer details for corporate schemes (NIT, NML and other empanelled organisations)',
 ];

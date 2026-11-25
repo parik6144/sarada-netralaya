@@ -8,6 +8,7 @@ import SectionHeader from './SectionHeader';
 gsap.registerPlugin(ScrollTrigger);
 
 const corporates = [
+  'NIT',
   'LIC',
   'MediAssist',
   'MD India',
