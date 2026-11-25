@@ -43,7 +43,7 @@ const faqs = [
   },
   {
     q: 'Do you offer cashless insurance treatment?',
-    a: 'Yes. Cashless facility is available and all major mediclaim and insurance are accepted. Partners include Tata Power, Tata Motors, LIC, MediAssist, MD India, Health India, New India Assurance, National Insurance, Oriental Insurance, United India Insurance, Ayushman Bharat (PM-JAY), Rajyakarmi Swasthya Bima Yojana, and NML. Please bring your insurance details so we can verify benefits before treatment.',
+    a: 'Yes. Cashless facility is available and all major mediclaim and insurance are accepted. Partners include LIC, MediAssist, MD India, Health India, Care Health Insurance, Volo Health Insurance, SBI General Insurance, New India Assurance, National Insurance, Oriental Insurance, United India Insurance, Ayushman Bharat (PM-JAY), Rajyakarmi Swasthya Bima Yojana, and NML. Please bring your insurance details so we can verify benefits before treatment.',
   },
 ];
 

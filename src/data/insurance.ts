@@ -5,12 +5,13 @@ export type InsurancePartner = {
 };
 
 export const corporatePartners: InsurancePartner[] = [
-  { name: 'Tata Power', logo: '/images/insurance/tatapowers.png' },
-  { name: 'Tata Motors', logo: '/images/insurance/TataMotors.png' },
   { name: 'LIC', logo: '/images/insurance/lic.png' },
   { name: 'MediAssist', logo: '/images/insurance/mediassist.png' },
   { name: 'MD India', logo: '/images/insurance/mdindia.png' },
   { name: 'Health India', logo: '/images/insurance/healthindia.png' },
+  { name: 'Care Health Insurance', logo: '/images/insurance/care-health.png' },
+  { name: 'Volo Health Insurance', logo: '/images/insurance/volo-health.png' },
+  { name: 'SBI General Insurance', logo: '/images/insurance/sbi-general.png' },
 ];
 
 export const governmentInsurers: InsurancePartner[] = [
@@ -44,5 +45,5 @@ export const cashlessChecklist = [
   'Ayushman Bharat / PM-JAY card for eligible beneficiaries',
   'Referral letter if required by your insurer or TPA',
   'Previous eye reports, prescriptions, and diabetes records if applicable',
-  'Employer details for corporate schemes (Tata Power, Tata Motors, NML, etc.)',
+  'Employer details for corporate schemes (NML and other empanelled organisations)',
 ];

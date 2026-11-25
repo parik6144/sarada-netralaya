@@ -8,12 +8,13 @@ import SectionHeader from './SectionHeader';
 gsap.registerPlugin(ScrollTrigger);
 
 const corporates = [
-  'Tata Power',
-  'Tata Motors',
   'LIC',
   'MediAssist',
   'MD India',
   'Health India',
+  'Care Health Insurance',
+  'Volo Health Insurance',
+  'SBI General Insurance',
 ];
 
 const government = [

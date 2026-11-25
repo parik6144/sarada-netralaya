@@ -127,9 +127,9 @@ export default function InsurancePageClient() {
           <motion.div {...fade}>
             <div className="mb-8 text-center sm:text-left">
               <p className="text-[11px] tracking-[0.18em] uppercase font-semibold text-brand-red">Corporate &amp; TPA</p>
-              <h2 className="mt-1 text-2xl sm:text-3xl font-bold text-slate-900">Private partners</h2>
+              <h2 className="mt-1 text-2xl sm:text-3xl font-bold text-slate-900">Partners</h2>
               <p className="mt-2 text-sm text-slate-500 max-w-2xl">
-                Tata Power · Tata Motors · LIC · MediAssist · MD India · Health India
+                LIC · MediAssist · MD India · Health India · Care Health Insurance · Volo Health Insurance · SBI General Insurance
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
